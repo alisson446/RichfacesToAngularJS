@@ -52,16 +52,16 @@
 
 <!-- Modal Grupos-->
 <div class="small-12 medium-12 large-12 columns">
-	<div id="modalGrupos" class="reveal-modal medium"  data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+	<div id="modalGrupos" class="reveal-modal medium collapse"  data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 	  <h3 id="modalTitle">Adicionar Grupo</h3>
 	  <br/>
 	  	<div class="small-12 medium-12 large-12 columns">
-		  	<ul class="tabs" data-tab role="tablist">
-	  			<li class="tab-title {{activeIdent}}" role="presentation"><a href="" ng-click="abaIdentificacao()" role="tab" tabindex="0">Identificação</a></li>
-	  			<li class="tab-title {{activeClass}}" role="presentation"><a href="" ng-click="abaClassificacao()" role="tab" tabindex="0">Classificacao</a></li>
+		  	<ul class="tabs" data-tab role="tablist" id="titleTab">
+	  			<li class="tab-title {{activeIdent}}" role="presentation"><a  href="" ng-click="abaIdentificacao()" role="tab" tabindex="0">Identificação</a></li>
+	  			<li class="tab-title {{activeClass}}" role="presentation"><a href="" ng-click="abaClassificacao()" role="tab" tabindex="0">Classificação</a></li>
 			</ul>
 			
-			<div class="tabs-content">
+			<div class="tabs-content" id="titleTab2">
 	  		  <div role="tabpanel" class="content {{abaIdent}}">
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-2 medium-2 large-2 columns">
@@ -81,24 +81,52 @@
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-4 medium-4 large-4 large-offset-2 columns">
-	    				Abreviãção
+	    				Abreviação
 	    			</div>
 	    			<div class="small-3 medium-3 large-3 large-offset-1 columns">
-	    				Desconto Máx
+	    				Desconto Máximo
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
 	    				Markup
 	    			</div>
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
-	    			<div class="small-4 medium-4 large-4 large-offset-2 columns">
+	    			<div class="small-5 medium-5 large-5 large-offset-2 columns">
 	    				<input class="form-control" type="text" ng-model="grupo.abreviacao" />
 	    			</div>
-	    			<div class="small-3 medium-3 large-3 large-offset-1 columns">
+	    			<div class="small-3 medium-3 large-3 columns">
 	    				<input class="form-control" type="text" ng-model="grupo.descontomax" />
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
 	    				<input class="form-control" type="text" ng-model="grupo.markup" />
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 large-offset-2 columns">
+	    				Observação
+	    			</div>
+	    			<div class="small-3 medium-3 large-3 large-offset-1 columns">
+	    				Imobilizado
+	    			</div>
+	    			<div class="small-3 medium-3 large-2 columns">
+	    				Inventario
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-5 medium-5 large-5 large-offset-2 columns">
+	    				<input class="form-control" type="text" ng-model="grupo.observacao" />
+	    			</div>
+	    			<div class="small-3 medium-3 large-3 columns">
+	    				<div class="switch round">
+						  <input id="radioimobilizado" type="checkbox">
+						  <label for="radioimobilizado"></label>
+						</div>
+	    			</div>
+	    			<div class="small-3 medium-3 large-2 columns">
+	    				<div class="switch round">
+						  <input id="radioinventario" type="checkbox">
+						  <label for="radioinventario"></label>
+						</div>
 	    			</div>
 	    		</div>
 			  </div>
@@ -108,6 +136,15 @@
 	    		</div>
 			  </div>		  
 			</div>
+	   	</div>
+
+	   	<div class="small-12 medium-12 large-12 columns">
+		   	<div class="small-4 medium-4 large-2 large-offset-7 columns" style="position:relative;left:2em;">
+		   		<button class="button small info radius">Cadastrar</button>
+		   	</div>
+		   	<div class="small-4 medium-4 large-3 columns" style="position:relative;left:2.8em;">
+		   		<button ng-click="fecharModal()" class="button small alert radius">Cancelar</button>
+		   	</div>
 	   	</div>
 
     	<a class="close-reveal-modal" aria-label="Close">&#215;</a>

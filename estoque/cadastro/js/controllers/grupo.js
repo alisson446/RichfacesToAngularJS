@@ -40,6 +40,11 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, grupos, $
 		$scope.activeClass = "";
 	};
 
+	$scope.fecharModal = function(){
+		$('#modalGrupos').foundation('reveal', 'close');
+		$scope.grupo = null;
+	};
+
 	$scope.abaIdentificacao = function(){
 		$scope.abaIdent = "active";
 		$scope.abaClass = "";
