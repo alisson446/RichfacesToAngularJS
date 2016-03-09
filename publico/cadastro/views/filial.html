@@ -24,11 +24,16 @@
 			<th>Ações</th>
 		</tr>
 		<tr ng-repeat="filialList in filiais">
-			<td class="trtitle">{{filialList.codigo}}</td>
-			<td class="trtitle">{{filialList.nome}}</td>
-			<td class="trtitle">{{filialList.fantasia}}</td>
-			<td class="trtitle">{{filialList.cnpj}}</td>
-			<td class="trtitle">{{filialList.telefone}}</td>
+			<td class="tdvalue">{{filialList.codigo}}</td>
+			<td class="tdvalue">{{filialList.nome}}</td>
+			<td class="tdvalue">{{filialList.fantasia}}</td>
+			<td class="tdvalue">{{filialList.cnpj}}</td>
+			<td class="tdvalue">{{filialList.telefone}}</td>
+			<td>
+				<img src="img/tables/remover.png">
+				<img src="img/tables/editar.png">
+				<img src="img/tables/tributar.png">
+			</td>
 		</tr>
 	</table>
 

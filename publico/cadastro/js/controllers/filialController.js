@@ -8,24 +8,17 @@ angular.module('hrcomercial').factory('filialService', function($http, config) {
 	}
 });
 
-angular.module('hrcomercial').controller('filialController', function($scope, filialService) {
+angular.module('hrcomercial').controller('filialController', function($scope, filialService, paginacaoService) {
 	$scope.nome = 'filiais';
 
-	filialService.getFiliais().success(function(data) {
-		var dados = data;
-
-		$scope.totalPorPagina = 10;
+	filialService.getFiliais().success(function(dados) {
 		$scope.totalRegistro = dados.length;
-		$scope.pagina = [];
-		var j = $scope.totalRegistro > $scope.totalPorPagina ? Math.ceil($scope.totalRegistro / $scope.totalPorPagina) : $scope.totaRegistro;
-		
-		for (var i = 0; i < j; i++) {
-		     $scope.pagina.push(dados.splice(0, $scope.totalPorPagina));
-		}
-
+		$scope.totalPorPagina = 10;
+		$scope.pagina = paginacaoService.getPagination($scope.totalPorPagina, dados);
 		$scope.filiais = $scope.pagina[0];
+	
 		$scope.loadListPagination = function (i) {
-		    $scope.filiais = $scope.pagina[i];
+	    	$scope.filiais = $scope.pagina[i];
 		};
 	}).error(function(data,status){
 		$scope.message = "Aconteceu um erro ao carregar filiais!";
