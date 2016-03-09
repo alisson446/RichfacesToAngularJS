@@ -1,0 +1,48 @@
+<br />
+<div class="small-3 medium-3 large-3 large-offset-1 columns">
+	<h3 class="titulo">{{nome}}</h3>	
+</div>
+<div class="small-1 medium-1 large-2 large-offset-2 columns">
+	<a href="">
+		<img src="img/tables/add.png">
+	</a>	
+</div>
+<div class="small-2 medium-2 large-4 columns">
+	<a href="">
+		<img src="img/tables/search.png">
+	</a>	
+</div>
+
+<div class="small-12 medium-12 large-12 columns">
+	<table class="small-8 medium-8 large-8 large-offset-1 columns">
+		<tr class="trbody">
+			<th>Código</th>
+			<th>Nome</th>
+			<th>Fantasia</th>
+			<th>CNPJ</th>
+			<th>Telefone</th>
+			<th>Ações</th>
+		</tr>
+		<tr ng-repeat="filialList in filiais">
+			<td class="trtitle">{{filialList.codigo}}</td>
+			<td class="trtitle">{{filialList.nome}}</td>
+			<td class="trtitle">{{filialList.fantasia}}</td>
+			<td class="trtitle">{{filialList.cnpj}}</td>
+			<td class="trtitle">{{filialList.telefone}}</td>
+		</tr>
+	</table>
+
+	<div class="small-3 medium-3 large-3 columns">
+		<nav ng-show="totalPorPagina < totalRegistro">
+	        <ul class="pagination">
+	            <a ng-click="prevPage(pagina-1)" ng-class="{disabled: pagina == 1}"><img src="img/tables/prev.png"></a>
+	            <li ng-repeat="j in pagina">
+	                <a href ng-click="loadListPagination($index)" style="background-color: #777;">
+	                    {{$index + 1}}
+	                </a>
+	            </li>
+	            <a ng-click="nextPage(pagina+1)" ng-class="{disabled: pagina == numberOfPages}"><img src="img/tables/next.png"></a>
+	        </ul>
+	    </nav>
+	</div>
+</div>

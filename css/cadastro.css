@@ -1,0 +1,1322 @@
+/*************************************************************
+  Cadastro.css
+  Objetivo: CSS para configuracao das telas de cadastro
+*/
+.outCabecalho {
+	font-size: 25px;
+}
+
+/*----------------------------------------------------------------------------*/
+/*------------------------- IDENTIFICACAO DE PAGINA --------------------------*/
+/*----------------------------------------------------------------------------*/
+.identificacaoPagina {
+	margin-bottom: 20px;
+}
+
+.divSuperiorCadastro {
+	margin-top: -20px;
+}
+
+.selectPesquisa {
+	margin-left: 30px;
+	width: 150px;
+}
+
+.tamanhoSelectPesquisa {
+	width: 140px;
+}
+
+.botaoNovo {
+	margin-top: -36px;
+	margin-bottom: 10px;
+}
+
+.pesquisaSemSelect {
+	margin-left: 30px;
+	width: 150px;
+}
+/*---------------------------------------------------------*/
+.ConteudoGeral {
+	margin-left: 30px;
+}
+/*RELATORIOS 
+	--------------------------------------------------------------------------*/
+.btn-relatorios {
+	padding: 50px 65px;
+	font-size: 30px;
+	border: 1000px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+/***********************************************************
+                    Cadastro Generico
+************************************************************/
+.modal_cadastro {
+	position: absolut;
+	top: 20%;
+	left: 40%;
+	z-index: 1050;
+	width: 900px;
+	margin-left: -280px;
+	background-color: #ffffff;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	*border: 1px solid #999;
+}
+/***********************************************************
+                Modal para Kits
+************************************************************/
+.modal_kits {
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	z-index: 1050;
+	width: 1265px;
+	margin-left: -290px;
+	background-color: #ffffff;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	*border: 1px solid #999;
+}
+/***********************************************************
+					Modal Remover
+*************************************************************/
+.modalremove {
+	position: fixed;
+	top: 20%;
+	left: 40%;
+	z-index: 1050;
+	width: 900px;
+	margin-top: 455px;
+	margin-left: -280px;
+	background-color: #ffffff;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	*border: 1px solid #999;
+	/* IE6-7 */
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 9px;
+	-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	outline: none;
+}
+
+.modal_movimento_financeiro {
+	position: absolut;
+	top: 20%;
+	left: 40%;
+	z-index: 1050;
+	background-color: #ffffff;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	*border: 1px solid #999;
+	margin-left: -500px;
+}
+
+/***********************************************************
+ AUTOCOMPLETE
+ ************************************************************/
+.autocompete {
+	margin-left: 30px;
+	border-radius: 8px;
+	background-color: #D3D3D3;
+	width: 540px;
+}
+
+/***********************************************************
+   Definicao de tamanhos de DIV e Inputs
+   wdd: DIV
+   wdi: Input
+************************************************************/
+[class*="wdd"] {
+	float: left;
+	min-height: 1px;
+	margin-left: 30px;
+}
+
+[class*="wdo"] {
+	
+}
+
+[class*="wdi"] {
+	
+}
+
+.cnpjMask {
+	
+}
+
+.wddLine {
+	margin-bottom: 0px;
+}
+
+.tableHeader {
+	margin-bottom: 0px;
+	font-size: 12px;
+}
+
+.tableDetailOutput {
+	margin-bottom: 0px;
+	font-size: 12px;
+}
+
+.tableDetailInput {
+	font-size: 10px;
+	height: 10px;
+	margin-left: -45;
+	margin-bottom: -8px;
+	margin-top: -5px;
+}
+
+.wddTituloWell {
+	font-weight: bolder;
+	margin-bottom: 0px;
+}
+
+.wdcMaster {
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+.wdoGeral {
+	font-weight: bolder;
+	font-size: 12px;
+}
+
+.wddCodigoTabela {
+	width: 50px;
+}
+
+.wdiCodigoTabela {
+	width: 1000px;
+}
+
+.wddElemento {
+	width: 100x;
+}
+
+.wdiElemento {
+	width: 85px;
+}
+
+.wddApendice {
+	width: 170px;
+}
+
+.wdiApendice {
+	width: 150px;
+}
+
+.wddCodigo {
+	width: 70px;
+}
+
+.wdiCodigo {
+	width: 50px;
+}
+
+.wddOrdem {
+	width: 50px;
+}
+
+.wdiOrdem {
+	width: 30px;
+}
+
+.wddNome {
+	width: 540px;
+}
+
+.wdiNome {
+	width: 520px;
+}
+
+.wddNomeReduzido {
+	width: 250px;
+}
+
+.wdiNomeReduzido {
+	width: 230px;
+}
+
+.wddDescricao {
+	width: 540px;
+}
+
+.wdiDescricao {
+	width: 520px;
+}
+
+.wddUnidade {
+	width: 40px;
+}
+
+.wdiUnidade {
+	width: 20px;
+}
+
+.wddDescricaoAlternativa {
+	width: 270px;
+}
+
+.wdiDescricaoAlternativa {
+	width: 250px;
+}
+
+.wddFantasia {
+	width: 270px;
+}
+
+.wdiFantasia {
+	width: 250px;
+}
+
+.wddAbreviacao {
+	width: 270px;
+}
+
+.wdiAbreviacao {
+	width: 250px;
+}
+
+.wddContato {
+	width: 170px;
+}
+
+.wdiContato {
+	width: 150px;
+}
+
+.wddTelefone {
+	width: 130px;
+}
+
+.wdiTelefone {
+	width: 110px;
+}
+
+.wddTipoInscricao {
+	width: 150px;
+}
+
+.wdiTipoInscricao {
+	width: 150px;
+}
+
+.wddData {
+	width: 100px;
+}
+
+.wdiData {
+	width: 80px;
+	background-color: #FFF;
+	font-size: 10px;
+}
+
+.wddDataHora {
+	width: 160px;
+}
+
+.wdiDataHora {
+	width: 140px;
+}
+
+.wddPercentual {
+	width: 60px;
+}
+
+.wdiPercentual {
+	width: 40px;
+	text-align: right;
+}
+
+.wddStatus {
+	width: 70px;
+}
+
+.wddLogradouro {
+	width: 520px;
+}
+
+.wddNumeroLogradouro {
+	width: 70px;
+}
+
+.wddComplementoLogradouro {
+	width: 220px;
+}
+
+.wddCep {
+	width: 100px;
+}
+
+.wddBairro {
+	width: 270px;
+}
+
+.wddEstado {
+	width: 70px;
+}
+
+.wddCidade {
+	width: 220px;
+}
+
+.wddEmail {
+	width: 520px;
+}
+
+.wddHomePage {
+	width: 320px;
+}
+
+.wddCodigoContabil {
+	width: 150px;
+}
+
+.wddApendiceContabil {
+	width: 150px;
+}
+
+.wddInscricao {
+	width: 170px;
+}
+
+.wdiInscricao {
+	width: 150px;
+}
+
+.wddOrgao {
+	width: 70px;
+}
+
+.wdiOrgao {
+	width: 50px;
+}
+
+.wdiStatus {
+	width: 150px;
+}
+
+.wdiLogradouro {
+	width: 500px;
+}
+
+.wdiNumeroLogradouro {
+	width: 50px;
+}
+
+.wdiComplementoLogradouro {
+	width: 200px;
+}
+
+.wdiCep {
+	width: 80px;
+}
+
+.wdiBairro {
+	width: 250px;
+}
+
+.wdiEstado {
+	width: 65px;
+}
+
+.wdiCidade {
+	width: 215px;
+}
+
+.wdiEmail {
+	width: 500px;
+}
+
+.wdiHomePage {
+	width: 300px;
+}
+
+.wdiCodigoContabil {
+	width: 130px;
+}
+
+.wdiApendiceContabil {
+	width: 50px;
+}
+
+.wddObservacao {
+	width: 720px;
+}
+
+.wdiObservacao {
+	width: 700px;
+}
+
+.wddContaCodigoBanco {
+	width: 50px;
+}
+
+.wdiContaCodigoBanco {
+	width: 30px;
+}
+
+.wddContaNomeBanco {
+	width: 200px;
+}
+
+.wdiContaNomeBanco {
+	width: 210px;
+}
+
+.wddContaAgenciaBanco {
+	width: 100px;
+}
+
+.wdiContaAgenciaBanco {
+	width: 80px;
+}
+
+.wddContaOperacaoBanco {
+	width: 50px;
+}
+
+.wdiContaOperacaoBanco {
+	width: 30px;
+}
+
+.wddContaNumeroBanco {
+	width: 150px;
+}
+
+.wdiContaNumeroBanco {
+	width: 130px;
+}
+
+.wddValor {
+	width: 100px;
+}
+
+.wdiValor {
+	width: 80px;
+	text-align: right;
+}
+
+.wddQuantidade {
+	width: 70px;
+}
+
+.wdiQuantidade {
+	width: 50px;
+	text-align: right;
+}
+
+.wddQuantidade2Char {
+	width: 40px;
+}
+
+.wdiQuantidade2Char {
+	width: 20px;
+	text-align: right;
+}
+
+.wddTipo {
+	width: 70px;
+}
+
+.wdiTipo {
+	width: 50px;
+}
+
+.wddRamal {
+	width: 70px;
+}
+
+.wdiRamal {
+	width: 50px;
+}
+
+.wddReferencia {
+	width: 100px;
+}
+
+.wdiReferencia {
+	width: 80px;
+}
+
+.wddWell {
+	width: 70px;
+}
+
+.wddAplicacoes {
+	width: 70px;
+}
+
+.wdiAplicacoes {
+	width: 812px;
+}
+
+.wddCodigoBarra {
+	width: 240px;
+}
+
+.wdiCodigoBarra {
+	width: 220px;
+}
+
+.wddFatorEmbalagem {
+	width: 150px;
+}
+
+.wdiFatorEmbalagem {
+	width: 50px;
+}
+
+.wddRomaneio {
+	width: 70px;
+}
+
+.wdiRomaneio {
+	width: 50px;
+}
+
+.wddStatusCaixa {
+	width: 420px;
+}
+
+.wdiStatusCaixa {
+	width: 400px;
+}
+
+.wddNumeroCheque {
+	width: 100px;
+}
+
+.wdiNumeroCheque {
+	width: 80px;
+}
+
+.wddNumeroDocumento {
+	width: 100px;
+}
+
+.wdiNumeroDocumento {
+	width: 80px;
+}
+
+.wddSerieDocumento {
+	width: 50px;
+}
+
+.wdiSerieDocumento {
+	width: 30px;
+}
+
+.wddSubSerieDocumento {
+	width: 50px;
+}
+
+.wdiSubSerieDocumento {
+	width: 30px;
+}
+
+/* DIVS e INPUTS PDV */
+.wddNumeroCartao {
+	width: 180px;
+}
+
+.wdiNumeroCartao {
+	width: 160px;
+}
+
+.wddValidadeCartao {
+	width: 90px;
+}
+
+.wdiValidadeCartao {
+	width: 70px;
+}
+
+.wddCodigoSeguranca {
+	width: 98px;
+}
+
+.wdiCodigoSeguranca {
+	width: 30px;
+}
+
+.wddNumeroParcelas {
+	width: 90px;
+}
+
+.wdiNumeroParcelas {
+	width: 70px;
+}
+
+.wddAutorizacao {
+	width: 110px;
+}
+
+.wdiAutorizacao {
+	width: 90px;
+}
+
+.wddLote {
+	width: 110px;
+}
+
+.wdiLote {
+	width: 90px;
+}
+
+.wddRepresentantePdv {
+	width: 80px;
+}
+
+.wdiRepresentantePdv {
+	width: 30px;
+}
+
+.wddTotalPagoPdv {
+	width: 80px;
+}
+
+.wdiTotalPagoPdv {
+	width: 30px;
+}
+
+.wddValorTotalPdv {
+	width: 80px;
+}
+
+.wdiValorTotalPdv {
+	width: 30px;
+}
+
+/*Login*/
+.wddUsuario {
+	width: 270px;
+}
+
+.wdiUsuario {
+	width: 250px;
+}
+
+.wddSenha {
+	width: 270px;
+}
+
+.wdiSenha {
+	width: 250px;
+}
+
+.wdiInputPesquisa {
+	width: 80px;
+}
+
+/*PAINEL*/
+.wddPainelInscricao {
+	width: 160px;
+}
+
+.wddComboBox {
+	width: 230px;
+}
+
+.wdsComboBox {
+	width: 230px;
+}
+
+.wddCheckBox {
+	width: 130px;
+}
+
+.wddDetalhe {
+	width: 230px;
+}
+
+.wdiDetalhe {
+	width: 280px;
+}
+
+.wddSuspender {
+	width: 100px;
+}
+
+.wdiSuspender {
+	width: 80px;
+}
+
+.wddSessao {
+	width: 60px;
+}
+
+.wdiSessao {
+	width: 40px;
+}
+
+/*NAVEGACAO DE ABAS*/
+.anterior_proximo {
+	font-size: 12px;
+	margin-left: 780px;
+}
+
+.proximo {
+	font-size: 12px;
+	margin-left: 830px;
+}
+
+.anterior {
+	font-size: 12px;
+	margin-left: 830px;
+}
+/*COLUNAS DAS DATATABLE*/
+.columnAcao {
+	width: 20px;
+}
+
+.columnAcao2 {
+	width: 40px;
+}
+
+.columnAcao3 {
+	width: 60px;
+}
+
+.columnAcao4 {
+	width: 70px;
+}
+
+.columnCodigo {
+	width: 50px;
+	text-align: right;
+}
+
+.columnElemento {
+	width: 100px;
+	text-align: left;
+}
+
+.columnApendice {
+	width: 120px;
+	text-align: left;
+}
+
+.columnInscricao {
+	width: 150px;
+	text-align: left;
+}
+
+.columnReferencia {
+	width: 70px;
+	text-align: left;
+}
+
+.columnNome {
+	width: 500px;
+}
+
+.columnUnidade {
+	width: 20px;
+}
+
+.columnNomeFantasia {
+	width: 150px;
+}
+
+.columnTelefone {
+	width: 120px;
+}
+
+.columnTipo {
+	width: 150px;
+}
+
+.columnAgencia {
+	width: 80px;
+}
+
+.columnConta {
+	width: 80px;
+}
+
+.columnData {
+	width: 80px;
+	text-align: center;
+}
+
+.columnDataHora {
+	width: 270px;
+	text-align: center;
+}
+
+.columnPreco {
+	width: 70px;
+	text-align: right;
+}
+
+.columnValor {
+	width: 70px;
+	text-align: right;
+}
+
+.columnQuantidade {
+	width: 60px;
+	text-align: right;
+}
+
+.columnPercentual {
+	width: 40px;
+	text-align: right;
+}
+
+.columnLogin {
+	width: 200px;
+}
+
+.columnTipo {
+	width: 50px;
+}
+
+.columnTabelaPreco {
+	width: 120px;
+}
+
+.columnSessao {
+	width: 30px;
+}
+
+.columnFilial {
+	width: 07px;
+	text-align: right;
+}
+
+.columnAlmoxarifado {
+	width: 50px;
+	text-align: right;
+}
+
+.columnCcusto {
+	width: 50px;
+	text-align: right;
+}
+
+/*///////////////// 	ESCOPO DE PRODUTO    //////////////////////*/
+.boxEscopoProduto {
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 4px 4px 4px;
+	width: 1010px;
+	height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 39px 19px 14px;
+	position: relative;
+}
+
+.boxEscopoProduto:after {
+	content: "Escopo Produto";
+	background-color: #9C9C9C;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 0 4px 0;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	right: -1px;
+	padding: 3px 7px;
+	position: absolute;
+	top: -5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/*///////////////// 	IMPLANTACAOO DE SALDO  //////////////////////*/
+.boxImplantacaoSaldo {
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 4px 4px 4px;
+	width: 1010px;
+	height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 39px 19px 14px;
+	position: relative;
+}
+
+.boxImplantacaoSaldo:after {
+	content: "Escopo Produto";
+	background-color: #9C9C9C;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 0 4px 0;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	right: -1px;
+	padding: 3px 7px;
+	position: absolute;
+	top: -5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.elementosBox {
+	margin-top: -30px;
+}
+
+.boxNovaTabela {
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 4px 4px 4px;
+	width: 450px;
+	height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 39px 19px 14px;
+	position: relative;
+}
+
+.boxBaseCalculo {
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 4px 4px 4px;
+	width: 720px;
+	height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 39px 19px 14px;
+	position: relative;
+}
+
+.boxBaseCalculo:after {
+	content: "Base de Calculo";
+	background-color: #9C9C9C;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 0 4px 0;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	right: -1px;
+	padding: 3px 7px;
+	position: absolute;
+	top: -5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/*///////////////// 	BOX FILIAL    //////////////////////*/
+.boxAlmoxarifado {
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 4px 4px 4px;
+	width: 470px;
+	height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 39px 19px 14px;
+	position: relative;
+}
+
+.boxAlmoxarifado:after {
+	content: "Almoxarifado";
+	background-color: #9C9C9C;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 0 4px 0;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	right: -1px;
+	padding: 3px 7px;
+	position: absolute;
+	top: -5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.testcentro {
+	text-align: center;
+}
+
+.wddTipoFinanceiro {
+	width: 40px;
+}
+
+.wdiTipoFinanceiro {
+	width: 40px;
+}
+
+.botoesRelatorio {
+	-moz-box-shadow: inset 0px 1px 0px -2px #bbdaf7;
+	-webkit-box-shadow: inset 0px 1px 0px -2px #bbdaf7;
+	box-shadow: inset 0px 1px 0px -2px #bbdaf7;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff
+		), color-stop(1, #378de5));
+	background: -moz-linear-gradient(center top, #79bbff 5%, #378de5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff',
+		endColorstr='#378de5');
+	background-color: #79bbff;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 5px;
+	border: 4px solid #9fc6ed;
+	display: inherit;
+	color: #ffffff;
+	font-family: arial;
+	font-size: 22px;
+	font-weight: bold;
+	width: 230px !important;
+	height: 70px;
+	text-decoration: none;
+	text-shadow: 1px -8px 28px #528ecc;
+}
+
+.botoesRelatorio:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5
+		), color-stop(1, #79bbff));
+	background: -moz-linear-gradient(center top, #378de5 5%, #79bbff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5',
+		endColorstr='#79bbff');
+	background-color: #378de5;
+}
+
+.botoesRelatorio:active {
+	position: relative;
+	top: 1px;
+}
+
+.titulolabel {
+	background-color: f6f6f6;
+	width: 600px;
+	height: 300px;
+}
+
+.titulotexto {
+	font-size: 62px;
+	text-align: left;
+	margin-top: 15px;
+}
+
+/*///////////////// 	BOX FILIAL    //////////////////////*/
+.columnFilialCcusto {
+	width: 65px;
+	text-align: center;
+}
+
+.columnNumeroTitulo {
+	width: 75px;
+	text-align: center;
+}
+
+.columnDocumento {
+	width: 60px;
+}
+
+.columnStatusNumero {
+	width: 10px;
+}
+
+.popover_cadastro {
+	z-index: 9999;
+}
+
+/*******************************************/
+/*******************************************/
+/*** NOVO PROJETO DE TELA	****************/
+/*******************************************/
+/*******************************************/
+
+/*******************************************/
+/*DIVs Principais*/
+/*******************************************/
+.divGeral {
+	float: left;
+}
+
+.divCabecalho {
+	margin-left: 100px;
+}
+
+.divScopo {
+	margin-left: 100px;
+	*zoom: 1;
+	display: table;
+}
+
+.divTabela {
+	margin-left: 100px;
+	width: 700px;
+}
+
+.divNavegacao {
+	
+}
+
+.divBotao {
+	margin-top: 70px;
+	float: right;
+}
+
+/*******************************************/
+/* div e componentes */
+/*******************************************/
+.divScopoPeriodo {
+	width: 220px;
+	float: left;
+	min-height: 1px;
+}
+
+.divScopoSelect {
+	float: left;
+	min-height: 1px;
+	margin-left: 10px;
+	width: 110px;
+}
+
+.componenteScopoSelect {
+	width: 120px;
+}
+
+/*Combox com auto complete*/
+/*Combox span*/
+.rf-sel-cntr {
+	border: 0;
+}
+
+.rf-sel-inp {
+	width: 170px !important;
+	border-radius: 0 !important;
+}
+
+/*Combox bot�o*/
+.rf-sel-btn {
+	width: 20px;
+	height: 28px;
+}
+
+/*Combox bot�o img*/
+.rf-sel-btn-arrow {
+	width: 20px;
+	height: 28px;
+}
+/*Fim combox*/
+.divScopoInput {
+	float: left;
+	min-height: 1px;
+	margin-left: 10px;
+	width: 90px;
+}
+
+.divScopoStatus {
+	float: left;
+	min-height: 1px;
+	margin-left: 10px;
+	width: 200px;
+}
+
+.divBotaoGenerico {
+	margin-top: 14px;
+}
+
+.divScopoCadastro {
+	float: left;
+	min-height: 1px;
+	margin-left: 10px;
+	width: 200px;
+}
+
+/*******************************/
+/****       FINANCEIRO       ***/
+/*******************************/
+
+/************************/
+/**** FatoFinanceiro ****/
+/************************/
+.divCorpoPagina {
+	width: 100%
+}
+
+.divComponenteEsquerdo {
+	float: left;
+}
+
+.divComponenteDireito {
+	float: right;
+}
+
+/*************************/
+/**** titulo financeiro **/
+/*************************/
+.divDataComboBox {
+	float: left;
+	width: 500px;
+	height: 200px;
+}
+
+.divPosicaoData {
+	float: left;
+	width: 90px;
+	height: 150px;
+}
+
+.divPosicaoComboBox {
+	float: right;
+	width: 250px;
+	height: 150px;
+}
+
+.divPosicaoValor {
+	float: left;
+	width: 100px;
+	height: 150px;
+	margin-left: 100px;
+}
+
+.divColorPositivo {
+	color: #000000;
+}
+
+.divColorNegativo {
+	color: #D3D3D3;
+}
+
+.colGrid1 {
+	font-size: 16px;
+}
+
+.colGrid2 {
+	font-size: 16px;
+}
+
+.colGrid3 {
+	font-size: 16px;
+}
+
+.colGrid4 {
+	font-size: 16px;
+	width: 60px;
+}
+
+.colorTh {
+	background-color: #000000 !important;
+}
+
+/*Estilo para richPopup*/
+.rf-pp-shade {
+	background-color: #000;
+}
+
+.rf-pp-cntr,.rf-pp-cnt-scrlr {
+	border-radius: 10px !important;
+}
+/*Estilo para richTooltip*/
+.rf-tt-cntr {
+	border-color: #0081A5;
+	background-color: #0081A5;
+	border-radius: 10px !important;
+	font-size: 15px;
+	color: white;
+	opacity: 0.85;
+}

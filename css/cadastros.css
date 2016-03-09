@@ -1,0 +1,640 @@
+@IMPORT url("style.css");
+
+.cabecalho {
+	padding: 0;
+}
+
+.cabecalho .title {
+	font-family: "Century Gothic";
+	color: #503F48;
+	margin: 3px 0;
+	font-size: 2em;
+}
+
+.cabecalho .titleContainer {
+	float: left;
+}
+
+.cabecalho .actionContainer {
+	float: right;
+}
+
+.cabecalho .actionContainer .linkAction {
+	padding: 0 0.5em;
+	cursor: pointer;
+}
+
+.divTabelaMaster {
+	padding: 0;
+	margin-top: 0.8em;
+}
+
+.data-table {
+	width: 100%;
+	border: 1px solid #4F3E47;
+	background: transparent;
+}
+
+.data-table .rf-dt-ftr-c {
+	padding: 0px;
+}
+
+.data-table tbody:last-child {
+	display: none;
+}
+
+.dataTable {
+	width: 100%;
+	border: 1px solid #4F3E47;
+}
+
+.dataTable .rf-dt-ftr-c {
+	padding: 0px;
+}
+
+.dataTable tbody:last-child {
+	display: none;
+}
+
+.findContainer {
+	position: absolute;
+	right: 0;
+	z-index: 1;
+	display: none;
+}
+
+.modal-footer {
+	font-size: 1.5em !important;
+	border: none;
+	padding-top: 0;
+	padding-bottom: 0;
+	float: right;
+}
+
+input[type="email"],input[type="number"],input[type="password"],input[type="tel"],input[type="url"],input[type="text"],textarea
+	{
+	background-color: #DDDDDB;
+	color: #4F3E47;
+	font-family: "Open Sans";
+	width: 100%;
+	border: none;
+	font-size: 1em;
+	padding: 0.3em 0.5em;
+}
+
+*[disabled="disabled"] {
+	opacity: 0.7 !important;
+	cursor: not-allowed !important;
+}
+
+label {
+	width: 100%;
+	font-family: "Open Sans";
+	color: #4F3E47;
+	font-size: 1.1em;
+	margin-bottom: 0;
+}
+
+select {
+	background-color: #DDDDDB;
+	color: #4F3E47;
+	font-family: "Open Sans";
+	width: 100%;
+	border: none;
+	font-size: 1.2em;
+	padding: 0.2em 0.5em;
+	height: 2em !important;
+}
+
+.modalMaster {
+	padding: 0;
+	border: 0;
+}
+
+.modalMaster .rf-pp-cnt-scrlr {
+	background-color: #DDDDDB;
+}
+
+.modalMaster .well {
+	background-color: #F1EFE8 !important;
+	border-radius: 0;
+}
+
+.modalMaster .well input[type='text'],.modalMaster .well select {
+	background-color: #DDDDDB !important;
+}
+
+.modalMaster .rf-pp-shdw {
+	display: none !important;
+}
+
+.modalTitle {
+	font-family: "Open Sans";
+	color: #4F3E47;
+	margin: 0;
+	float: left;
+	padding-left: 15px;
+}
+
+.modal-body {
+	margin-top: 3em;
+}
+
+.modalRemove {
+	padding: 0;
+	border: 0;
+}
+
+.modalRemove .rf-pp-cnt-scrlr {
+	background-color: #DDDDDB;
+}
+
+.modalRemove .rf-pp-shdw {
+	display: none !important;
+}
+
+.dsFooter {
+	margin-top: 1em;
+}
+
+.dsFooter .rf-ds-btn-prev img {
+	width: 2em;
+}
+
+.dsFooter .rf-ds-btn-next img {
+	width: 2.7em;
+}
+
+.dsFooterMini {
+	margin-top: 0.5em;
+}
+
+.dsFooterMini .rf-ds-btn-prev img {
+	width: 1.0em;
+}
+
+.dsFooterMini .rf-ds-btn-next img {
+	width: 1.2em;
+}
+
+.dsFooterMini .rf-ds-nmb-btn {
+	font-size: 14px !important;
+	width: 2em;
+	height: 2em;
+	text-align: center;
+}
+
+.btCloseModal {
+	float: right;
+}
+
+.modalMaster input[type="email"],.modalMaster  input[type="number"],.modalMaster  input[type="password"],.modalMaster  input[type="tel"],.modalMaster input[type="url"],.modalMaster  input[type="text"],.modalMaster  textarea
+	{
+	background-color: #F1EFE8;
+	font-weight: initial;
+	font-size: 1.2em;
+}
+
+.modalMaster  select {
+	background-color: #F1EFE8;
+	font-weight: initial;
+}
+/*Reset Style da data-table*/
+*.rf-dt-shdr-c {
+	border: none !important;
+	background: #4F3E47 !important;
+	color: #F0EEE8 !important;
+	font-family: "Open Sans" !important;
+	font-size: 17px !important;
+	padding: 3px !important;
+}
+
+*.rf-dt-shdr-c a {
+	text-decoration: none !important;
+	color: #F0EEE8 !important;
+}
+
+*.rf-dt-c {
+	border: none !important;
+	color: #4F3E47;
+	font-family: "Open Sans" !important;
+	font-size: 15px !important;
+	font-weight: bold !important;
+	padding: 4px !important;
+}
+
+*.rf-dt-nd {
+	border: none !important;
+	color: #4F3E47;
+	font-family: "Open Sans" !important;
+	font-size: 13px !important;
+	font-weight: bold !important;
+	padding: 4px !important;
+}
+
+.odd-row {
+	background: #F0EEE8;
+}
+
+.even-row {
+	background-color: #DDDDDB;
+}
+
+*.rf-ds {
+	white-space: normal;
+	display: block;
+	background: none;
+}
+
+.rf-ds-btn-last,.rf-ds-btn-first,.rf-ds-btn-fastrwd,.rf-ds-btn-fastfwd {
+	display: none;
+}
+
+.rf-ds-dis {
+	opacity: 0;
+}
+
+*.rf-ds-nmb-btn.rf-ds-act {
+	color: #F0EEE8 !important;
+	border-radius: 2em !important;
+	padding: 0.3em !important;
+	background: #4F3E47 !important;
+}
+
+*.rf-ds-nmb-btn {
+	cursor: pointer;
+	width: 2em;
+	text-align: center;
+	margin: 0;
+	padding: 2px 2px 3px 2px;
+	border: none !important;
+	background: none !important;
+	display: inline-block;
+	font-size: 20px;
+	font-family: "Century Gothic";
+	text-decoration: none !important;
+	color: #4F3E47 !important;
+	display: inline-block;
+}
+
+*.rf-ds-btn {
+	border: none !important;
+	background: none !important;
+}
+
+*.rf-pp-shade {
+	background-color: black !important;
+}
+
+.columnAcao1 {
+	width: 1.8em;
+	text-align: center;
+}
+
+.columnAcao2 {
+	width: 3.6em;
+	text-align: center;
+}
+
+.columnAcao3 {
+	width: 5.4em;
+	text-align: center;
+}
+
+.columnAcao4 {
+	width: 7.2em;
+	text-align: center;
+}
+
+.msgRemove {
+	width: 100%;
+	font-family: "Open Sans";
+	color: #4F3E47;
+	font-size: 1.5em;
+}
+
+*.rf-tt-cntr {
+	background-color: white;
+	padding: 7px;
+	border: 1px solid;
+	border-color: #4F3E47;
+	border-radius: 0px;
+	font-family: "Open Sans";
+	font-size: 11px;
+	display: inline-block;
+}
+/* Referente ao padr�o das modais */
+.rf-tab-hdr {
+	border: none;
+	color: #F0EEE8 !important;
+	background: #4F3E47 !important;
+	font-family: Open Sans;
+	font-weight: bold;
+	padding: 1em !important;
+}
+
+*.rf-tab-lbl {
+	font-size: 15px !important;
+}
+
+.rf-tab-hdr-inact {
+	vertical-align: middle;
+	background-image: none !important;
+}
+
+*.rf-tab-hdr-tabline-vis.rf-tab-hdr-tabline-top {
+	background: none !important;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+*.rf-tab-hdr-act {
+	color: #4F3E47 !important;
+	background: #F0EEE8 !important;
+}
+
+*.rf-tab-hdr-inact {
+	background: #4F3E47 !important;
+	border-left: 1px solid;
+}
+
+.rf-tab-hdr-spcr {
+	padding-left: 0 !important;
+}
+
+*.rf-tab-hdr-tabline-vis.rf-tab-hdr-tabline-top {
+	height: 44px;
+}
+
+*.rf-tab-hdr-brd {
+	display: none !important;
+}
+
+*.rf-tab-hdr-tabs {
+	margin-left: -1px;
+}
+
+.rf-tab-cnt {
+	background: #F0EEE8 !important;
+	border: none !important;
+}
+
+.rf-tab-cnt input[type="email"],.rf-tab-cnt input[type="number"],.rf-tab-cnt input[type="password"],.rf-tab-cnt input[type="tel"],.rf-tab-cnt input[type="url"],.rf-tab-cnt input[type="text"],.rf-tab-cnt textarea,.rf-tab-cnt select
+	{
+	background-color: #DDDDDB;
+	color: #4F3E47;
+}
+
+.rf-tab-cnt .well {
+	background-color: #DDDDDB !important;
+	border-radius: 0;
+}
+
+.rf-tab-cnt .well input[type='text'],.rf-tab-cnt .well select {
+	background-color: #F1EFE8 !important;
+}
+/*Referente ao select*/
+*.rf-sel {
+	width: 100%;
+}
+
+*.rf-sel-cntr {
+	font-size: inherit;
+	border: none !important;
+	background: #DDDDDB !important;
+	width: 100%
+}
+
+input.rf-sel-inp {
+	background-image: url('../img/publico/ic_combobox.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	cursor: pointer;
+	padding-right: 1.2em;
+}
+
+*.rf-sel-btn {
+	display: none;
+}
+
+*.rf-sel-lst-scrl,*.rf-sel-lst-dcrtn {
+	background: #DDDDDB;
+	border: none;
+	max-height: 150px !important;
+}
+
+*.rf-sel-opt {
+	width: 100%;
+	background: none;
+	border: none;
+	font-size: 1em;
+	font-family: "Open Sans";
+	cursor: pointer;
+	padding-left: 0.1em;
+}
+
+*.rf-sel-sel {
+	background: #4F3E47;
+	color: #DDDDDB;
+}
+
+*.rf-sel-shdw-t,*.rf-sel-shdw-l,*.rf-sel-shdw-r,*.rf-sel-shdw-b {
+	display: none !important;
+}
+
+.well {
+	background-color: #dddddb;
+	border-radius: 0;
+	border: 0;
+	box-shadow: none;
+}
+
+.well input[type='text'],.well select {
+	background-color: #ffffff !important;
+}
+
+input[type='text'] {
+	height: 2em;
+	border-radius: 0;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.btRadius {
+	background-color: #59B9D0 !important;
+	border: none;
+	padding: 0.3em;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #F0EEE8;
+	font-weight: bolder;
+	font-size: 14px;
+	height: 3em;
+	width: 3em;
+	border-radius: 100%;
+	cursor: pointer;
+}
+
+.selectCheckMenu label {
+	width: auto !important;
+	margin-left: 0.5em;
+	font-size: 1em;
+}
+
+.selectCheckMenu-cc {
+	width: 100%;
+	font-size: 1em;
+	padding: 0.3em 0.5em;
+	background-color: #DDDDDB;
+	color: #4F3E47;
+	font-family: "Open Sans";
+	cursor: pointer;
+	background-image: url('../img/publico/ic_combobox.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+/*Referente aos campos de valor*/
+.wdiValor {
+	text-align: right;
+}
+
+/*Referente aos campos de Pervcentuais - 999,99 */
+.wdiPercentual {
+	text-align: right;
+}
+
+.data-table select,.data-table input {
+	height: 1.5em !important;
+}
+
+.odd-row input,.odd-row select {
+	background-color: #DDDDDB !important;
+	font-size: 1em !important;
+}
+
+.even-row input,.even-row select {
+	background: #F0EEE8 !important;
+	font-size: 1em !important;
+}
+
+.odd-row select,.even-row select {
+	padding: 0;
+}
+
+.btPrimary {
+	background-color: #59B9D0 !important;
+	border: none;
+	padding: 0.3em;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #F0EEE8;
+	font-weight: bolder;
+	width: 100%;
+}
+
+.btDanger {
+	background-color: #D3354B;
+	border: none;
+	padding: 0.3em;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #F0EEE8;
+	font-weight: bolder;
+	width: 100%;
+}
+
+.btDefault {
+	background-color: #FFF;
+	border: none;
+	padding: 0.3em;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #59B9D0;
+	font-weight: bolder;
+	width: 100%;
+}
+
+.btWarning {
+	background-color: #ec971f;
+	border: none;
+	padding: 0.3em;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #FFF !important;
+	font-weight: bolder;
+	width: 100%;
+}
+
+.obgr {
+	color: rgba(255, 0, 0, 0.66);
+	display: inline;
+	margin-left: 0.2em;
+}
+
+.rf-pick-btn {
+	padding: 0 1em !important;
+	background-image: none !important;
+	border: none !important;
+	box-shadow: none !important;
+	font-size: 1.2em !important;
+	font-family: Open Sans !important;
+	font-weight: bolder !important;
+	color: #4F3E47 !important;
+	text-align: center !important;
+}
+
+.rf-pick-add {
+	margin-top: 0.2em;
+	margin-bottom: 0.1em;
+}
+
+.rf-pick-rem {
+	margin-top: 0.2em;
+	margin-bottom: 0.3em;
+}
+
+.rf-pick-lst-dcrtn {
+	background: none !important;
+	border: 1px solid #4F3E47 !important;
+}
+
+.rf-pick-opt {
+	font-size: 1.2em !important;
+	font-family: Open Sans !important;
+	font-weight: bolder !important;
+	color: #4F3E47 !important;
+	text-align: left;
+}
+
+.rf-pick-sel {
+	border: none !important;
+	background-color: #DDDDDB !important;
+}
+
+.rf-pick-src-cptn,.rf-pick-tgt-cptn {
+	border: none;
+	color: #F0EEE8 !important;
+	background: #4F3E47 !important;
+	font-family: "Open Sans" !important;
+	font-weight: bold;
+	font-size: 17px !important;
+	padding: 3px 0 !important;
+	text-align: center !important;
+}
+
+.rf-pick-src,.rf-pick-tgt {
+	padding: 0 0.4em;
+}
+
+.findContainer select {
+	font-size: 1em;
+}
+.rf-dt-ftr{
+	background: transparent !important;
+}
+.rf-dt-ftr-c{
+	background: transparent !important;
+	border: none !important;
+}

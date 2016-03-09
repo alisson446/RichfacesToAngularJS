@@ -1,0 +1,283 @@
+.logo-header {
+	height: 8em;
+}
+
+.navbar {
+	background: #59B9D0;
+	height: 2.8em;
+	border-radius: 0;
+	min-height: 0;
+	padding-top: 0.3em;
+	margin-top: 0.1em
+}
+
+/***********************************************/
+.menuExpress {
+	width: 3em;
+	height: 3em;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	background: #D3354B;
+	border-radius: 5em;
+	margin-left: 28%;
+}
+
+.hamburger span,.arrow span {
+	height: 3px;
+	-webkit-transform: translateY(29px);
+}
+
+.material-icon {
+	width: 5.2em;
+	height: 3.15em;
+	margin: 14%;
+	position: relative;
+}
+
+.material-icon span,.material-icon {
+	transition: all 500ms ease;
+}
+
+.material-icon span {
+	background-color: #fff;
+	display: block;
+	position: absolute;
+	width: 58%;
+}
+
+.hamburger {
+	margin-left: 19%;
+	margin-top: 11%;
+}
+
+.hamburger span {
+	width: 1.9em;
+}
+
+.hamburger .first {
+	margin-top: -1em;
+}
+
+.hamburger .second {
+	margin-top: -1.5em;
+}
+
+.hamburger .third {
+	margin-top: -0.5em;
+}
+
+.arrow {
+	margin-left: 19%;
+	margin-top: 11%;
+}
+
+.arrow .first {
+	margin-top: -1em;
+	width: 2.2em;
+	left: -0.2em;
+}
+
+.arrow .third {
+	-webkit-transform: rotate(-45deg);
+	width: 1.5em;
+	margin-top: 1.5em;
+	margin-left: 0.75em;
+}
+
+.arrow .second {
+	-webkit-transform: rotate(45deg);
+	width: 1.5em;
+	margin-top: 0.5em;
+	margin-left: 0.7em;
+}
+
+/***********************************************/
+.linkModulos {
+	transition: all 0.3s linear;
+	text-align: center;
+	font-family: Century Gothic;
+	font-size: 14px;
+	color: #503F48;
+	cursor: pointer;
+	opacity: 0.5;
+	text-align: center;
+}
+
+.linkModulos:HOVER {
+	opacity: 1;
+}
+
+.linkModulos img {
+	width: 6em;
+	border-radius: 100%;
+}
+
+.linkModulos.disabled {
+	opacity: 1 !important;
+	cursor: auto;
+}
+
+.menu li {
+	position: relative;
+}
+
+.itemMenu {
+	float: left;
+	padding: 0 2.4%;
+	font-family: Century Gothic;
+	font-size: 1.4em;
+	height: 2.1em;
+}
+
+.itemMenu a {
+	color: #F0EEE8 !important;
+	text-decoration: none !important;
+}
+
+.navbar .menu li ul {
+	position: absolute;
+	top: 33px;
+	background-color: #6DC6D0;
+	display: none;
+	width: 14em;
+	font-size: 15px;
+	padding: 5px 0;
+	z-index: 2;
+}
+
+.navbar .menu li ul li {
+	transition: all 0.2s linear;
+	padding: 4px 0;
+	padding-left: 11px;
+	cursor: pointer;
+}
+
+.navbar .menu li ul li:HOVER {
+	background-color: #59B9D0;
+}
+
+.navbar .menu li:HOVER>ul {
+	display: block;
+	-webkit-animation: fadeIn 0.3s ease-in-out;
+	-moz-animation: fadeIn 0.3s ease-in-out;
+	-o-animation: fadeIn 0.3s ease-in-out;
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+.menu li:HOVER>ul.submenu {
+	top: 0;
+	background-color: #59B9D0 !important;
+}
+
+.submenu {
+	right: -14em;
+}
+
+.submenu li:HOVER {
+	background-color: #6DC6D0 !important;
+}
+
+.userSpace {
+	background-color: #f1efe8;
+	border: none;
+	height: 2.5em;
+	width: 100%;
+	padding-right: 0.5em;
+	cursor: pointer;
+}
+
+.userSpace p {
+	font-family: Century Gothic;
+	color: #00bad2;
+	font-size: 18px;
+	padding: 0.36em;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	float: left;
+}
+
+.sysSpace {
+	background-color: #00bad2;
+	border: none;
+	height: 2.5em;
+	width: 100%;
+	padding-right: 0.5em;
+	cursor: pointer;
+}
+
+.sysSpace p {
+	font-family: Century Gothic;
+	color: #f1efe8;
+	font-size: 18px;
+	padding: 0.36em;
+	float: left;
+}
+
+.seta {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 15px solid #00bad2;
+	float: right;
+	margin-top: 0.9em;
+}
+
+.setaCinza {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 15px solid #f1efe8;
+	float: right;
+	margin-top: 0.9em;
+}
+
+.express {
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	top: 4em;
+	z-index: 1;
+	left: 2em;
+	background-color: #FBFAF8;
+}
+
+.express li {
+	text-align: left;
+	padding: 0.2em 0;
+}
+
+.express li a {
+	color: #59B9D0;
+	font-size: large;
+	padding-top: 1.5px;
+	padding-right: 5px;
+	padding-bottom: 1.5px;
+	font-family: "Century Gothic";
+	position: relative;
+}
+
+.userOptions,.sysOptions {
+	background-color: #00bad2;
+	border: none;
+	width: calc(100% - 30px);
+	padding-right: 0.5em;
+	display: none;
+	position: absolute;
+	z-index: 3;
+}
+
+.userOptions {
+	top: 3em;
+}
+
+.sysOptions {
+	top: 70px;
+}
+
+.userOptions a,.sysOptions a {
+	text-decoration: none;
+	color: #F0EEE8;
+	font-family: "Century Gothic";
+	font-size: 18px;
+	padding: 0.5em;
+}

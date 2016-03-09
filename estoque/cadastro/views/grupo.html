@@ -1,0 +1,118 @@
+<br/>
+
+<div class="small-3 medium-3 large-3 large-offset-1 columns">
+	<h3 class="titulo">{{nome}}</h3>	
+</div>
+<div class="small-1 medium-1 large-1 large-offset-4 columns">
+	<a href="" ng-click="openModalGrupo()">
+		<img src="img/tables/add.png">
+	</a>	
+</div>
+<div style="position:relative;right:5em;" class="small-2 medium-2 large-1 columns">
+	<a href="">
+		<img src="img/tables/search.png">
+	</a>	
+</div>
+
+<div class="small-12 medium-12 large-12 columns">
+	<table class="small-8 medium-8 large-8 large-offset-1 columns">
+		<tr class="trbody">
+			<th>Código</th>
+			<th>Descricao</th>
+			<th>Abreviacao</th>
+			<th>Tipo</th>
+			<th>Ações</th>
+		</tr>
+		<tr ng-repeat="teste in lista">
+			<td class="tdvalue">{{teste.grupo}}</td>
+			<td class="tdvalue">{{teste.descricao}}</td>
+			<td class="tdvalue">{{teste.abreviacao}}</td>
+			<td class="tdvalue">{{teste.tipoProduto}}</td>
+			<td>
+				<img src="img/tables/remover.png">
+				<img src="img/tables/editar.png">
+				<img src="img/tables/tributar.png">
+			</td>
+		</tr>
+	</table>
+	<div class="small-3 medium-3 large-3 columns">
+	<nav ng-show="totalPorPagina < totalRegistro">
+        <ul class="pagination">
+            <a ng-click="prevPage(pagina-1)" ng-class="{disabled: pagina == 1}"><img src="img/tables/prev.png"></a>
+            <li ng-repeat="j in pagina">
+                <a href ng-click="loadListPagination($index)" style="background-color: #777;">
+                    {{$index + 1}}
+                </a>
+            </li>
+            <a ng-click="nextPage(pagina+1)" ng-class="{disabled: pagina == numberOfPages}"><img src="img/tables/next.png"></a>
+        </ul>
+    </nav>
+</div>
+</div>
+
+<!-- Modal Grupos-->
+<div class="small-12 medium-12 large-12 columns">
+	<div id="modalGrupos" class="reveal-modal medium"  data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+	  <h3 id="modalTitle">Adicionar Grupo</h3>
+	  <br/>
+	  	<div class="small-12 medium-12 large-12 columns">
+		  	<ul class="tabs" data-tab role="tablist">
+	  			<li class="tab-title {{activeIdent}}" role="presentation"><a href="" ng-click="abaIdentificacao()" role="tab" tabindex="0">Identificação</a></li>
+	  			<li class="tab-title {{activeClass}}" role="presentation"><a href="" ng-click="abaClassificacao()" role="tab" tabindex="0">Classificacao</a></li>
+			</ul>
+			
+			<div class="tabs-content">
+	  		  <div role="tabpanel" class="content {{abaIdent}}">
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-2 medium-2 large-2 columns">
+	    				Código
+	    			</div>
+	    			<div class="small-6 medium-6 large-10 columns">
+	    				Descrição
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-2 medium-2 large-2 columns">
+	    				<input class="form-control" type="text" ng-model="grupo.codigo" />
+	    			</div>
+	    			<div class="small-6 medium-6 large-10 columns">
+	    				<input class="form-control" type="text" ng-model="grupo.descricao" />
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 large-offset-2 columns">
+	    				Abreviãção
+	    			</div>
+	    			<div class="small-3 medium-3 large-3 large-offset-1 columns">
+	    				Desconto Máx
+	    			</div>
+	    			<div class="small-3 medium-3 large-2 columns">
+	    				Markup
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 large-offset-2 columns">
+	    				<input class="form-control" type="text" ng-model="grupo.abreviacao" />
+	    			</div>
+	    			<div class="small-3 medium-3 large-3 large-offset-1 columns">
+	    				<input class="form-control" type="text" ng-model="grupo.descontomax" />
+	    			</div>
+	    			<div class="small-3 medium-3 large-2 columns">
+	    				<input class="form-control" type="text" ng-model="grupo.markup" />
+	    			</div>
+	    		</div>
+			  </div>
+			  <div role="tabpanel" class="content {{abaClass}}">
+			  	<div class="small-12 medium-12 large-12 columns">
+			    	<h2>Classificação panel content goes here...</h2>
+	    		</div>
+			  </div>		  
+			</div>
+	   	</div>
+
+    	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+	</div>
+</div>
+
+
+

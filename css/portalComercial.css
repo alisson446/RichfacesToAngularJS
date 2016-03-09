@@ -1,0 +1,58 @@
+@import url("style.css");
+
+body {
+	overflow-x: hidden;
+}
+
+.logo {
+	position: relative;
+	left: 3.5em;
+	height: 12em;
+}
+
+section {
+	position: relative;
+	top: 6em;
+	left: 8em;
+	padding: 2em;
+}
+
+section div img {
+	border-radius: 100%;
+}
+
+section div p {
+	font-family: Century Gothic;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 0.5em;
+}
+
+.linkModulosPortal {
+	cursor: pointer;
+	text-align: center;
+}
+
+.userOptions,.sysOptions {
+	background-color: #00bad2;
+	border: none;
+	width: 87%;
+	padding-right: 0.5em;
+	display: none;
+	position: absolute;
+}
+
+.userOptions {
+	top: 3em;
+}
+
+.sysOptions {
+	top: 6em;
+}
+
+.userOptions a,.sysOptions a {
+	text-decoration: none;
+	color: #F0EEE8;
+	font-family: "Open Sans";
+	font-size: 13pt;
+}

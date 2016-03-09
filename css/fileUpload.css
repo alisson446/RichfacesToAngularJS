@@ -1,0 +1,122 @@
+@IMPORT url("cadastros.css");
+
+.rf-fu {
+	width: 100% !important;
+	border-color: #503F48 !important;
+}
+
+.rf-fu-lst {
+	height: 195px;
+	width: 99.9%;
+}
+
+.rf-fu-itm {
+	border-color: #503F48 !important;
+}
+
+.rf-fu-itm-lnk {
+	visibility: hidden;
+}
+
+.rf-fu-itm-lnk:after {
+	content: 'X';
+	visibility: visible;
+	font-family: "Open Sans";
+	font-size: 1.5em;
+	font-weight: bolder;
+	color: #503F48;
+}
+
+.rf-fu-itm-st {
+	font-family: "Open Sans";
+	font-weight: bold;
+	color: #503F48;
+}
+
+.rf-fu-btn-cnt-add {
+	content: 'Adicionar' !important;
+	font-family: "Open Sans";
+	font-size: 1em;
+	color: #503F48;
+	margin-right: 0.3em;
+	background: url('/hrcomercial/img/publico/ic_add.png') no-repeat
+		!important;
+	background-size: 1.4em !important;
+	background-position-y: 0.3em !important;
+	background-position-x: 0.2em !important;
+	padding-left: 24px !important;
+}
+
+.rf-fu-btn-cnt-upl {
+	font-family: "Open Sans";
+	font-size: 1em;
+	color: #503F48;
+	margin-right: 0.3em;
+	background: url('/hrcomercial/img/publico/ic_send.png') no-repeat
+		!important;
+	background-size: 1.4em !important;
+	background-position-y: 0.3em !important;
+	background-position-x: 0.2em !important;
+	padding-left: 24px !important;
+	font-weight: normal;
+}
+
+.rf-fu-btn-cnt-clr {
+	content: 'Limpar' !important;
+	font-family: "Open Sans";
+	font-size: 1em;
+	color: #503F48;
+	margin-right: 0.3em;
+	background: url('/hrcomercial/img/publico/ic_remove.png') no-repeat
+		!important;
+	background-size: 1.4em !important;
+	background-position-y: 0.3em !important;
+	background-position-x: 0.2em !important;
+	padding-left: 24px !important;
+}
+
+.rf-fu-itm-rgh {
+	text-align: right !important;
+}
+
+.rf-fu-itm-lbl {
+	font-family: "Open Sans";
+	font-size: 1em;
+	color: #503F48;
+}
+
+.rf-fu-hdr {
+	background: #503F48 !important;
+	margin: 0 !important;
+	border: none !important;
+}
+
+.rf-fu-btn-add,.rf-fu-btn-upl,.rf-fu-btn-clr {
+	background: #DFDCD5 !important;
+	border-color: #DFDCD5;
+	margin-top: 3px;
+	margin-bottom: 6px;
+}
+
+.rf-p-hdr {
+	background: #503F48 !important;
+	border: none !important;
+	color: #F0EEE8 !important;
+	font-size: 1.5em !important;
+	font-family: "Open Sans" !important;
+	font-weight: bolder !important;
+	text-align: center;
+	padding: 3px;
+}
+
+.rf-p {
+	border-color: #503F48 !important;
+	padding: 0;
+}
+
+*.rf-dt-shdr-c {
+	font-size: 0.9em !important;
+	font-weight: normal;
+	position: absolute;
+	top: 50px;
+}

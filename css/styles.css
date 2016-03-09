@@ -1,0 +1,458 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ////////////////////////////////////////////////////
+					TABELAS
+//////////////////////////////////////////////////// */
+.table th {
+	border: none;
+	color: white;
+	font-weight: normal;
+	background-color: #0081A5 !important;
+	background-image: -webkit-linear-gradient(top, #0081A5, #0081A5);
+	background-image: -o-linear-gradient(top, #0081A5, #0081A5);
+	background-image: linear-gradient(top, #0081A5, #0081A5);
+	background-repeat: repeat-x;
+	height: -10px;
+}
+
+.table td {
+	width: -250px;
+}
+
+.table_content {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.table-hover tbody tr:hover td {
+	background-color: #596066 !important;
+	color: white;
+}
+
+.content {
+	margin-top: 6em;
+}
+/* ////////////////////////////////////////////////////
+					COMPONENTES - BOTOES
+//////////////////////////////////////////////////// */
+#button_search {
+	position: relative;
+}
+
+#button_depto {
+	position: relative;
+	margin-left: 360px;
+	margin-top: 55px;
+	-moz-margin-leftmoz-border-radius-topleft: 4px;
+}
+
+/* ////////////////////////////////////////////////////
+		COMPONENTES - SPANS/TEXTS DECORATION
+//////////////////////////////////////////////////// */
+.span_obs {
+	margin-bottom: 15px;
+}
+
+.required_field {
+	color: red;
+}
+
+.disable {
+	display: inline-block;
+	color: #eee;
+}
+
+label {
+	cursor: default;
+}
+
+/* ////////////////////////////////////////////////////
+					CORPO GERAL
+//////////////////////////////////////////////////// */
+.container-wrap {
+	width: 940px;
+	margin: auto;
+}
+
+/* ////////////////////////////////////////////////////
+						HEADER
+//////////////////////////////////////////////////// */
+.header {
+	background-color: #0081A5;
+	height: 85px;
+	font-size: 14px;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	height: 85px;
+	position: fixed;
+	top: 0;
+	z-index: 31;
+}
+
+.logo_header {
+	margin-bottom: 50px;
+	margin-right: 30px;
+	float: left;
+}
+
+.buttons_actions {
+	position: absolute;
+	margin-top: 45px;
+	margin-left: -35px;
+}
+
+.drop_menus {
+	margin-top: -6px;
+}
+
+.nav-tabs a:link {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* ////////////////////////////////////////////////////
+						FOOTER
+//////////////////////////////////////////////////// */
+.footer {
+	background-color: #E8E8E8;
+	background-image: url("../img/image-footer-border.png");
+	background-repeat: no-repeat;
+	height: 80px;
+	position: fixed;
+	width: 100%;
+	border: 0;
+	overflow: hidden;
+	bottom: 0;
+	z-index: 5;
+}
+
+.logo {
+	background-image: url(../img/logo_footer.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-align: center;
+	height: 50px;
+}
+
+.footer .copyright {
+	text-align: center;
+	color: #c5c5c5;
+	top: 50px;
+	position: relative;
+	margin: 0px;
+}
+
+/* ////////////////////////////////////////////////////
+							 LEFT
+//////////////////////////////////////////////////// */
+.side_left {
+	transition: all 0.3s linear;
+	z-index: 30;
+	height: 100%;
+	position: absolute;
+	background-color: #0081A5;
+	left: 0;
+	top: 0;
+	width: 11em;
+	margin-left: -13em;
+}
+
+/* ////////////////////////////////////////////////////
+					MODALS/POPUPS
+//////////////////////////////////////////////////// */
+#popupCreate {
+	width: 720px;
+	margin: 0px 350px 0px -250px;
+}
+
+#popupRemover {
+	width: 500px;
+}
+
+#tabclientenovo {
+	width: 690px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.navp-modal  a {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #5bb75b;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',
+		endColorstr='#ff51a351', GradientType=0);
+	border-color: #51a351 #51a351 #387038;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+/* ////////////////////////////////////////////////////
+				nav-ModalEmpresa
+//////////////////////////////////////////////////// */
+.nav-ModalEmpresa  a {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #0044cc;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',
+		endColorstr='#ff51a351', GradientType=0);
+	border-color: #51a351 #51a351 #387038;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.nav-ModalEmpresa   a:hover {
+	background-color: #003399 !important;
+}
+
+.nav-ModalEmpresa:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+
+.nav-ModalEmpresa:after {
+	clear: both;
+}
+
+.nav-ModalEmpresa>li>a {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.nav-ModalEmpresa>.active>a,.nav-ModalEmpresa>.active>a:hover {
+	color: #fff;
+	background-color: #003399;
+}
+
+.nav-ModalEmpresa.nav-stacked>li>a {
+	margin-bottom: 3px;
+}
+
+.nav-ModalEmpresa.nav-stacked>li:last-child>a {
+	margin-bottom: 1px;
+}
+
+.nav-ModalEmpresa .dropdown-menu {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+/* ////////////////////////////////////////////////////
+				COMPONENTES DAS MODALS
+//////////////////////////////////////////////////// */
+.button {
+	margin-left: 3%;
+	margin-top: 6%;
+}
+
+.label {
+	width: 14%;
+	height: 4%;
+	margin-left: 40%;
+	font-size: 22px;
+	font-weight: 500;
+	color: black;
+	background-color: #B5B5B5;
+	margin-bottom: 1%;
+}
+
+/*PanelGrid*/
+.column1 {
+	width: 2%;
+}
+
+.column2 {
+	width: 2%;
+}
+
+.column3 {
+	width: 2%;
+}
+
+.status_loading {
+	width: 200px;
+	margin-top: 100px;
+	margin-left: 10px;
+	position: fixed;
+}
+
+/*HOME*/
+.homeImg {
+	margin-left: 20%;
+	margin-top: 3%;
+}
+
+.homeText {
+	margin-left: 50%;
+	margin-top: 13%;
+}
+
+.menuDown {
+	margin-top: 17%;
+}
+
+.open_div_pesquisa_produto {
+	width: 20px;
+	cursor: pointer;
+}
+
+.hidden_div {
+	position: relative;
+	width: 360px;
+	margin-left: 30px;
+	height: 120px;
+	z-index: 0;
+	background-color: #FFFFFF;
+	border: 2px solid #CCCCCC;
+	overflow: hidden;
+	clear: both;
+	background-color: #A4D3EE;
+}
+
+header .pull-left {
+	width: 10.4em;
+	text-align: center
+}
+
+.nav-user {
+	font-weight: bolder;
+}
+
+.menu_left {
+	margin-top: 6.1em;
+}
+
+.menu_left ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+.itens_menu_left {
+	transition: all 0.3s linear;
+	text-align: center;
+	font-family: monospace;
+	font-size: x-large;
+	height: 1.5em;
+	border-top: 2px solid #102E36;
+	padding-top: 0.6em;
+	color: #102E36;
+	cursor: pointer;
+}
+
+.itens_menu_left:LAST-CHILD {
+	border-bottom: 2px solid #102E36;
+}
+
+.itens_menu_left:HOVER {
+	background-color: #FFFFFF;
+	color: #0081A5;
+}
+
+.selected {
+	background-color: #FFF;
+	color: #0081A5;
+}
+
+.caret {
+	border-top-color: #FFFFFF !important;
+}
+
+.dropdown:HOVER .caret {
+	border-top-color: #38b1fe !important;
+}
+
+.nav-pills .open .dropdown-toggle {
+	color: #38b1fe !important;
+}
+
+.dropdown:ACTIVE {
+	color: #38b1fe !important;
+}
+
+header .container {
+	float: left;
+	margin-top: 2.2em;
+	width: auto;
+	display: none;
+}
+
+html>body *.rf-ntf {
+	z-index: 10000 !important;
+}
+
+.user {
+	position: absolute;
+	right: 0;
+}
+
+.express {
+	position: absolute;
+	bottom: 0;
+	width: 11em;
+	text-align: center;
+	font-style: italic;
+}
+
+.express .tittle {
+	font-size: 1.6em;
+	color: #FFFFFF;
+}
+
+.express ul {
+	list-style-type: none;
+	margin: 0;
+	margin-top: 0.5em;
+}
+
+.express ul li {
+	transition: all 0.3s linear;
+	height: 1.5em;
+	border-top: 2px solid #102E36;
+	padding-top: 0.6em;
+}
+
+.express ul li:LAST-CHILD {
+	border-bottom: 2px solid #102E36;
+}
+
+.express ul li:HOVER {
+	background-color: #FFFFFF;
+}
+
+.express ul li:HOVER .itens_express {
+	color: #0081A5;
+}
+
+.itens_express {
+	transition: all 0.3s linear;
+	text-align: center;
+	font-family: monospace;
+	font-size: x-large;
+	padding-top: 0.6em;
+	color: #102E36;
+}
+
+.itens_express:HOVER {
+	text-decoration: none;
+}
+/* ////////////////////////////////////////////////////
+				BOTOES BOOTSTRAP
+//////////////////////////////////////////////////// */
+/*.btn-primary{
+	background-image: linear-gradient(to bottom, #74a6cc, #74a6cc) !important;
+	border-color: #74a6cc !important;
+}
+.btn{
+	border-radius: 0 !important;
+	
+}*/

@@ -1,0 +1,52 @@
+@IMPORT url("cadastros.css");
+
+body {
+	overflow-x: hidden;
+}
+
+h3 {
+	font-family: Open Sans;
+	position: relative;
+	left: 1em;
+}
+
+a div p {
+	font-family: Open Sans;
+	font-size: 18px;
+	text-aling: center;
+	position: relative;
+	left: 1.5em;
+	text-decoration: none;
+	color: #000;
+}
+
+.contrato p {
+	text-decoration: none;
+	color: #000;
+	margin-left: -1em;
+}
+
+button {
+	background: #503f48;
+	color: #f1efe8;
+	border: none;
+	font-family: Open Sans;
+	font-size: 18px;
+	height: 2.5em;
+	width: 14em;
+	margin-top: 1em;
+	margin-left: 0.7em;
+}
+
+.btDanger {
+	margin-top: 6em;
+	color: #f1efe8 !important;
+	text-decoration: none !important;
+	background: #D3354B;
+}
+
+.btDanger:hover {
+	color: #f1efe8;
+	text-decoration: none;
+	background: #D3354B;
+}

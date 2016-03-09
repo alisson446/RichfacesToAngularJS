@@ -1,0 +1,26 @@
+.trbody{
+	background-color: #4F3E47 !important;
+	font-family: "Open Sans" !important;
+	font-weight: bold !important
+}
+
+.trbody th{
+	color: #fff;
+}
+
+.tdvalue{
+	font-family: "Open Sans" !important;
+	color: #4F3E47 !important; 
+	font-weight: bold !important
+}
+
+.titulo{
+	font-family: "Century Gothic";
+	color: #503F48;
+}
+
+#modalTitle{
+	font-family: "Open Sans";
+	color: #4F3E47;	
+	font-size: 24px;
+}

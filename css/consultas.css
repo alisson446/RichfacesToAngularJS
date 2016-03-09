@@ -1,0 +1,431 @@
+@IMPORT url("style.css");
+
+.cabecalho {
+	padding: 0;
+}
+
+.cabecalho .title {
+	font-family: "Century Gothic";
+	color: #503F48;
+	margin: 3px 0;
+}
+
+.cabecalho .titleContainer {
+	float: left;
+}
+
+.cabecalho .actionContainer {
+	float: right;
+}
+
+.cabecalho .actionContainer .linkAction {
+	padding: 0 0.5em;
+	cursor: pointer;
+}
+
+.divTabelaMaster {
+	padding: 0;
+	margin-top: 0.8em;
+}
+
+.data-table {
+	width: 100%;
+	border: 1px solid #4F3E47;
+}
+
+.data-table tbody:last-child {
+	display: none;
+}
+
+.findContainer {
+	position: absolute;
+	right: 0;
+	z-index: 1;
+	display: none;
+}
+
+.btPrimary {
+	background-color: #59B9D0;
+	border: none;
+	padding: 0.3em;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #F0EEE8;
+	font-weight: bolder;
+	width: 100%;
+}
+
+.btDanger {
+	background-color: #D3354B;
+	border: none;
+	padding: 0.3em;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #F0EEE8;
+	font-weight: bolder;
+	width: 100%;
+}
+
+.btDefault {
+	background-color: #FFF;
+	border: none;
+	padding: 0.3em;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #59B9D0;
+	font-weight: bolder;
+	width: 100%;
+}
+
+.modal-footer {
+	font-size: 1.5em !important;
+	border: none;
+	padding-top: 0;
+	padding-bottom: 0;
+	float: right;
+}
+
+input[type="email"],input[type="number"],input[type="password"],input[type="tel"],input[type="url"],input[type="text"],textarea
+	{
+	background-color: #DDDDDB;
+	color: #4F3E47;
+	font-family: "Open Sans";
+	width: 100%;
+	border: none;
+	font-size: 1em;
+	padding: 0.3em 0.5em;
+}
+
+label {
+	width: 100%;
+	font-family: "Open Sans";
+	color: #4F3E47;
+	font-size: 1.5em;
+	cursor: pointer;
+	margin-bottom: 0;
+}
+
+select {
+	background-color: #DDDDDB;
+	color: #4F3E47;
+	font-family: "Open Sans";
+	width: 100%;
+	border: none;
+	font-size: 1em;
+	padding: 0.2em 0.5em;
+}
+
+.modalMaster {
+	padding: 0;
+	border: 0;
+}
+
+.modalMaster .rf-pp-cnt-scrlr {
+	background-color: #DDDDDB;
+}
+
+.modalMaster .rf-pp-shdw {
+	display: none !important;
+}
+
+.modalTitle {
+	font-family: "Open Sans";
+	color: #4F3E47;
+	margin: 0;
+	float: left;
+	padding-left: 15px;
+}
+
+.modal-body {
+	margin-top: 3em;
+}
+
+.modalRemove {
+	padding: 0;
+	border: 0;
+}
+
+.modalRemove .rf-pp-cnt-scrlr {
+	background-color: #DDDDDB;
+}
+
+.modalRemove .rf-pp-shdw {
+	display: none !important;
+}
+
+.dsFooter {
+	margin-top: 1em;
+}
+
+.dsFooter .rf-ds-btn-prev img {
+	width: 2em;
+}
+
+.dsFooter .rf-ds-btn-next img {
+	width: 2.7em;
+}
+
+.btCloseModal {
+	float: right;
+}
+
+.modalMaster input[type="email"],.modalMaster  input[type="number"],.modalMaster  input[type="password"],.modalMaster  input[type="tel"],.modalMaster input[type="url"],.modalMaster  input[type="text"],.modalMaster  textarea
+	{
+	background-color: #F1EFE8;
+	font-weight: initial;
+	font-size: 1.2em;
+}
+
+.modalMaster  select {
+	background-color: #F1EFE8;
+	font-weight: initial;
+}
+/*Reset Style da data-table*/
+*.rf-dt-shdr-c {
+	border: none !important;
+	background: #4F3E47 !important;
+	color: #F0EEE8 !important;
+	font-family: "Open Sans" !important;
+	font-size: 16px !important;
+	padding: 3px !important;
+	text-align: left !important;
+}
+
+*.rf-dt-shdr-c a {
+	text-decoration: none !important;
+	color: #F0EEE8 !important;
+}
+
+*.rf-dt-c {
+	border: none !important;
+	color: #4F3E47;
+	font-family: "Open Sans" !important;
+	font-size: 13px !important;
+	font-weight: bold !important;
+	padding: 4px !important;
+}
+
+*.rf-dt-nd {
+	border: none !important;
+	color: #4F3E47;
+	font-family: "Open Sans" !important;
+	font-size: 13px !important;
+	font-weight: bold !important;
+	padding: 4px !important;
+}
+
+.odd-row {
+	background: #F0EEE8;
+}
+
+.even-row {
+	background-color: #DDDDDB;
+}
+
+*.rf-ds {
+	white-space: normal;
+	display: block;
+	background: none;
+}
+
+.rf-ds-btn-last,.rf-ds-btn-first,.rf-ds-btn-fastrwd,.rf-ds-btn-fastfwd {
+	display: none;
+}
+
+.rf-ds-dis {
+	opacity: 0;
+}
+
+*.rf-ds-nmb-btn.rf-ds-act {
+	color: #F0EEE8 !important;
+	border-radius: 2em !important;
+	padding: 0.3em !important;
+	background: #4F3E47 !important;
+}
+
+*.rf-ds-nmb-btn {
+	cursor: pointer;
+	width: 2em;
+	text-align: center;
+	margin: 0;
+	padding: 2px 2px 3px 2px;
+	border: none !important;
+	background: none !important;
+	display: inline-block;
+	font-size: 20px;
+	font-family: "Century Gothic";
+	text-decoration: none !important;
+	color: #4F3E47 !important;
+	display: inline-block;
+}
+
+*.rf-ds-btn {
+	border: none !important;
+	background: none !important;
+}
+
+*.rf-pp-shade {
+	background-color: black !important;
+}
+
+.columnAcao1 {
+	width: 1.8em;
+}
+
+.columnAcao2 {
+	width: 3.6em;
+}
+
+.columnAcao3 {
+	width: 5.4em;
+}
+
+.columnAcao4 {
+	width: 7.2em;
+}
+
+.msgRemove {
+	width: 100%;
+	font-family: "Open Sans";
+	color: #4F3E47;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+/*Referente aos campos de valor*/
+.wdiValor {
+	text-align: right;
+}
+
+*.rf-tt-cntr {
+	background-color: white;
+	padding: 7px;
+	border: 1px solid;
+	border-color: #4F3E47;
+	border-radius: 0px;
+	font-family: "Open Sans";
+	font-size: 11px;
+	display: inline-block;
+}
+/* Referente ao padr�o das modais */
+.rf-tab-hdr {
+	border: none;
+	color: #F0EEE8 !important;
+	background: #4F3E47 !important;
+	font-family: Open Sans;
+	font-weight: bold;
+	padding: 1em !important;
+}
+
+*.rf-tab-lbl {
+	font-size: 15px !important;
+}
+
+.rf-tab-hdr-inact {
+	vertical-align: middle;
+	background-image: none !important;
+}
+
+*.rf-tab-hdr-tabline-vis.rf-tab-hdr-tabline-top {
+	background: none !important;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+*.rf-tab-hdr-act {
+	color: #4F3E47 !important;
+	background: #F0EEE8 !important;
+}
+
+*.rf-tab-hdr-inact {
+	background: #4F3E47 !important;
+	border-left: 1px solid;
+}
+
+.rf-tab-hdr-spcr {
+	padding-left: 0 !important;
+}
+
+*.rf-tab-hdr-tabline-vis.rf-tab-hdr-tabline-top {
+	height: 44px;
+}
+
+*.rf-tab-hdr-brd {
+	display: none !important;
+}
+
+*.rf-tab-hdr-tabs {
+	margin-left: -1px;
+}
+
+.rf-tab-cnt {
+	background: #F0EEE8 !important;
+	border: none !important;
+}
+
+.rf-tab-cnt input[type="email"],.rf-tab-cnt input[type="number"],.rf-tab-cnt input[type="password"],.rf-tab-cnt input[type="tel"],.rf-tab-cnt input[type="url"],.rf-tab-cnt input[type="text"],.rf-tab-cnt textarea
+	{
+	background-color: #DDDDDB;
+	color: #4F3E47;
+}
+/*Referente ao select*/
+*.rf-sel {
+	width: 100%;
+}
+
+*.rf-sel-cntr {
+	font-size: inherit;
+	border: none !important;
+	background: #DDDDDB !important;
+	width: 100%
+}
+
+input.rf-sel-inp {
+	background-image: url('../img/publico/ic_combobox.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	cursor: pointer;
+	padding-right: 1.2em;
+}
+
+*.rf-sel-btn {
+	display: none;
+}
+
+*.rf-sel-lst-scrl,*.rf-sel-lst-dcrtn {
+	background: #DDDDDB;
+	border: none;
+	max-height: 150px !important;
+}
+
+*.rf-sel-opt {
+	width: 100%;
+	background: none;
+	border: none;
+	font-size: 1em;
+	font-family: "Open Sans";
+	cursor: pointer;
+	padding-left: 0.1em;
+}
+
+*.rf-sel-sel {
+	background: #4F3E47;
+	color: #DDDDDB;
+}
+
+*.rf-sel-shdw-t,*.rf-sel-shdw-l,*.rf-sel-shdw-r,*.rf-sel-shdw-b {
+	display: none !important;
+}
+
+.alignLeft {
+	text-align: left !important;
+}
+
+.alignRight {
+	text-align: right !important;
+}
+
+.alignCenter {
+	text-align: center !important;
+}
