@@ -52,6 +52,7 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			$scope.loadListPagination = function (i) {
 			    $scope.lista = $scope.pagina[i];
 			};
+
 		}).error(function(data,status){
 			$scope.message = "Aconteceu um erro ao carregar grupos!";
 		});
@@ -84,14 +85,9 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 
 	};	
 
-	$scope.grupoSelecionado = function(id){
-		gruposService.gruposSelecionado(id).success(function (data){
-			$scope.grupoedit = data;
-		});
-	};
-
 	$scope.atualizarGrupo = function(grupo){
 		gruposService.editarGrupo(grupo).success(function (data){
+			$('#modalEditarGrupos').foundation('reveal', 'close');
 			carregarGrupos();
 		});
 	};
@@ -102,12 +98,26 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		});
 	};
 
-	$scope.openModalGrupo = function(){
-		$('#modalGrupos').foundation('reveal', 'open');
-		$scope.abaIdent = "active";
-		$scope.abaClass = "";
-		$scope.activeIdent = "active";
-		$scope.activeClass = "";
+	$scope.openModalGrupo = function(screen, id){
+		if(screen == "cadastrar"){
+			$('#modalGrupos').foundation('reveal', 'open');
+			$scope.abaIdent = "active";
+			$scope.abaClass = "";
+			$scope.activeIdent = "active";
+			$scope.activeClass = "";			
+		}else if(screen == "editar"){
+			$('#modalEditarGrupos').foundation('reveal', 'open');
+			$scope.abaEditIdent = "active";
+			$scope.abaEditClass = "";
+			$scope.activeEditIdent = "active";
+			$scope.activeEditClass = "";	
+			gruposService.gruposSelecionado(id).success(function(data){
+				$scope.grupoedit = data;
+			});
+		}else {
+			alert("Deu erro");
+		}
+		
 	};
 
 	$scope.fecharModal = function(){
@@ -127,6 +137,20 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		$scope.abaIdent = "";
 		$scope.activeIdent = "";
 		$scope.activeClass = "active";
+	};
+
+	$scope.abaEditIdentificacao = function(){
+		$scope.abaEditIdent = "active";
+		$scope.abaEditClass = "";
+		$scope.activeEditIdent = "active";
+		$scope.activeEditClass = "";
+	};
+
+	$scope.abaEditClassificacao = function(){
+		$scope.abaEditIdent = "";
+		$scope.abaEditClass = "active";
+		$scope.activeEditIdent = "";
+		$scope.activeEditClass = "active";
 	};
 
 	carregarGrupos();

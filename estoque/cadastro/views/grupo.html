@@ -4,7 +4,7 @@
 	<h3 class="titulo">{{nome}}</h3>	
 </div>
 <div class="small-1 medium-1 large-1 large-offset-4 columns">
-	<a href="" ng-click="openModalGrupo()">
+	<a href="" ng-click="openModalGrupo('cadastrar')">
 		<img src="img/tables/add.png">
 	</a>	
 </div>
@@ -30,7 +30,7 @@
 			<td class="tdvalue">{{teste.tipoProduto}}</td>
 			<td>
 				<a href="" ng-click="deletarGrupo(teste.grupo)"><img src="img/tables/remover.png"></a>
-				<a href="" onclick="$('#modalEditarGrupos').foundation('reveal', 'open');" ng-click="grupoSelecionado(teste.grupo)"><img src="img/tables/editar.png"></a>
+				<a href="" ng-click="openModalGrupo('editar', teste.grupo)"><img src="img/tables/editar.png"></a>
 				<img src="img/tables/tributar.png">
 			</td>
 		</tr>
@@ -38,13 +38,13 @@
 	<div class="small-3 medium-3 large-3 columns">
 	<nav ng-show="totalPorPagina < totalRegistro">
         <ul class="pagination">
-            <a ng-click="prevPage(pagina-1)" ng-class="{disabled: pagina == 1}"><img src="img/tables/prev.png"></a>
+            <a ng-click="prevPage($index-1)" ng-class="{disabled: $index == 1}"><img src="img/tables/prev.png"></a>
             <li ng-repeat="j in pagina">
                 <a href ng-click="loadListPagination($index)" style="background-color: #777;">
                     {{$index + 1}}
                 </a>
             </li>
-            <a ng-click="nextPage(pagina+1)" ng-class="{disabled: pagina == numberOfPages}"><img src="img/tables/next.png"></a>
+            <a ng-click="nextPage($index+1)" ng-class="{disabled: $index == totalPorPagina}"><img src="img/tables/next.png"></a>
         </ul>
     </nav>
 </div>
@@ -73,7 +73,7 @@
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-2 medium-2 large-2 columns">
-	    				<input class="form-control" type="text" ng-model="grupo.codigo" />
+	    				<input class="form-control" type="text" ng-model="grupo.grupo" />
 	    			</div>
 	    			<div class="small-6 medium-6 large-10 columns">
 	    				<input class="form-control" type="text" ng-model="grupo.descricao" />
@@ -95,10 +95,10 @@
 	    				<input class="form-control" type="text" ng-model="grupo.abreviacao" />
 	    			</div>
 	    			<div class="small-3 medium-3 large-3 columns">
-	    				<input class="form-control" type="text" ng-model="grupo.descontomax" />
+	    				<input class="form-control" type="text" ng-model="grupo.descontoMaximo" />
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
-	    				<input class="form-control" type="text" ng-model="grupo.markup" />
+	    				<input class="form-control" type="text" ng-model="grupo.markupPadrao" />
 	    			</div>
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
@@ -118,13 +118,13 @@
 	    			</div>
 	    			<div class="small-3 medium-3 large-3 columns">
 	    				<div class="switch round">
-						  <input id="radioimobilizado" type="checkbox" ng-model="grupo.radioimobilizado">
+						  <input id="radioimobilizado" type="checkbox" ng-model="grupo.isImobilizado">
 						  <label for="radioimobilizado"></label>
 						</div>
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
 	    				<div class="switch round">
-						  <input id="radioinventario" type="checkbox" ng-model="grupo.radioinventario">
+						  <input id="radioinventario" type="checkbox" ng-model="grupo.isInventario">
 						  <label for="radioinventario"></label>
 						</div>
 	    			</div>
@@ -144,13 +144,13 @@
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-4 medium-4 large-4 columns">
-	    				<select ng-model="grupo.tipo">
+	    				<select ng-model="grupo.tipoProduto">
 				          <option value="husker">Husker</option>
 				          <option value="starbuck">Starbuck</option>
        					</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
-	    				<select ng-model="grupo.aliquota">
+	    				<select ng-model="grupo.aliquotaImpressoraFiscal">
 				          <option value="husker">Husker</option>
 				          <option value="starbuck">Starbuck</option>
        					</select>
@@ -217,12 +217,12 @@
 	  <br/>
 	  	<div class="small-12 medium-12 large-12 columns">
 		  	<ul class="tabs" data-tab role="tablist" id="titleTab">
-	  			<li class="tab-title {{activeIdent}}" role="presentation"><a  href="" ng-click="abaIdentificacao()" role="tab" tabindex="0">Identificação</a></li>
-	  			<li class="tab-title {{activeClass}}" role="presentation"><a href="" ng-click="abaClassificacao()" role="tab" tabindex="0">Classificação</a></li>
+	  			<li class="tab-title {{activeEditIdent}}" role="presentation"><a  href="" ng-click="abaEditIdentificacao()" role="tab" tabindex="0">Identificação</a></li>
+	  			<li class="tab-title {{activeEditClass}}" role="presentation"><a href="" ng-click="abaEditClassificacao()" role="tab" tabindex="0">Classificação</a></li>
 			</ul>
 			
 			<div class="tabs-content" id="titleTab2">
-	  		  <div role="tabpanel" class="content {{abaIdent}}">
+	  		  <div role="tabpanel" class="content {{abaEditIdent}}">
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-2 medium-2 large-2 columns">
 	    				Código
@@ -233,7 +233,7 @@
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-2 medium-2 large-2 columns">
-	    				<input class="form-control" type="text" ng-model="grupoedit.codigo" />
+	    				<input class="form-control" type="text" ng-model="grupoedit.grupo" />
 	    			</div>
 	    			<div class="small-6 medium-6 large-10 columns">
 	    				<input class="form-control" type="text" ng-model="grupoedit.descricao" />
@@ -255,10 +255,10 @@
 	    				<input class="form-control" type="text" ng-model="grupoedit.abreviacao" />
 	    			</div>
 	    			<div class="small-3 medium-3 large-3 columns">
-	    				<input class="form-control" type="text" ng-model="grupoedit.descontomax" />
+	    				<input class="form-control" type="text" ng-model="grupoedit.descontoMaximo" />
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
-	    				<input class="form-control" type="text" ng-model="grupoedit.markup" />
+	    				<input class="form-control" type="text" ng-model="grupoedit.markupPadrao" />
 	    			</div>
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
@@ -278,19 +278,19 @@
 	    			</div>
 	    			<div class="small-3 medium-3 large-3 columns">
 	    				<div class="switch round">
-						  <input id="radioimobilizado" type="checkbox" ng-model="grupoedit.radioimobilizado">
+						  <input id="radioimobilizado" type="checkbox" ng-model="grupoedit.isImobilizado">
 						  <label for="radioimobilizado"></label>
 						</div>
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
 	    				<div class="switch round">
-						  <input id="radioinventario" type="checkbox" ng-model="grupoedit.radioinventario">
+						  <input id="radioinventario" type="checkbox" ng-model="grupoedit.isInventario">
 						  <label for="radioinventario"></label>
 						</div>
 	    			</div>
 	    		</div>
 			  </div>
-			  <div role="tabpanel" id="abaClasse" class="content {{abaClass}}">
+			  <div role="tabpanel" id="abaClasse" class="content {{abaEditClass}}">
 			  	<div class="small-12 medium-12 large-12 columns">
 			    	<div class="small-4 medium-4 large-4 columns">
 	    				Tipo de Produto
@@ -304,13 +304,13 @@
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-4 medium-4 large-4 columns">
-	    				<select ng-model="grupoedit.tipo">
+	    				<select ng-model="grupoedit.tipoProduto">
 				          <option value="husker">Husker</option>
 				          <option value="starbuck">Starbuck</option>
        					</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
-	    				<select ng-model="grupoedit.aliquota">
+	    				<select ng-model="grupoedit.aliquotaImpressoraFiscal">
 				          <option value="husker">Husker</option>
 				          <option value="starbuck">Starbuck</option>
        					</select>
