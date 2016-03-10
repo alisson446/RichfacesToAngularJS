@@ -8,13 +8,28 @@ angular.module("hrcomercial").factory("gruposService", function ($http, config){
 	};
 
 	var _saveGrupo = function(grups){
-		return $http.put(config.url + "/", grups);
+		return $http.post(config.url + "/", grups);
 	}
+
+	var _gruposSelecionado = function(id){
+		return $http.get(config.url + "/" + id);
+	};
+
+	var _editarGrupo = function(grups){
+		return $http.put(config.url + "/", grups);
+	};
+
+	var _deletarGrupo = function(id){
+		return $http.delete(config.url + "/" + id);
+	};	
 
 	return {
 		getGrupos: _getGrupos,
 		getFluxodecaixa: _getFluxodecaixa,
-		saveGrupo: _saveGrupo
+		saveGrupo: _saveGrupo,
+		editarGrupo: _editarGrupo,
+		deletarGrupo: _deletarGrupo,
+		gruposSelecionado: _gruposSelecionado
 	};
 });
 
@@ -61,13 +76,31 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			comissao: grupos.comissao};
 
 		gruposService.saveGrupo(objetoGrupo).success(function(data){
-			$scope.grupo = null;
 			$('#modalGrupos').foundation('reveal', 'close');
+			$scope.grupo = null;
 		}).error(function(data,status){
 			$scope.message = "Aconteceu um erro ao salvar grupo!";
 		});	
 
 	};	
+
+	$scope.grupoSelecionado = function(id){
+		gruposService.gruposSelecionado(id).success(function (data){
+			$scope.grupoedit = data;
+		});
+	};
+
+	$scope.atualizarGrupo = function(grupo){
+		gruposService.editarGrupo(grupo).success(function (data){
+			carregarGrupos();
+		});
+	};
+
+	$scope.deletarGrupo = function(id){
+		gruposService.deletarGrupo(id).success(function(data){
+			carregarGrupos();
+		});
+	};
 
 	$scope.openModalGrupo = function(){
 		$('#modalGrupos').foundation('reveal', 'open');

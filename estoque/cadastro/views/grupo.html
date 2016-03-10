@@ -29,8 +29,8 @@
 			<td class="tdvalue">{{teste.abreviacao}}</td>
 			<td class="tdvalue">{{teste.tipoProduto}}</td>
 			<td>
-				<img src="img/tables/remover.png">
-				<img src="img/tables/editar.png">
+				<a href="" ng-click="deletarGrupo(teste.grupo)"><img src="img/tables/remover.png"></a>
+				<a href="" onclick="$('#modalEditarGrupos').foundation('reveal', 'open');" ng-click="grupoSelecionado(teste.grupo)"><img src="img/tables/editar.png"></a>
 				<img src="img/tables/tributar.png">
 			</td>
 		</tr>
@@ -50,7 +50,7 @@
 </div>
 </div>
 
-<!-- Modal Grupos-->
+<!-- Modal de cadastro de  Grupos-->
 <div class="small-12 medium-12 large-12 columns">
 	<div id="modalGrupos" class="reveal-modal medium collapse"  data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 	  <h3 id="modalTitle">Adicionar Grupo</h3>
@@ -208,6 +208,167 @@
     	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 	</div>
 </div>
+
+
+<!-- Modal de edição de  Grupos-->
+<div class="small-12 medium-12 large-12 columns">
+	<div id="modalEditarGrupos" class="reveal-modal medium collapse"  data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+	  <h3 id="modalTitle">Editar Grupo</h3>
+	  <br/>
+	  	<div class="small-12 medium-12 large-12 columns">
+		  	<ul class="tabs" data-tab role="tablist" id="titleTab">
+	  			<li class="tab-title {{activeIdent}}" role="presentation"><a  href="" ng-click="abaIdentificacao()" role="tab" tabindex="0">Identificação</a></li>
+	  			<li class="tab-title {{activeClass}}" role="presentation"><a href="" ng-click="abaClassificacao()" role="tab" tabindex="0">Classificação</a></li>
+			</ul>
+			
+			<div class="tabs-content" id="titleTab2">
+	  		  <div role="tabpanel" class="content {{abaIdent}}">
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-2 medium-2 large-2 columns">
+	    				Código
+	    			</div>
+	    			<div class="small-6 medium-6 large-10 columns">
+	    				Descrição
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-2 medium-2 large-2 columns">
+	    				<input class="form-control" type="text" ng-model="grupoedit.codigo" />
+	    			</div>
+	    			<div class="small-6 medium-6 large-10 columns">
+	    				<input class="form-control" type="text" ng-model="grupoedit.descricao" />
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 large-offset-2 columns">
+	    				Abreviação
+	    			</div>
+	    			<div class="small-3 medium-3 large-3 large-offset-1 columns">
+	    				Desconto Máximo
+	    			</div>
+	    			<div class="small-3 medium-3 large-2 columns">
+	    				Markup
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-5 medium-5 large-5 large-offset-2 columns">
+	    				<input class="form-control" type="text" ng-model="grupoedit.abreviacao" />
+	    			</div>
+	    			<div class="small-3 medium-3 large-3 columns">
+	    				<input class="form-control" type="text" ng-model="grupoedit.descontomax" />
+	    			</div>
+	    			<div class="small-3 medium-3 large-2 columns">
+	    				<input class="form-control" type="text" ng-model="grupoedit.markup" />
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 large-offset-2 columns">
+	    				Observação
+	    			</div>
+	    			<div class="small-3 medium-3 large-3 large-offset-1 columns">
+	    				Imobilizado
+	    			</div>
+	    			<div class="small-3 medium-3 large-2 columns">
+	    				Inventario
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-5 medium-5 large-5 large-offset-2 columns">
+	    				<input class="form-control" type="text" ng-model="grupoedit.observacao" />
+	    			</div>
+	    			<div class="small-3 medium-3 large-3 columns">
+	    				<div class="switch round">
+						  <input id="radioimobilizado" type="checkbox" ng-model="grupoedit.radioimobilizado">
+						  <label for="radioimobilizado"></label>
+						</div>
+	    			</div>
+	    			<div class="small-3 medium-3 large-2 columns">
+	    				<div class="switch round">
+						  <input id="radioinventario" type="checkbox" ng-model="grupoedit.radioinventario">
+						  <label for="radioinventario"></label>
+						</div>
+	    			</div>
+	    		</div>
+			  </div>
+			  <div role="tabpanel" id="abaClasse" class="content {{abaClass}}">
+			  	<div class="small-12 medium-12 large-12 columns">
+			    	<div class="small-4 medium-4 large-4 columns">
+	    				Tipo de Produto
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				Aliquota de Impressora Fiscal
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				Classificacao Fiscal	
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupoedit.tipo">
+				          <option value="husker">Husker</option>
+				          <option value="starbuck">Starbuck</option>
+       					</select>
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupoedit.aliquota">
+				          <option value="husker">Husker</option>
+				          <option value="starbuck">Starbuck</option>
+       					</select>
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupoedit.classfiscal">
+				          <option value="husker">Husker</option>
+				          <option value="starbuck">Starbuck</option>
+       					</select>
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+			    	<div class="small-4 medium-4 large-4 columns">
+	    				Classificacao da Despesa
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				Classificação da Receita
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				Comissao	
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 columns">
+
+	    				<select ng-model="grupoedit.classificacaodespesa" ng-options="fluxo.codigoFluxo + ' - ' + fluxo.descricao for fluxo in fluxos">
+	    					<option value="">Selecione um item</option>
+	    				</select>
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupoedit.classificacaoreceita" ng-options="fluxo.codigoFluxo + ' - ' + fluxo.descricao for fluxo in fluxos">
+	    					<option value="">Selecione um item</option>
+	    				</select>
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupoedit.comissao">
+				          <option value="husker">Husker</option>
+				          <option value="starbuck">Starbuck</option>
+       					</select>
+	    			</div>
+	    		</div>
+			  </div>	  
+			</div>
+	   	</div>
+
+	   	<div class="small-12 medium-12 large-12 columns">
+		   	<div class="small-4 medium-4 large-2 large-offset-7 columns" style="position:relative;left:2em;">
+		   		<button ng-click="atualizarGrupo(grupoedit)" class="button small info radius">Atualizar</button>
+		   	</div>
+		   	<div class="small-4 medium-4 large-3 columns" style="position:relative;left:2.8em;">
+		   		<button ng-click="fecharModal()" class="button small alert radius">Cancelar</button>
+		   	</div>
+	   	</div>
+
+    	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+	</div>
+</div>
+
 
 
 
