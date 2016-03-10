@@ -17,7 +17,3 @@ angular.module('hrcomercial', ['ngRoute']).config(function($routeProvider) {
 
 		.otherwise({redirectTo: '/'});
 });
-
-
-
-

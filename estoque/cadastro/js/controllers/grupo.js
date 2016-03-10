@@ -1,19 +1,29 @@
-angular.module("hrcomercial").factory("grupos", function ($http, config){
+angular.module("hrcomercial").factory("gruposService", function ($http, config){
 	var _getGrupos = function () { //"_" significa que é do tipo private
 		return $http.get(config.url + "/");
 	};
 
+	var _getFluxodecaixa = function() {
+		return $http.get(config.fluxodecaixa + "/");
+	};
+
+	var _saveGrupo = function(grups){
+		return $http.put(config.url + "/", grups);
+	}
+
 	return {
-		getGrupos: _getGrupos
+		getGrupos: _getGrupos,
+		getFluxodecaixa: _getFluxodecaixa,
+		saveGrupo: _saveGrupo
 	};
 });
 
-angular.module('hrcomercial').controller('grupoCtrl', function($scope, grupos, $location) {
+angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposService, $location) {
 	$scope.redirecionar = $location.path();
 	$scope.nome = "Grupos";
 
 	var carregarGrupos = function(){
-		grupos.getGrupos().success(function(data){
+		gruposService.getGrupos().success(function(data){
 			var dados = data;
 
 			$scope.totalPorPagina = 10;
@@ -31,6 +41,33 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, grupos, $
 			$scope.message = "Aconteceu um erro ao carregar grupos!";
 		});
 	};
+
+	var carregarSelectFluxo = function(){
+		gruposService.getFluxodecaixa().success(function(data){
+			$scope.fluxos = data;
+		}).error(function(data,status){
+			$scope.message = "Aconteceu um erro ao carregar fluxos!";
+		});
+	};
+
+	$scope.cadastrarGrupo = function(grupos){
+		var objetoGrupo = { 
+			codigo: grupos.codigo, descricao:grupos.descricao, abreviacao: grupos.abreviacao, 
+			descontomax: grupos.descontomax, markup: grupos.markup, observacao: grupos.observacao,
+			radioimobilizado: grupos.radioimobilizado, radioinventario: grupos.radioinventario,
+			tipo:grupos.tipo, aliquota:grupos.aliquota, classfiscal: grupos.classfiscal,
+			classificacaodespesa: grupos.classificacaodespesa.codigoFluxo + ' - ' + grupos.classificacaodespesa.descricao,
+			classificacaoreceita: grupos.classificacaoreceita.codigoFluxo + ' - ' + grupos.classificacaoreceita.descricao,
+			comissao: grupos.comissao};
+
+		gruposService.saveGrupo(objetoGrupo).success(function(data){
+			$scope.grupo = null;
+			$('#modalGrupos').foundation('reveal', 'close');
+		}).error(function(data,status){
+			$scope.message = "Aconteceu um erro ao salvar grupo!";
+		});	
+
+	};	
 
 	$scope.openModalGrupo = function(){
 		$('#modalGrupos').foundation('reveal', 'open');
@@ -60,5 +97,6 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, grupos, $
 	};
 
 	carregarGrupos();
+	carregarSelectFluxo();
 
 });

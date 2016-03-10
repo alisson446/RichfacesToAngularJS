@@ -118,29 +118,87 @@
 	    			</div>
 	    			<div class="small-3 medium-3 large-3 columns">
 	    				<div class="switch round">
-						  <input id="radioimobilizado" type="checkbox">
+						  <input id="radioimobilizado" type="checkbox" ng-model="grupo.radioimobilizado">
 						  <label for="radioimobilizado"></label>
 						</div>
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
 	    				<div class="switch round">
-						  <input id="radioinventario" type="checkbox">
+						  <input id="radioinventario" type="checkbox" ng-model="grupo.radioinventario">
 						  <label for="radioinventario"></label>
 						</div>
 	    			</div>
 	    		</div>
 			  </div>
-			  <div role="tabpanel" class="content {{abaClass}}">
+			  <div role="tabpanel" id="abaClasse" class="content {{abaClass}}">
 			  	<div class="small-12 medium-12 large-12 columns">
-			    	<h2>Classificação panel content goes here...</h2>
+			    	<div class="small-4 medium-4 large-4 columns">
+	    				Tipo de Produto
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				Aliquota de Impressora Fiscal
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				Classificacao Fiscal	
+	    			</div>
 	    		</div>
-			  </div>		  
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupo.tipo">
+				          <option value="husker">Husker</option>
+				          <option value="starbuck">Starbuck</option>
+       					</select>
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupo.aliquota">
+				          <option value="husker">Husker</option>
+				          <option value="starbuck">Starbuck</option>
+       					</select>
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupo.classfiscal">
+				          <option value="husker">Husker</option>
+				          <option value="starbuck">Starbuck</option>
+       					</select>
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+			    	<div class="small-4 medium-4 large-4 columns">
+	    				Classificacao da Despesa
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				Classificação da Receita
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				Comissao	
+	    			</div>
+	    		</div>
+	    		<div class="small-12 medium-12 large-12 columns">
+	    			<div class="small-4 medium-4 large-4 columns">
+
+	    				<select ng-model="grupo.classificacaodespesa" ng-options="fluxo.codigoFluxo + ' - ' + fluxo.descricao for fluxo in fluxos">
+	    					<option value="">Selecione um item</option>
+	    				</select>
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupo.classificacaoreceita" ng-options="fluxo.codigoFluxo + ' - ' + fluxo.descricao for fluxo in fluxos">
+	    					<option value="">Selecione um item</option>
+	    				</select>
+	    			</div>
+	    			<div class="small-4 medium-4 large-4 columns">
+	    				<select ng-model="grupo.comissao">
+				          <option value="husker">Husker</option>
+				          <option value="starbuck">Starbuck</option>
+       					</select>
+	    			</div>
+	    		</div>
+			  </div>	  
 			</div>
 	   	</div>
 
 	   	<div class="small-12 medium-12 large-12 columns">
 		   	<div class="small-4 medium-4 large-2 large-offset-7 columns" style="position:relative;left:2em;">
-		   		<button class="button small info radius">Cadastrar</button>
+		   		<button ng-click="cadastrarGrupo(grupo)" class="button small info radius">Cadastrar</button>
 		   	</div>
 		   	<div class="small-4 medium-4 large-3 columns" style="position:relative;left:2.8em;">
 		   		<button ng-click="fecharModal()" class="button small alert radius">Cancelar</button>
