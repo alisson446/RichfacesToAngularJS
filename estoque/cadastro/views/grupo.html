@@ -9,11 +9,11 @@
 	</a>	
 </div>
 <div style="position:relative;left:3.5em;" class="large-1 columns">
-	<a href="" ng-click="opensearch=!opensearch">
+	<a href="" ng-click="abrindoSearch()">
 		<img src="img/tables/search.png">
 	</a>	
 </div>
-<div ng-show="opensearch">
+<div class="{{classe}}" ng-show="opensearch">
 	<div class="large-1 columns">
 		<select id="selectSearch" ng-click="filtrarPorSelect()">
 			<option value="undefinied"></option>

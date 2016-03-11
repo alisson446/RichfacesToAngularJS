@@ -143,6 +143,16 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		}
 	};	
 
+	$scope.abrindoSearch = function(){
+		$scope.opensearch = !$scope.opensearch;
+		if($scope.opensearch==true){
+			$scope.classe = "animated fadeInLeft";
+		}else{
+			$scope.opensearch==false;
+			$scope.classe = "animated fadeInRight";
+		}
+	};
+
 	$scope.abaIdentificacao = function(){
 		$scope.abaIdent = "active";
 		$scope.abaClass = "";
