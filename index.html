@@ -63,211 +63,212 @@
 	</div>
 
 	<div class="row">
-			<a4j:outputPanel ajaxRendered="true">
-				<h:panelGroup rendered="#{contextoBean.isMenuFinanceiro()}">
-					<div class="col-md-11 navbar">
-						<ul id="navBarFinanceiro" class="menu">
-							<li class="itemMenu"><a href="#financeiro/homeFinanceiro.jsf">Home</a></li>
-							<li class="itemMenu"><a href="#">Cadastros</a>
-								<ul>
-									<li onclick="href('/publico/tabelaGenerica.jsf', this)"><a title="Tabela genérica" href="/publico/tabelaGenerica.jsf">Tabela genérica</a></li>
+		<a4j:outputPanel ajaxRendered="true">
+			<h:panelGroup rendered="#{contextoBean.isMenuFinanceiro()}">
+				<div class="col-md-11 navbar">
+					<ul id="navBarFinanceiro" class="menu">
+						<li class="itemMenu"><a href="#financeiro/homeFinanceiro.jsf">Home</a></li>
+						<li class="itemMenu"><a href="#">Cadastros</a>
+							<ul>
+								<li onclick="href('/publico/tabelaGenerica.jsf', this)"><a title="Tabela genérica" href="/publico/tabelaGenerica.jsf">Tabela genérica</a></li>
 
-									<li onclick="href('#publico/filial', this)"><a title="Cadastro de filial,almoxarifados e centro de custos" href="#publico/filial">Filiais</a></li>
+								<li onclick="href('#publico/filial', this)"><a title="Cadastro de filial,almoxarifados e centro de custos" href="#publico/filial">Filiais</a></li>
 
-									<li onclick="href('/publico/fornecedor.jsf', this)"><a title="Cadastro de fornecedores,credores e marcas" href="/publico/fornecedor.jsf">Fornecedores</a></li>
+								<li onclick="href('/publico/fornecedor.jsf', this)"><a title="Cadastro de fornecedores,credores e marcas" href="/publico/fornecedor.jsf">Fornecedores</a></li>
 
-									<li onclick="href('/publico/cliente.jsf', this)"><a title="Cadastro de clientes" href="/publico/cliente.jsf">Clientes</a></li>
+								<li onclick="href('/publico/cliente.jsf', this)"><a title="Cadastro de clientes" href="/publico/cliente.jsf">Clientes</a></li>
 
-									<li onclick="href('/publico/representante.jsf', this)"><a title="Cadastro de vendedores e representantes de vendas" href="/publico/representante.jsf">Representantes</a></li>
+								<li onclick="href('/publico/representante.jsf', this)"><a title="Cadastro de vendedores e representantes de vendas" href="/publico/representante.jsf">Representantes</a></li>
 
-									<li onclick="href('/publico/sacado.jsf', this)"><a title="Cadastro de sacados" href="/publico/sacado.jsf">Sacados</a></li>
+								<li onclick="href('/publico/sacado.jsf', this)"><a title="Cadastro de sacados" href="/publico/sacado.jsf">Sacados</a></li>
 
-									<li onclick="href('/publico/banco.jsf', this)"><a title="Cadastro de bancos" href="/publico/banco.jsf">Bancos</a></li>
+								<li onclick="href('/publico/banco.jsf', this)"><a title="Cadastro de bancos" href="/publico/banco.jsf">Bancos</a></li>
 
-									<li onclick="href('#/grupo', this)"><a title="Cadastro de bancos" href="#/grupo">Grupos</a></li>
+								<li onclick="href('#/grupo', this)"><a title="Cadastro de bancos" href="#/grupo">Grupos</a></li>
 
-									<li><a title="Cadastro de bancos" href="#/subgrupo">Subgrupos</a></li>
+								<li><a title="Cadastro de bancos" href="#/subgrupo">Subgrupos</a></li>
 
-									<li onclick="href('/estoque/formaPagamento.jsf', this)"><a title="Forma de pagamento" href="/estoque/formaPagamento.jsf">Forma de pagamento</a></li>
+								<li onclick="href('/estoque/formaPagamento.jsf', this)"><a title="Forma de pagamento" href="/estoque/formaPagamento.jsf">Forma de pagamento</a></li>
 
-									<li onclick="href('/financeiro/fluxoCaixa.jsf', this)"><a title="Fluxo de caixa" href="/financeiro/fluxoCaixa.jsf">Fluxo de caixa</a></li>
+								<li onclick="href('/financeiro/fluxoCaixa.jsf', this)"><a title="Fluxo de caixa" href="/financeiro/fluxoCaixa.jsf">Fluxo de caixa</a></li>
 
-									<li onclick="href('/financeiro/cartaoCorporativo.jsf', this)"><a title="Cartão Corporativo" href="/financeiro/cartaoCorporativo.jsf">Cartão Corporativo</a></li>
-								</ul></li>
-							<li class="itemMenu"><a href="#">Movimentações</a>
-								<ul style="width: 17.3em">
-									<li onclick="href('/financeiro/tituloFinanceiro.jsf', this)"><a href="/financeiro/tituloFinanceiro.jsf">Faturas/Títulos</a></li>
+								<li onclick="href('/financeiro/cartaoCorporativo.jsf', this)"><a title="Cartão Corporativo" href="/financeiro/cartaoCorporativo.jsf">Cartão Corporativo</a></li>
+							</ul></li>
+						<li class="itemMenu"><a href="#">Movimentações</a>
+							<ul style="width: 17.3em">
+								<li onclick="href('/financeiro/tituloFinanceiro.jsf', this)"><a href="/financeiro/tituloFinanceiro.jsf">Faturas/Títulos</a></li>
 
-									<li><a href="#">Contrato Financeiro</a>
-										<ul class="submenu" style="right: -14em;">
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('FIN_CONTRATO_FINANCEIRO')}">
-												<li onclick="href('/financeiro/contratoFinanceiro.jsf', this)"><a href="/financeiro/contratoFinanceiro.jsf">Cadastro de Contratos</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('GERAR_MENSALIDADE')}">
-												<li onclick="href('/financeiro/gerarMensalidades.jsf', this)"><a href="/financeiro/gerarMensalidades.jsf">Gerar Mensalidades</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ATUALIZAR_MENSALIDADE')}">
-												<li onclick="href('/financeiro/atualizarMensalidades.jsf', this)"><a href="/financeiro/atualizarMensalidades.jsf">Atualizar Mensalidades</a></li>
-											</h:panelGroup>
-										</ul></li>
+								<li><a href="#">Contrato Financeiro</a>
+									<ul class="submenu" style="right: -14em;">
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('FIN_CONTRATO_FINANCEIRO')}">
+											<li onclick="href('/financeiro/contratoFinanceiro.jsf', this)"><a href="/financeiro/contratoFinanceiro.jsf">Cadastro de Contratos</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('GERAR_MENSALIDADE')}">
+											<li onclick="href('/financeiro/gerarMensalidades.jsf', this)"><a href="/financeiro/gerarMensalidades.jsf">Gerar Mensalidades</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ATUALIZAR_MENSALIDADE')}">
+											<li onclick="href('/financeiro/atualizarMensalidades.jsf', this)"><a href="/financeiro/atualizarMensalidades.jsf">Atualizar Mensalidades</a></li>
+										</h:panelGroup>
+									</ul></li>
 
-									<li><a href="#">Baixas</a>
-										<ul class="submenu" style="right: -14em;">
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_DUPLICATA')}">
-												<li onclick="href('/financeiro/baixaDuplicata.jsf', this)"><a href="/financeiro/baixaDuplicata.jsf">Baixa Duplicata</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_VENDEDOR')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Baixa por Vendedor</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_NUMERO')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Baixa por Número</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_NEGOCIACAO')}">
-												<li onclick="href('/financeiro/negociacao.jsf', this)"><a href="/financeiro/negociacao.jsf">Negociação/Acordo</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('AGREGAR_CUSTO')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Agregar Custos</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('PRESTACAO_CONTAS')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Prestação de Contas</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ADIANTAMENTO_FINANCEIRO')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Adiantamentos Financeiros</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_ADIANTAMENTO')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Baixas vs Adiantamentos</a></li>
-											</h:panelGroup>
-										</ul></li>
-									<li><a href="#">Fatos Financeiros</a>
-										<ul class="submenu" style="right: -14em;">
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('FATO_FINANCEIRO')}">
-												<li onclick="href('/financeiro/fatoFinanceiro.jsf', this)"><a href="/financeiro/fatoFinanceiro.jsf">Fato Financeiro</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('MOVIMENTO_FINANCEIRO')}">
-												<li onclick="href('/financeiro/movimentoFinanceiro.jsf', this)"><a href="/financeiro/movimentoFinanceiro.jsf">Movimento Financeiro</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('TRANSFERENCIA_MONETARIA')}">
-												<li onclick="href('/financeiro/transferenciaMonetaria.jsf', this)"><a href="/financeiro/transferenciaMonetaria.jsf">Transferência Monetária</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('APLICACAO_FINANCEIRA')}">
-												<li onclick="href('/financeiro/aplicacaoFinanceira.jsf', this)"><a href="/financeiro/aplicacaoFinanceira.jsf">Aplicação Financeira</a></li>
-											</h:panelGroup>
-										</ul></li>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CONCILIACAO_BANCARIA')}">
-										<li onclick="href('/financeiro/conciliacaoBancaria.jsf', this)"><a href="/financeiro/conciliacaoBancaria.jsf">Conciliação Bancária</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CONCILIACAO_CARTAO_CORP')}">
-										<li onclick="href('/financeiro/conciliacaoCartaoCorporativo.jsf', this)"><a href="/financeiro/conciliacaoCartaoCorporativo.jsf">Conciliação Cartão Corporativo</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('OPERACAO_DESCONTO')}">
-										<li onclick="href('/financeiro/operacaoDesconto.jsf', this)"><a href="/financeiro/operacaoDesconto.jsf">Operação de Desconto</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('MUDANCA_COBRANCA')}">
-										<li onclick="href('/financeiro/mudancaCobranca.jsf', this)"><a href="/financeiro/mudancaCobranca.jsf">Mudança de Cobrança</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('AUTORIZACAO_PAGAMENTO')}">
-										<li onclick="href('/financeiro/autorizacaoPagamento.jsf', this)"><a href="/financeiro/autorizacaoPagamento.jsf">Autorização de Pagamentos</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('COBRANCA')}">
-										<li onclick="href('/financeiro/cobranca.jsf', this)"><a href="/financeiro/cobranca.jsf">Cobrança</a></li>
-									</h:panelGroup>
+								<li><a href="#">Baixas</a>
+									<ul class="submenu" style="right: -14em;">
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_DUPLICATA')}">
+											<li onclick="href('/financeiro/baixaDuplicata.jsf', this)"><a href="/financeiro/baixaDuplicata.jsf">Baixa Duplicata</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_VENDEDOR')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Baixa por Vendedor</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_NUMERO')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Baixa por Número</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_NEGOCIACAO')}">
+											<li onclick="href('/financeiro/negociacao.jsf', this)"><a href="/financeiro/negociacao.jsf">Negociação/Acordo</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('AGREGAR_CUSTO')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Agregar Custos</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('PRESTACAO_CONTAS')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Prestação de Contas</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ADIANTAMENTO_FINANCEIRO')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Adiantamentos Financeiros</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('BAIXA_ADIANTAMENTO')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf">Baixas vs Adiantamentos</a></li>
+										</h:panelGroup>
+									</ul></li>
+								<li><a href="#">Fatos Financeiros</a>
+									<ul class="submenu" style="right: -14em;">
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('FATO_FINANCEIRO')}">
+											<li onclick="href('/financeiro/fatoFinanceiro.jsf', this)"><a href="/financeiro/fatoFinanceiro.jsf">Fato Financeiro</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('MOVIMENTO_FINANCEIRO')}">
+											<li onclick="href('/financeiro/movimentoFinanceiro.jsf', this)"><a href="/financeiro/movimentoFinanceiro.jsf">Movimento Financeiro</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('TRANSFERENCIA_MONETARIA')}">
+											<li onclick="href('/financeiro/transferenciaMonetaria.jsf', this)"><a href="/financeiro/transferenciaMonetaria.jsf">Transferência Monetária</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('APLICACAO_FINANCEIRA')}">
+											<li onclick="href('/financeiro/aplicacaoFinanceira.jsf', this)"><a href="/financeiro/aplicacaoFinanceira.jsf">Aplicação Financeira</a></li>
+										</h:panelGroup>
+									</ul></li>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CONCILIACAO_BANCARIA')}">
+									<li onclick="href('/financeiro/conciliacaoBancaria.jsf', this)"><a href="/financeiro/conciliacaoBancaria.jsf">Conciliação Bancária</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CONCILIACAO_CARTAO_CORP')}">
+									<li onclick="href('/financeiro/conciliacaoCartaoCorporativo.jsf', this)"><a href="/financeiro/conciliacaoCartaoCorporativo.jsf">Conciliação Cartão Corporativo</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('OPERACAO_DESCONTO')}">
+									<li onclick="href('/financeiro/operacaoDesconto.jsf', this)"><a href="/financeiro/operacaoDesconto.jsf">Operação de Desconto</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('MUDANCA_COBRANCA')}">
+									<li onclick="href('/financeiro/mudancaCobranca.jsf', this)"><a href="/financeiro/mudancaCobranca.jsf">Mudança de Cobrança</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('AUTORIZACAO_PAGAMENTO')}">
+									<li onclick="href('/financeiro/autorizacaoPagamento.jsf', this)"><a href="/financeiro/autorizacaoPagamento.jsf">Autorização de Pagamentos</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('COBRANCA')}">
+									<li onclick="href('/financeiro/cobranca.jsf', this)"><a href="/financeiro/cobranca.jsf">Cobrança</a></li>
+								</h:panelGroup>
 
-									<li><a href="#">Outros Créditos</a>
-										<ul class="submenu" style="right: -19em; width: 19em;">
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CHEQUE_PREDATADO')}">
-												<li onclick="href('/financeiro/chequePredatado.jsf', this)"><a href="/financeiro/chequePredatado.jsf" title="Controle de Créditos Diversos (cheques, vales, etc.)">Créditos Diversos (Cheques e Vales)</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CHEQUE_PREDATADO_DEPOSITO')}">
-												<li onclick="href('/financeiro/chequePredatadoDeposito.jsf', this)"><a href="/financeiro/chequePredatadoDeposito.jsf" title="Efetuar depósitos de cheques predatados ou resgate de vales">Depósito</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('FACTORIZACAO')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf" title="Realizar operações de factorização (desconto de cheques predatados)">Factorização</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('DEVOLUCAO_CHEQUES')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf" title="Informar devoluções de cheques depositados">Devoluções de cheques</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('REAPRESENTACAO_CHEQUE')}">
-												<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf" title="Reapresentar cheques devolvidos">Reapresentação de Cheques</a></li>
-											</h:panelGroup>
-										</ul></li>
+								<li><a href="#">Outros Créditos</a>
+									<ul class="submenu" style="right: -19em; width: 19em;">
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CHEQUE_PREDATADO')}">
+											<li onclick="href('/financeiro/chequePredatado.jsf', this)"><a href="/financeiro/chequePredatado.jsf" title="Controle de Créditos Diversos (cheques, vales, etc.)">Créditos Diversos (Cheques e Vales)</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CHEQUE_PREDATADO_DEPOSITO')}">
+											<li onclick="href('/financeiro/chequePredatadoDeposito.jsf', this)"><a href="/financeiro/chequePredatadoDeposito.jsf" title="Efetuar depósitos de cheques predatados ou resgate de vales">Depósito</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('FACTORIZACAO')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf" title="Realizar operações de factorização (desconto de cheques predatados)">Factorização</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('DEVOLUCAO_CHEQUES')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf" title="Informar devoluções de cheques depositados">Devoluções de cheques</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('REAPRESENTACAO_CHEQUE')}">
+											<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a href="/Em_Desenvolvimento.jsf" title="Reapresentar cheques devolvidos">Reapresentação de Cheques</a></li>
+										</h:panelGroup>
+									</ul></li>
 
-									<li><a href="#">Cartões de Crédito</a>
-										<ul class="submenu" style="right: -14em;">
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CREDITO_CARTAO')}">
-												<li onclick="href('/financeiro/creditoCartao.jsf', this)"><a href="/financeiro/creditoCartao.jsf">Cartões de Créditos</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('DEPOSITO')}">
-												<li onclick="href('/financeiro/creditoCartaoDeposito.jsf', thiss)"><a href="/financeiro/creditoCartaoDeposito.jsf">Depósito</a></li>
-											</h:panelGroup>
-											<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ANTECIPACAO')}">
-												<li><a href="/Em_Desenvolvimento.jsf">Antecipações</a></li>
-											</h:panelGroup>
-										</ul></li>
+								<li><a href="#">Cartões de Crédito</a>
+									<ul class="submenu" style="right: -14em;">
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CREDITO_CARTAO')}">
+											<li onclick="href('/financeiro/creditoCartao.jsf', this)"><a href="/financeiro/creditoCartao.jsf">Cartões de Créditos</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('DEPOSITO')}">
+											<li onclick="href('/financeiro/creditoCartaoDeposito.jsf', thiss)"><a href="/financeiro/creditoCartaoDeposito.jsf">Depósito</a></li>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ANTECIPACAO')}">
+											<li><a href="/Em_Desenvolvimento.jsf">Antecipações</a></li>
+										</h:panelGroup>
+									</ul></li>
 
-								</ul></li>
-							<li class="itemMenu"><a href="#">Consultas</a>
-								<ul style="width: 17.3em">
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('TITULOS_EMITIDOS')}">
-										<li onclick="href('/financeiro/consultas/tituloEmitido.jsf', this)"><a title="Consulta a títulos emitidos" href="/financeiro/consultas/tituloEmitido.jsf">Títulos por Emissão</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('TITULOS_PERIODO')}">
-										<li onclick="href('/financeiro/consultas/tituloPeriodo.jsf', this)"><a title="Consulta de títulos a vencer em um período" href="/financeiro/consultas/tituloPeriodo.jsf">Título Período</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('EXTRATO_INTERVINIENTE')}">
-										<li onclick="href('/financeiro/consultas/extratoInterveniente.jsf', this)"><a title="Consulta a extrato de Credores e Cliente" href="/financeiro/consultas/extratoInterveniente.jsf">Extrato de Interveniente</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ADIANTAMENTO_FORNECEDORES')}">
-										<li onclick="href('/financeiro/consultas/adiantamentoFornecedor.jsf', this)"><a title="Consulta a Adiantamento de Fornecedores" href="/financeiro/consultas/adiantamentoFornecedor.jsf">Adiantamento de Fornecedores</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ADIANTAMENTO_CLIENTES')}">
-										<li onclick="href('/financeiro/consultas/adiantamentoCliente.jsf', this)"><a title="Consulta a Adiantamento de Clientes" href="/financeiro/consultas/adiantamentoCliente.jsf">Adiantamento de Clientes</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('SALDO_BANCARIO')}">
-										<li onclick="href('/financeiro/consultas/consultaSaldoBancario.jsf', this)"><a title="Saldo Bancário" href="/financeiro/consultas/consultaSaldoBancario.jsf">Saldo Bancário</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('SALDO_FLUXO_CAIXA')}">
-										<li onclick="href('/financeiro/consultas/consultaSaldoFluxoCaixa.jsf', this)"><a title="Demonstrativo do saldo do fluxo de caixa" href="/financeiro/consultas/consultaSaldoFluxoCaixa.jsf">Demonstrativo Saldo Fluxo Caixa</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('TRANSACOES_CAIXA_BANCO')}">
-										<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a title="Consulta a Transações de Caixa e/ou Bancos" href="/Em_Desenvolvimento.jsf">Transações Caixa/Bancos</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CON_CHEQUES_PREDATADOS')}">
-										<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a title="Consulta a Cheques Predatados" href="/Em_Desenvolvimento.jsf">Cheques Predatados</a></li>
-									</h:panelGroup>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('DISPONIBILIDADE_FINANCEIRA')}">
-										<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a title="Consulta a Disponibilidades Financeiras" href="/Em_Desenvolvimento.jsf">Disponibilidade Financeira</a></li>
-									</h:panelGroup>
-								</ul></li>
-							<li class="itemMenu"><a href="#">Relatórios</a>
-								<ul>
-									<li onclick="href('/financeiro/relatorios/relatoriosCadastrais.jsf', this)"><a href="/financeiro/relatorios/relatoriosCadastrais.jsf">Cadastrais</a></li>
-									<li onclick="href('/financeiro/relatorios/relatoriosOperacionais.jsf', this)"><a href="/financeiro/relatorios/relatoriosOperacionais.jsf">Operacionais</a></li>
-									<li onclick="href('/financeiro/relatorios/relatoriosEventuais.jsf', this)"><a href="/financeiro/relatorios/relatoriosEventuais.jsf">Eventuais</a></li>
-									<li onclick="href('/financeiro/relatorios/relatoriosPreImpressos.jsf', this)"><a href="/financeiro/relatorios/relatoriosPreImpressos.jsf">Pré Impressos</a></li>
-									<li onclick="href('/financeiro/relatorios/relatoriosResumos.jsf', this)"><a href="/financeiro/relatorios/relatoriosResumos.jsf">Resumos</a></li>
-								</ul></li>
-							<li class="itemMenu"><a href="#">Rotinas</a>
-								<ul>
-									<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('APURACAO_CAIXA')}">
-										<li onclick="href('/faturamento/apuracaoCaixa.jsf', this)"><a href="/faturamento/apuracaoCaixa.jsf" title="Apuração e integração dos caixas">Apuração de Caixas</a></li>
-									</h:panelGroup>
-									<li onclick="href('/financeiro/emissaoBoleto.jsf', this)"><a href="/financeiro/emissaoBoleto.jsf">Emissão de Boleto</a></li>
-								</ul></li>
-							<li class="itemMenu"><a href="#">Tabelas Externas</a>
-								<ul>
-									<li onclick="href('/estoque/formaPagamento.jsf', this)"><a title="Forma de pagamento" href="/estoque/formaPagamento.jsf">Forma de pagamento</a></li>
-									<li onclick="href('/publico/cotacaoMoeda.jsf', this)"><a href="/publico/cotacaoMoeda.jsf">Tabelas monetárias</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</h:panelGroup>
-			</a4j:outputPanel>
-		</div>
-
+							</ul></li>
+						<li class="itemMenu"><a href="#">Consultas</a>
+							<ul style="width: 17.3em">
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('TITULOS_EMITIDOS')}">
+									<li onclick="href('/financeiro/consultas/tituloEmitido.jsf', this)"><a title="Consulta a títulos emitidos" href="/financeiro/consultas/tituloEmitido.jsf">Títulos por Emissão</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('TITULOS_PERIODO')}">
+									<li onclick="href('/financeiro/consultas/tituloPeriodo.jsf', this)"><a title="Consulta de títulos a vencer em um período" href="/financeiro/consultas/tituloPeriodo.jsf">Título Período</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('EXTRATO_INTERVINIENTE')}">
+									<li onclick="href('/financeiro/consultas/extratoInterveniente.jsf', this)"><a title="Consulta a extrato de Credores e Cliente" href="/financeiro/consultas/extratoInterveniente.jsf">Extrato de Interveniente</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ADIANTAMENTO_FORNECEDORES')}">
+									<li onclick="href('/financeiro/consultas/adiantamentoFornecedor.jsf', this)"><a title="Consulta a Adiantamento de Fornecedores" href="/financeiro/consultas/adiantamentoFornecedor.jsf">Adiantamento de Fornecedores</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('ADIANTAMENTO_CLIENTES')}">
+									<li onclick="href('/financeiro/consultas/adiantamentoCliente.jsf', this)"><a title="Consulta a Adiantamento de Clientes" href="/financeiro/consultas/adiantamentoCliente.jsf">Adiantamento de Clientes</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('SALDO_BANCARIO')}">
+									<li onclick="href('/financeiro/consultas/consultaSaldoBancario.jsf', this)"><a title="Saldo Bancário" href="/financeiro/consultas/consultaSaldoBancario.jsf">Saldo Bancário</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('SALDO_FLUXO_CAIXA')}">
+									<li onclick="href('/financeiro/consultas/consultaSaldoFluxoCaixa.jsf', this)"><a title="Demonstrativo do saldo do fluxo de caixa" href="/financeiro/consultas/consultaSaldoFluxoCaixa.jsf">Demonstrativo Saldo Fluxo Caixa</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('TRANSACOES_CAIXA_BANCO')}">
+									<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a title="Consulta a Transações de Caixa e/ou Bancos" href="/Em_Desenvolvimento.jsf">Transações Caixa/Bancos</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('CON_CHEQUES_PREDATADOS')}">
+									<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a title="Consulta a Cheques Predatados" href="/Em_Desenvolvimento.jsf">Cheques Predatados</a></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('DISPONIBILIDADE_FINANCEIRA')}">
+									<li onclick="href('/Em_Desenvolvimento.jsf', this)"><a title="Consulta a Disponibilidades Financeiras" href="/Em_Desenvolvimento.jsf">Disponibilidade Financeira</a></li>
+								</h:panelGroup>
+							</ul></li>
+						<li class="itemMenu"><a href="#">Relatórios</a>
+							<ul>
+								<li onclick="href('/financeiro/relatorios/relatoriosCadastrais.jsf', this)"><a href="/financeiro/relatorios/relatoriosCadastrais.jsf">Cadastrais</a></li>
+								<li onclick="href('/financeiro/relatorios/relatoriosOperacionais.jsf', this)"><a href="/financeiro/relatorios/relatoriosOperacionais.jsf">Operacionais</a></li>
+								<li onclick="href('/financeiro/relatorios/relatoriosEventuais.jsf', this)"><a href="/financeiro/relatorios/relatoriosEventuais.jsf">Eventuais</a></li>
+								<li onclick="href('/financeiro/relatorios/relatoriosPreImpressos.jsf', this)"><a href="/financeiro/relatorios/relatoriosPreImpressos.jsf">Pré Impressos</a></li>
+								<li onclick="href('/financeiro/relatorios/relatoriosResumos.jsf', this)"><a href="/financeiro/relatorios/relatoriosResumos.jsf">Resumos</a></li>
+							</ul></li>
+						<li class="itemMenu"><a href="#">Rotinas</a>
+							<ul>
+								<h:panelGroup rendered="#{usuarioAction.verificarExistenciaPermissao('APURACAO_CAIXA')}">
+									<li onclick="href('/faturamento/apuracaoCaixa.jsf', this)"><a href="/faturamento/apuracaoCaixa.jsf" title="Apuração e integração dos caixas">Apuração de Caixas</a></li>
+								</h:panelGroup>
+								<li onclick="href('/financeiro/emissaoBoleto.jsf', this)"><a href="/financeiro/emissaoBoleto.jsf">Emissão de Boleto</a></li>
+							</ul></li>
+						<li class="itemMenu"><a href="#">Tabelas Externas</a>
+							<ul>
+								<li onclick="href('/estoque/formaPagamento.jsf', this)"><a title="Forma de pagamento" href="/estoque/formaPagamento.jsf">Forma de pagamento</a></li>
+								<li onclick="href('/publico/cotacaoMoeda.jsf', this)"><a href="/publico/cotacaoMoeda.jsf">Tabelas monetárias</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</h:panelGroup>
+		</a4j:outputPanel>
+	</div>
+	
 	<div ng-view>
 		
 	</div>
+
 
 	<script src="lib/foundation/vendor/jquery.js"></script>
 	<script src="lib/foundation/foundation.min.js"></script>

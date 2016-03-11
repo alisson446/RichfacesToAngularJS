@@ -38,3 +38,12 @@
 	font-size: 13px !important;
 	font-weight: bold;
 }
+
+#modalFilial {
+	max-width: 72%;
+	max-height: 35rem;
+}
+
+.reveal-modal input {
+	height: 1.8rem !important;
+}

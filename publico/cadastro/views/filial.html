@@ -2,12 +2,12 @@
 <div class="small-3 medium-3 large-3 large-offset-1 columns">
 	<h3 class="titulo">{{nome}}</h3>	
 </div>
-<div class="small-1 medium-1 large-2 large-offset-2 columns">
-	<a href="">
+<div class="small-1 medium-1 large-1 large-offset-4 columns">
+	<a href="" ng-click='openModal()'>
 		<img src="img/tables/add.png">
 	</a>	
 </div>
-<div class="small-2 medium-2 large-4 columns">
+<div style="position:relative;right:5em;" class="small-2 medium-2 large-1 columns">
 	<a href="">
 		<img src="img/tables/search.png">
 	</a>	
@@ -40,14 +40,224 @@
 	<div class="small-3 medium-3 large-3 columns">
 		<nav ng-show="totalPorPagina < totalRegistro">
 	        <ul class="pagination">
-	            <a ng-click="prevPage(pagina-1)" ng-class="{disabled: pagina == 1}"><img src="img/tables/prev.png"></a>
-	            <li ng-repeat="j in pagina">
+	            <a ng-click="prevPage(anterior)" ng-hide="prevDisable"><img src="img/tables/prev.png"></a>
+	            <li ng-repeat="j in pagina | limitTo: 3">
 	                <a href ng-click="loadListPagination($index)" style="background-color: #777;">
-	                    {{$index + 1}}
+	                    {{showPaginas[$index]}}{{$index==atual-1 ? '<-- aqui' : ''}}
 	                </a>
 	            </li>
-	            <a ng-click="nextPage(pagina+1)" ng-class="{disabled: pagina == numberOfPages}"><img src="img/tables/next.png"></a>
+	            <a ng-click="nextPage(proxima)" ng-hide="nextDisable"><img src="img/tables/next.png"></a>
 	        </ul>
 	    </nav>
+	</div>
+
+	<div class="small-12 medium-12 large-12 columns">
+		<div id="modalFilial" class="reveal-modal collapse" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+		  	<h3 id="modalTitle">Adicionar Filial</h3>
+		  	<br/>
+		  	<div class="small-12 medium-12 large-12 columns">
+			  	<ul class="tabs" data-tab role="tablist" id="titleTab">
+		  			<li class="tab-title {{abaIdent}}" role="presentation"><a  href="" ng-click="abaIdentificacao()" role="tab" tabindex="0">Identificação</a></li>
+		  			<li class="tab-title {{abaClass}}" role="presentation"><a href="" ng-click="abaClassificacao()" role="tab" tabindex="0">Classificação</a></li>
+		  			<li class="tab-title {{abaOutros}}" role="presentation"><a href="" ng-click="abaOthers()" role="tab" tabindex="0">Outros</a></li>
+		  			<li class="tab-title {{abaPdv}}" role="presentation"><a href="" ng-click="abaPDV()" role="tab" tabindex="0">PDV</a></li>
+				</ul>
+				
+				<div class="tabs-content" id="titleTab2">
+		  		  	<div role="tabpanel" class="content {{abaIdent}}">
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-2 medium-2 large-2 columns">
+			    				Código
+			    			</div>
+			    			<div class="small-6 medium-6 large-6 left columns">
+			    				Nome
+			    			</div>
+			    			<div class="small-6 medium-6 large-4 left columns">
+			    				Fantasia
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-2 medium-2 large-2 columns">
+			    				<input class="form-control" type="text" ng-model="filial.codigo" />
+			    			</div>
+			    			<div class="small-6 medium-6 large-6 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.nome" />
+			    			</div>
+			    			<div class="small-6 medium-6 large-4 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.fantasia" />
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-4 medium-4 large-4 columns">
+			    				CNPJ
+			    			</div>
+			    			<div class="small-5 medium-5 large-4 left columns">
+			    				Inscrição Estadual
+			    			</div>
+			    			<div class="small-6 medium-6 large-4 left columns">
+			    				Inscrição Municipal
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-5 medium-5 large-4 columns">
+			    				<input class="form-control" type="text" ng-model="filial.cnpj" />
+			    			</div>
+			    			<div class="small-5 medium-5 large-4 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.inscricaoEstadual" />
+			    			</div>
+			    			<div class="small-5 medium-5 large-4 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.inscricaoMunicipal" />
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-4 medium-4 large-6 columns">
+			    				Logradouro
+			    			</div>
+			    			<div class="small-2 medium-2 large-2 left columns">
+			    				N°
+			    			</div>
+			    			<div class="small-6 medium-6 large-4 left columns">
+			    				Complemento
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-5 medium-5 large-6 columns">
+			    				<input class="form-control" type="text" ng-model="filial.logradouro" />
+			    			</div>
+			    			<div class="small-2 medium-2 large-2 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.numero" />
+			    			</div>
+			    			<div class="small-2 medium-2 large-4 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.complemento" />
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-4 medium-4 large-2 columns">
+			    				CEP
+			    			</div>
+			    			<div class="small-7 medium-7 large-6 left columns">
+			    				Bairro
+			    			</div>
+			    			<div class="small-6 medium-6 large-1 left columns">
+			    				Estado
+			    			</div>
+			    			<div class="small-6 medium-6 large-3 left columns">
+			    				Cidade
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-5 medium-5 large-2 columns">
+			    				<input class="form-control" type="text" ng-model="filial.cep" />
+			    			</div>
+			    			<div class="small-7 medium-7 large-6 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.bairro" />
+			    			</div>
+			    			<div class="small-7 medium-7 large-1 left columns">
+			    				<select class="form-control" ng-model="filial.estado"></select>
+			    			</div>
+			    			<div class="small-7 medium-7 large-3 left columns">
+			    				<select class="form-control" ng-model="filial.cidade"></select>
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-4 medium-4 large-4 columns">
+			    				Nome do Contrato
+			    			</div>
+			    			<div class="small-3 medium-3 large-2 left columns">
+			    				Telefone
+			    			</div>
+			    			<div class="small-3 medium-3 large-2 left columns">
+			    				Fax
+			    			</div>
+			    			<div class="small-3 medium-3 large-4 left columns">
+			    				Email
+			    			</div>
+			    		</div>
+			    		<div class="small-12 medium-12 large-12 columns">
+			    			<div class="small-5 medium-5 large-4 columns">
+			    				<input class="form-control" type="text" ng-model="filial.nomeContrato" />
+			    			</div>
+			    			<div class="small-3 medium-3 large-2 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.telefone" />
+			    			</div>
+			    			<div class="small-3 medium-3 large-2 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.fax" />
+			    			</div>
+			    			<div class="small-3 medium-3 large-4 left columns">
+			    				<input class="form-control" type="text" ng-model="filial.email" />
+			    			</div>
+			    		</div>
+					</div>
+
+					<div role="tabpanel" class="content {{abaClass}}">
+					  	<div class="small-12 medium-12 large-12 columns">
+					    	<div class="small-12 medium-12 large-12 columns">
+				    			<div class="small-2 medium-2 large-4 columns">
+				    				Atividade Econômica
+				    			</div>
+				    			<div class="small-6 medium-6 large-3 left columns">
+				    				Tabela Preço
+				    			</div>
+				    		</div>
+				    		<div class="small-12 medium-12 large-12 columns">
+				    			<div class="small-2 medium-2 large-4 columns">
+				    				<input class="form-control" type="text" ng-model="filial.atividadeEconomica" />
+				    			</div>
+				    			<div class="small-6 medium-6 large-3 left columns">
+				    				<select class="form-control" ng-model="filial.tabelaPreco"></select>
+				    			</div>
+				    		</div>
+			    		</div>
+					</div>
+
+					<div role="tabpanel" class="content {{abaOutros}}">
+					  	<div class="small-12 medium-12 large-12 columns">
+					    	<div class="small-12 medium-12 large-12 columns">
+				    			<div class="small-2 medium-2 large-4 columns">
+				    				INSS
+				    			</div>
+				    			<div class="small-6 medium-6 large-3 left columns">
+				    				Logo
+				    			</div>
+				    		</div>
+				    		<div class="small-12 medium-12 large-12 columns">
+				    			<div class="small-2 medium-2 large-4 columns">
+				    				<input class="form-control" type="text" ng-model="filial.inss" />
+				    			</div>
+				    			<div class="small-6 medium-6 large-3 left columns">
+				    				<input class="form-control" type="text" ng-model="filial.logo" />
+				    			</div>
+				    		</div>
+			    		</div>
+			    	</div>	    
+
+			    	<div role="tabpanel" class="content {{abaPdv}}">
+					  	<div class="small-12 medium-12 large-12 columns">
+					    	<div class="small-12 medium-12 large-12 columns">
+				    			<div class="small-2 medium-2 large-4 columns">
+				    				Cliente
+				    			</div>
+				    		</div>
+				    		<div class="small-12 medium-12 large-12 columns">
+				    			<div class="small-2 medium-2 large-4 columns">
+				    				<select class="form-control" ng-model="filial.cliente"></select>
+				    			</div>
+				    		</div>
+			    		</div>
+			    	</div>	    
+				</div>
+			</div>
+
+		   	<div class="small-12 medium-12 large-12 columns">
+			   	<div class="small-4 medium-4 large-2 large-offset-7 columns" style="position:relative;left:2em;">
+			   		<button class="button small info radius">Cadastrar</button>
+			   	</div>
+			   	<div class="small-4 medium-4 large-3 columns" style="position:relative;left:2.8em;">
+			   		<button ng-click="fecharModal()" class="button small alert radius">Cancelar</button>
+			   	</div>
+		   	</div>
+
+	    	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+		</div>
 	</div>
 </div>
