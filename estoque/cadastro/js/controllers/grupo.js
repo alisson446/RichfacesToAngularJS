@@ -125,6 +125,19 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		$scope.grupo = null;
 	};
 
+	$scope.filtrarPorSelect = function(){
+		var option = document.getElementById("selectSearch").value;
+		if(option == "codigo"){
+			$scope.filters = 'grupo';
+		}
+		if(option == "descricao"){
+			$scope.filters = 'descricao';
+		} 
+		if(option == "abreviacao"){
+			$scope.filters = 'abreviacao';
+		}
+	};	
+
 	$scope.abaIdentificacao = function(){
 		$scope.abaIdent = "active";
 		$scope.abaClass = "";
