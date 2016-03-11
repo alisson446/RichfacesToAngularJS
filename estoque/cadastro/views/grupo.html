@@ -16,13 +16,14 @@
 <div ng-show="opensearch">
 	<div class="large-1 columns">
 		<select id="selectSearch" ng-click="filtrarPorSelect()">
+			<option value="undefinied"></option>
 			<option value="codigo">Código</option>
 			<option value="descricao">Descrição</option>
 			<option value="abreviacao">Abreviação</option>
 		</select>
 	</div>
 	<div class="large-2 columns" id="inputSearch">
-		<input type="text" ng-model="buscarGrupos[filters]" placeholder="Pesquisar..." />
+		<input type="text" ng-model="buscarGrupos[filters]" id="campoBuscar" placeholder="Pesquisar..." disabled />
 	</div>
 </div>
 

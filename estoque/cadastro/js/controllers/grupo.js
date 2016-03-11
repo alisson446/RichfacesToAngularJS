@@ -128,13 +128,18 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 	$scope.filtrarPorSelect = function(){
 		var option = document.getElementById("selectSearch").value;
 		if(option == "codigo"){
+			document.getElementById("campoBuscar").disabled = false;
 			$scope.filters = 'grupo';
-		}
-		if(option == "descricao"){
+		}else if(option == "descricao"){
+			document.getElementById("campoBuscar").disabled = false;
 			$scope.filters = 'descricao';
-		} 
-		if(option == "abreviacao"){
+		}else if(option == "abreviacao"){
+			document.getElementById("campoBuscar").disabled = false;
 			$scope.filters = 'abreviacao';
+		}else if(option == "undefinied"){
+			document.getElementById("campoBuscar").disabled = true;
+		}else{
+			alert("Error");
 		}
 	};	
 
