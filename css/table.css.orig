@@ -1,0 +1,52 @@
+.trbody{
+	background-color: #4F3E47 !important;
+	font-family: "Open Sans" !important;
+	font-weight: bold !important
+}
+
+.trbody th{
+	color: #fff;
+}
+
+.tdvalue{
+	font-family: "Open Sans" !important;
+	color: #4F3E47 !important; 
+	font-weight: bold !important
+}
+
+.titulo{
+	font-family: "Century Gothic";
+	color: #503F48;
+}
+
+#modalTitle{
+	font-family: "Open Sans";
+	color: #4F3E47;	
+	font-size: 24px;
+	position: relative;
+	top: 9px;
+	left: 0.8em;
+}
+#titleTab{
+	font-family: "Open Sans" !important;
+	font-size: 14px !important;
+	font-weight: bold;
+}
+#titleTab2{
+	font-family: "Open Sans" !important;
+	color: #4F3E47;
+	font-size: 13px !important;
+	font-weight: bold;
+}
+
+<<<<<<< HEAD
+#modalFilial {
+	max-width: 72%;
+	max-height: 35rem;
+}
+
+.reveal-modal input {
+	height: 1.8rem !important;
+}
+=======
+>>>>>>> 0e5e131f7219ee4abd708e5125e0b42d4961fa86

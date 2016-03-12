@@ -24,18 +24,16 @@ angular.module('hrcomercial').controller('filialController', function($scope, fi
 	 	}
 	};	
 
-	paginar($scope.atual, 3);
-
 	filialService.getFiliais().success(function(dados) {
 		$scope.totalRegistro = dados.length;
-		$scope.totalPorPagina = 5;
+		$scope.totalPorPagina = 10;
 		$scope.pagina = paginacaoService.getPagination($scope.totalPorPagina, dados);
 		$scope.filiais = $scope.pagina[0];
-		$scope.lengthPagina = $scope.pagina.length;
 
+		paginar($scope.atual, $scope.pagina.length);
 		$scope.loadListPagination = function (i) {
-	    	$scope.filiais = $scope.pagina[$scope.page];
-	    	$scope.atual = i+1;
+	    	$scope.filiais = $scope.pagina[$scope.showPaginas[i]-1];
+	    	$scope.atual = $scope.showPaginas[i];
 	    	$scope.anterior = $scope.atual - 1;
 			$scope.proxima = $scope.atual + 1;
 	    	

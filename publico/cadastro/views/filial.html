@@ -41,9 +41,9 @@
 		<nav ng-show="totalPorPagina < totalRegistro">
 	        <ul class="pagination">
 	            <a ng-click="prevPage(anterior)" ng-hide="prevDisable"><img src="img/tables/prev.png"></a>
-	            <li ng-repeat="j in pagina | limitTo: 3">
-	                <a href ng-click="loadListPagination($index)" style="background-color: #777;">
-	                    {{showPaginas[$index]}}{{$index==atual-1 ? '<-- aqui' : ''}}
+	            <li ng-repeat="j in pagina">
+	                <a href ng-click="loadListPagination($index)" ng-if='$index<=2' style="background-color: #fff;">
+	                    {{showPaginas[$index]}}{{showPaginas[$index]==atual ? '<-- aqui' : ''}}
 	                </a>
 	            </li>
 	            <a ng-click="nextPage(proxima)" ng-hide="nextDisable"><img src="img/tables/next.png"></a>
