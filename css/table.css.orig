@@ -39,6 +39,7 @@
 	font-weight: bold;
 }
 
+<<<<<<< HEAD
 #modalFilial {
 	max-width: 72%;
 	max-height: 35rem;
@@ -47,3 +48,5 @@
 .reveal-modal input {
 	height: 1.8rem !important;
 }
+=======
+>>>>>>> 0e5e131f7219ee4abd708e5125e0b42d4961fa86

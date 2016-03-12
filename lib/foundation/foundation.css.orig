@@ -3295,7 +3295,11 @@ meta.foundation-mq-topbar {
       .tabs dd > a:focus, .tabs .tab-title > a:focus {
         outline: none; }
     .tabs dd.active a, .tabs .tab-title.active a {
+<<<<<<< HEAD
       background-color: #F0EEE8;
+=======
+      background-color:#F0EEE8;
+>>>>>>> 0e5e131f7219ee4abd708e5125e0b42d4961fa86
       color: #4F3E47; }
   .tabs.radius dd:first-child a, .tabs.radius .tab:first-child a {
     -webkit-border-bottom-left-radius: 3px;
