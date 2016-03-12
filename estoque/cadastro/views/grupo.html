@@ -1,5 +1,5 @@
 <br/>
-
+<div class="row"></div>
 <div class="large-2 large-offset-1 columns">
 	<h3 class="titulo">{{nome}}</h3>	
 </div>
@@ -13,18 +13,21 @@
 		<img src="img/tables/search.png">
 	</a>	
 </div>
-<div class="{{classe}}" ng-show="opensearch">
-	<div class="large-1 columns">
-		<select id="selectSearch" ng-click="filtrarPorSelect()">
-			<option value="undefinied"></option>
-			<option value="codigo">Código</option>
-			<option value="descricao">Descrição</option>
-			<option value="abreviacao">Abreviação</option>
-		</select>
+<div class="large-3 columns">
+	<div class="{{classe}}" ng-show="opensearch">
+		<div class="large-4 columns">
+			<select id="selectSearch" ng-click="filtrarPorSelect()">
+				<option value="undefinied"></option>
+				<option value="codigo">Código</option>
+				<option value="descricao">Descrição</option>
+				<option value="abreviacao">Abreviação</option>
+			</select>
+		</div>
+		<div class="large-8 columns" id="inputSearch">
+			<input type="text" ng-model="buscarGrupos[filters]" id="campoBuscar" placeholder="Pesquisar..." disabled />
+		</div>
 	</div>
-	<div class="large-2 columns" id="inputSearch">
-		<input type="text" ng-model="buscarGrupos[filters]" id="campoBuscar" placeholder="Pesquisar..." disabled />
-	</div>
+</div>
 </div>
 
 <div class="small-12 medium-12 large-12 columns">
@@ -37,7 +40,7 @@
 			<th>Ações</th>
 		</tr>
 
-		<tr ng-repeat="teste in lista | filter:buscarGrupos">
+		<tr ng-repeat="teste in filiais | filter:buscarGrupos">
 			<td class="tdvalue">{{teste.grupo}}</td>
 			<td class="tdvalue">{{teste.descricao}}</td>
 			<td class="tdvalue">{{teste.abreviacao}}</td>
@@ -50,18 +53,19 @@
 		</tr>
 	</table>
 	<div class="small-3 medium-3 large-3 columns">
-	<nav ng-show="totalPorPagina < totalRegistro">
-        <ul class="pagination">
-            <a ng-click="prevPage($index-1)" ng-class="{disabled: $index == 1}"><img src="img/tables/prev.png"></a>
-            <li ng-repeat="j in pagina">
-                <a href ng-click="loadListPagination($index)" style="background-color: #777;">
-                    {{$index + 1}}
-                </a>
-            </li>
-            <a ng-click="nextPage($index+1)" ng-class="{disabled: $index == totalPorPagina}"><img src="img/tables/next.png"></a>
-        </ul>
-    </nav>
-</div>
+		<nav ng-show="totalPorPagina < totalRegistro">
+	        <ul class="pagination">
+	            <a ng-click="prevPage(anterior)" ng-hide="prevDisable"><img src="img/tables/prev.png"></a>
+	            <li ng-repeat="j in pagina">
+	                <a href ng-click="loadListPagination($index)" ng-if='$index<=2' style="background-color: #fff;">
+	                    {{showPaginas[$index]}}{{showPaginas[$index]==atual ? '<-- aqui' : ''}}
+	                </a>
+	            </li>
+	            <a ng-click="nextPage(proxima)" ng-hide="nextDisable"><img src="img/tables/next.png"></a>
+	        </ul>
+	    </nav>
+	</div>
+
 </div>
 
 <!-- Modal de cadastro de  Grupos-->
@@ -382,7 +386,3 @@
     	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 	</div>
 </div>
-
-
-
-

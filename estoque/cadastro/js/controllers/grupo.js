@@ -33,29 +33,91 @@ angular.module("hrcomercial").factory("gruposService", function ($http, config){
 	};
 });
 
-angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposService, $location, $timeout) {
+angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposService, $location, $timeout, paginacaoService) {
 	$scope.redirecionar = $location.path();
 	$scope.nome = "Grupos";
 
-	var carregarGrupos = function(){
-		gruposService.getGrupos().success(function(data){
-			var dados = data;
+	$scope.showPaginas = []; 
+	$scope.proxima = 2;
+	$scope.atual = 1;
+	$scope.anterior = 0;
 
-			$scope.totalPorPagina = 10;
-			$scope.totalRegistro = dados.length;
-			$scope.pagina = [];
-			var j = $scope.totalRegistro > $scope.totalPorPagina ? Math.ceil($scope.totalRegistro / $scope.totalPorPagina) : $scope.totaRegistro;
-			for (var i = 0; i < j; i++) {
-			     $scope.pagina.push(dados.splice(0, $scope.totalPorPagina));
+	$scope.prevDisable = true;
+	$scope.nextDisable = false;
+
+	var paginar = function(atual, length) {
+		for(var i=0; i<length;i++) {
+			$scope.showPaginas[i] = atual+i;
+	 	}
+	};	
+
+	gruposService.getGrupos().success(function(dados) {
+		$scope.totalRegistro = dados.length;
+		$scope.totalPorPagina = 10;
+		$scope.pagina = paginacaoService.getPagination($scope.totalPorPagina, dados);
+		$scope.filiais = $scope.pagina[0];
+
+		paginar($scope.atual, $scope.pagina.length);
+		$scope.loadListPagination = function (i) {
+	    	$scope.filiais = $scope.pagina[$scope.showPaginas[i]-1];
+	    	$scope.atual = $scope.showPaginas[i];
+	    	$scope.anterior = $scope.atual - 1;
+			$scope.proxima = $scope.atual + 1;
+	    	
+	    	verifButtonPass($scope.atual);
+		};
+	}).error(function(data,status){
+		$scope.message = "Aconteceu um erro ao carregar filiais!";
+	});
+
+	var verifButtonPass = function(atual) {
+		$scope.anterior = atual-1;
+		$scope.proxima = atual+1;
+
+		$scope.prevDisable = $scope.anterior > 0 ? false : true;
+		$scope.nextDisable = $scope.proxima <= $scope.pagina.length ? false : true;
+	}
+
+	$scope.nextPage = function(proxima) {
+		if($scope.atual < $scope.pagina.length) {
+			$scope.atual = $scope.atual + 1;
+			$scope.anterior = $scope.anterior + 1;
+			$scope.proxima = proxima + 1;
+
+			if(proxima < $scope.pagina.length) {
+				for(var i=0; i<$scope.pagina.length; i++) {
+					$scope.pagina[i] = $scope.pagina[i];
+				}
+				paginar(proxima-1, $scope.pagina.length);
 			}
-			$scope.lista = $scope.pagina[0];
-			$scope.loadListPagination = function (i) {
-			    $scope.lista = $scope.pagina[i];
-			};
 
-		}).error(function(data,status){
-			$scope.message = "Aconteceu um erro ao carregar grupos!";
-		});
+			$scope.filiais = $scope.pagina[proxima-1];
+		}
+
+		verifButtonPass($scope.atual);
+	};
+
+	$scope.prevPage = function(anterior) {
+		if(anterior>0) {
+			$scope.atual = $scope.atual-1;
+			$scope.anterior = anterior-1;
+			$scope.proxima = $scope.proxima-1;
+
+			if(anterior==1) {
+				paginar(anterior, $scope.pagina.length);
+			}
+
+			if(anterior>1) {
+				for(var i=0; i<$scope.pagina.length; i++) {
+					$scope.pagina[i] = $scope.pagina[i];
+				}
+				paginar(anterior-1, $scope.pagina.length);
+			}
+
+			$scope.filiais = $scope.pagina[anterior-1];
+		}
+
+		verifButtonPass($scope.atual);
 	};
 
 	var carregarSelectFluxo = function(){
@@ -144,17 +206,17 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 	};	
 
 	$scope.abrindoSearch = function(){
-		$scope.opensearch = !$scope.opensearch;
-		if($scope.opensearch==true){
-			$scope.classe = "animated fadeInLeft";
-		}
-		
+		if($scope.opensearch==undefined || $scope.opensearch == false){
+			$scope.opensearch = true;
+			if($scope.opensearch==true){
+				$scope.classe = "animated fadeInLeft";
+			}
+		}else if($scope.opensearch == true){
+			$scope.classe = "animated fadeOutLeft";	
 			$timeout(function() {
-				$scope.classe = "animated fadeInRight";
-				if($scope.opensearch==false){
-					alert("ta falso");
-				}
-			}, 2000);
+				$scope.opensearch = false;
+			}, 500);
+		}
 	};
 
 	$scope.abaIdentificacao = function(){
@@ -185,7 +247,6 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		$scope.activeEditClass = "active";
 	};
 
-	carregarGrupos();
 	carregarSelectFluxo();
 
 });
