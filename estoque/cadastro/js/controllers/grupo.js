@@ -33,7 +33,7 @@ angular.module("hrcomercial").factory("gruposService", function ($http, config){
 	};
 });
 
-angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposService, $location) {
+angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposService, $location, $timeout) {
 	$scope.redirecionar = $location.path();
 	$scope.nome = "Grupos";
 
@@ -147,10 +147,14 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		$scope.opensearch = !$scope.opensearch;
 		if($scope.opensearch==true){
 			$scope.classe = "animated fadeInLeft";
-		}else{
-			$scope.opensearch==false;
-			$scope.classe = "animated fadeInRight";
 		}
+		
+			$timeout(function() {
+				$scope.classe = "animated fadeInRight";
+				if($scope.opensearch==false){
+					alert("ta falso");
+				}
+			}, 2000);
 	};
 
 	$scope.abaIdentificacao = function(){
