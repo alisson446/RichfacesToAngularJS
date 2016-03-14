@@ -41,3 +41,20 @@ select{
 	font-size: 15px!important;
 	font-family: sans-serif !important;
 }   
+
+#marcador{
+	width:2em;
+	background-color: #DCDCDC;
+	position:relative;
+	bottom:1.6em;
+	right:12px;z-index:-1;
+	border-radius: 8px;
+	color: #4F3E47;
+}
+#marcador span{
+	position: relative;
+	left: 12px;
+	top:0em;
+	background-color: #DCDCDC;
+}
+

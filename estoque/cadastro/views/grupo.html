@@ -34,8 +34,8 @@
 	<table class="small-8 medium-8 large-8 large-offset-1 columns">
 		<tr class="trbody">
 			<th>Código</th>
-			<th>Descricao</th>
-			<th>Abreviacao</th>
+			<th>Descrição</th>
+			<th>Abreviação</th>
 			<th>Tipo</th>
 			<th>Ações</th>
 		</tr>
@@ -57,8 +57,11 @@
 	        <ul class="pagination">
 	            <a ng-click="prevPage(anterior)" ng-hide="prevDisable"><img src="img/tables/prev.png"></a>
 	            <li ng-repeat="j in pagina">
-	                <a href ng-click="loadListPagination($index)" ng-if='$index<=2' style="background-color: #fff;">
-	                    {{showPaginas[$index]}}{{showPaginas[$index]==atual ? '<-- aqui' : ''}}
+	                <a href ng-click="loadListPagination($index)" ng-if='$index<=2' style="font-size:18px;width:2em;height:30px;border-radius: 5px;color: #4F3E47;rigth:30px;">
+	                    {{showPaginas[$index]}}
+	                    <div id="marcador">
+	                    		<span>{{showPaginas[$index]==atual ? '_' : ''}}</span>
+	              		</div>
 	                </a>
 	            </li>
 	            <a ng-click="nextPage(proxima)" ng-hide="nextDisable"><img src="img/tables/next.png"></a>

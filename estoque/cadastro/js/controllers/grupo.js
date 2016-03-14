@@ -36,7 +36,7 @@ angular.module("hrcomercial").factory("gruposService", function ($http, config){
 angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposService, $location, $timeout, paginacaoService) {
 	$scope.redirecionar = $location.path();
 	$scope.nome = "Grupos";
-
+	
 	$scope.showPaginas = []; 
 	$scope.proxima = 2;
 	$scope.atual = 1;
