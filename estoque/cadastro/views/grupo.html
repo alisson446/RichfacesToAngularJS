@@ -139,14 +139,14 @@
 	    			</div>
 	    			<div class="small-3 medium-3 large-3 columns">
 	    				<div class="switch round">
-						  <input id="radioimobilizado" type="checkbox" ng-model="grupo.isImobilizado">
-						  <label for="radioimobilizado"></label>
+						  <input id="imobilizado" type="checkbox" ng-model="grupo.isImobilizado">
+						  <label for="imobilizado"></label>
 						</div>
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
 	    				<div class="switch round">
-						  <input id="radioinventario" type="checkbox" ng-model="grupo.isInventario">
-						  <label for="radioinventario"></label>
+						  <input id="inventario" type="checkbox" ng-model="grupo.isInventario">
+						  <label for="inventario"></label>
 						</div>
 	    			</div>
 	    		</div>
@@ -196,14 +196,13 @@
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-4 medium-4 large-4 columns">
-
-	    				<select ng-model="grupo.classificacaodespesa" ng-options="fluxo.codigoFluxo + ' - ' + fluxo.descricao for fluxo in fluxos">
-	    					<option value="">Selecione um item</option>
+	    			<select ng-model="grupo.fluxoSaida">
+	    					<option ng-repeat="fluxo in fluxos" value="{{fluxo.codigoFluxo}}">{{fluxo.codigoFluxo +' - '+ fluxo.descricao}}</option>
 	    				</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
-	    				<select ng-model="grupo.classificacaoreceita" ng-options="fluxo.codigoFluxo + ' - ' + fluxo.descricao for fluxo in fluxos">
-	    					<option value="">Selecione um item</option>
+	    				<select ng-model="grupo.fluxoEntrada">
+	    					<option ng-repeat="fluxo in fluxos" value="{{fluxo.codigoFluxo}}">{{fluxo.codigoFluxo +' - '+ fluxo.descricao}}</option>
 	    				</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
@@ -299,14 +298,14 @@
 	    			</div>
 	    			<div class="small-3 medium-3 large-3 columns">
 	    				<div class="switch round">
-						  <input id="radioimobilizado" type="checkbox" ng-model="grupoedit.isImobilizado">
-						  <label for="radioimobilizado"></label>
+						  <input id="imobilizadoedit" type="checkbox" ng-model="grupoedit.isImobilizado">
+						  <label for="imobilizadoedit"></label>
 						</div>
 	    			</div>
 	    			<div class="small-3 medium-3 large-2 columns">
 	    				<div class="switch round">
-						  <input id="radioinventario" type="checkbox" ng-model="grupoedit.isInventario">
-						  <label for="radioinventario"></label>
+						  <input id="inventarioedit" type="checkbox" ng-model="grupoedit.isInventario">
+						  <label for="inventarioedit"></label>
 						</div>
 	    			</div>
 	    		</div>
@@ -326,7 +325,7 @@
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-4 medium-4 large-4 columns">
 	    				<select ng-model="grupoedit.tipoProduto">
-				          <option value="husker">Husker</option>
+				          <option value="BR">BR</option>
 				          <option value="starbuck">Starbuck</option>
        					</select>
 	    			</div>
@@ -356,14 +355,13 @@
 	    		</div>
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-4 medium-4 large-4 columns">
-
-	    				<select ng-model="grupoedit.classificacaodespesa" ng-options="fluxo.codigoFluxo + ' - ' + fluxo.descricao for fluxo in fluxos">
-	    					<option value="">Selecione um item</option>
+	    				<select ng-model="grupoedit.fluxoSaida">
+	    					<option ng-repeat="fluxo in fluxos" value="{{fluxo.codigoFluxo}}">{{fluxo.codigoFluxo +' - '+ fluxo.descricao}}</option>
 	    				</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
-	    				<select ng-model="grupoedit.classificacaoreceita" ng-options="fluxo.codigoFluxo + ' - ' + fluxo.descricao for fluxo in fluxos">
-	    					<option value="">Selecione um item</option>
+	    				<select ng-model="grupoedit.fluxoEntrada">
+	    					<option ng-repeat="fluxo in fluxos" value="{{fluxo.codigoFluxo}}">{{fluxo.codigoFluxo +' - '+ fluxo.descricao}}</option>
 	    				</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
@@ -382,10 +380,11 @@
 		   		<button ng-click="atualizarGrupo(grupoedit)" class="button small info radius">Atualizar</button>
 		   	</div>
 		   	<div class="small-4 medium-4 large-3 columns" style="position:relative;left:2.8em;">
-		   		<button ng-click="fecharModal()" class="button small alert radius">Cancelar</button>
+		   		<button ng-click="fecharModalEdit()" class="button small alert radius">Cancelar</button>
 		   	</div>
 	   	</div>
 
     	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 	</div>
 </div>
+ 

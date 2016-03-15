@@ -31,6 +31,18 @@ angular.module("hrcomercial").factory("fornecedorService", function ($http, conf
 angular.module("hrcomercial").controller("fornecedorController", function($scope, fornecedorService, $timeout, paginacaoService){
 	$scope.fornecedor = "Fornecedor";
 
+	$scope.cadastrarFornecedor = function(fornecedor){
+
+	};
+
+	$scope.atualizarFornecedor = function(fornecedor){
+
+	};
+
+	$scope.deletarrFornecedor = function(id){
+
+	};
+
 	$scope.filtrarPorSelect = function(){
 		var option = document.getElementById("selectSearch").value;
 		if(option == "nome"){
