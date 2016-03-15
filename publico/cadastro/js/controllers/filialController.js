@@ -9,7 +9,7 @@ angular.module('hrcomercial').factory('filialService', function($http, config) {
 });
 
 angular.module('hrcomercial').controller('filialController', function($scope, filialService, paginacaoService) {
-	$scope.nome = 'filiais';
+	$scope.nome = 'Filiais';
 	$scope.showPaginas = []; 
 	$scope.proxima = 2;
 	$scope.atual = 1;

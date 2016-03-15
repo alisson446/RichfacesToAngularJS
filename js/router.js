@@ -12,7 +12,12 @@ angular.module('hrcomercial', ['ngRoute']).config(function($routeProvider) {
 
 		.when('/subgrupo', {
 			templateUrl: 'estoque/cadastro/views/subgrupo.html',
-			controller: 'subgrupo'
+			controller: 'subgrupoController'
+		})
+
+		.when('/publico/fornecedor', {
+			templateUrl: 'publico/cadastro/views/fornecedor.html',
+			controller: 'fornecedorController'
 		})
 
 		.otherwise({redirectTo: '/'});

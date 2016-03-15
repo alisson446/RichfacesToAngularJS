@@ -1,1 +1,47 @@
-<label>subgrupo {{sub}}</label>
+<br/>
+<div class="row">
+	<div class="large-2 large-offset-1 columns">
+		{{sub}}
+	</div>
+	<div class="large-1 large-offset-4 columns">
+		<a href="">
+			<img src="img/tables/add.png">
+		</a>	
+	</div>
+	<div class="large-1 columns">
+		<a href="">
+			<img src="img/tables/search.png">
+		</a>	
+	</div>
+	<div class="large-3 columns">
+		<div class="{{classe}}" ng-show="opensearch">
+			<div class="large-4 columns">
+				<select id="selectSearch" ng-click="filtrarPorSelect()">
+					<option value="undefinied"></option>
+					<option value="codigo">Código</option>
+					<option value="descricao">Descrição</option>
+					<option value="abreviacao">Abreviação</option>
+				</select>
+			</div>
+			<div class="large-8 columns" id="inputSearch">
+				<input type="text" ng-model="[]" id="" placeholder="Pesquisar..." disabled />
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+<table>
+	<tr>
+		<th>Código</th>
+		<th>Descrição</th>
+		<th>Abreviação</th>
+		<th>Ações</th>
+	</tr>
+	<tr>
+		<td>{{}}</td>
+		<td>{{}}</td>
+		<td>{{}}</td>
+		<td>{{}}</td>
+	</tr>
+</table>

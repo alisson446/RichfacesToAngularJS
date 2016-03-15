@@ -1,0 +1,70 @@
+<br/>
+<div class="row">
+	<div class="large-2 large-offset-1 columns">
+		<h3 class="titulo">{{fornecedor}}</h3>	
+	</div>
+	<div style="position:relative;left:8.5em;" class="large-1 large-offset-4 columns">
+		<a href="">
+			<img src="img/tables/add.png">
+		</a>	
+	</div>
+	<div style="position:relative;left:3.5em;" class="large-1 columns">
+		<a href="" ng-click="abrindoSearch()">
+			<img src="img/tables/search.png">
+		</a>	
+	</div>
+	<div class="large-3 columns">
+		<div class="{{classe}}" ng-show="opensearch">
+			<div class="large-4 columns">
+				<select id="selectSearch" ng-click="filtrarPorSelect()">
+					<option value="undefinied"></option>
+					<option value="nome">Nome</option>
+					<option value="nomeFantasia">Nome Fantasia</option>
+					<option value="cnpj">CNPJ/CPF</option>
+				</select>
+			</div>
+			<div class="large-8 columns" id="inputSearch">
+				<input type="text" ng-model="buscarFornecedores[filters]" id="campoBuscar" placeholder="Pesquisar..." disabled />
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class="small-12 medium-12 large-12 columns">
+	<table class="large-8 large-offset-1 columns">
+		<tr class="trbody">
+			<th>Código</th>
+			<th>Nome</th>
+			<th>Fantasia</th>
+			<th>CNPJ/CPF</th>
+			<th>Contato</th>
+			<th>Telefone</th>
+			<th>Ações</th>
+		</tr>
+		<tr ng-repeat="fornecedor in fornecedores | filter:buscarFornecedores">
+			<td>{{fornecedor.codigo}}</td>
+			<td>{{fornecedor.nome}}</td>
+			<td>{{fornecedor.nomeFantasia}}</td>
+			<td>{{fornecedor.cnpj}}</td>
+			<td>{{fornecedor.contato}}</td>
+			<td>{{fornecedor.telefone}}</td>
+			<td></td>
+		</tr>
+	</table>
+	<div class="large-2 columns" style="position:relative;top:20em;">
+		<nav ng-show="totalPorPagina < totalRegistro">
+	        <ul class="pagination">
+	         <a ng-click="prevPage(anterior)" ng-hide="prevDisable" style="position:relative;right:16em;bottom:0.3em;"><img src="img/tables/prev.png"></a>
+	            <li ng-repeat="j in pagina">
+	                <a href ng-click="loadListPagination($index)" ng-if='$index<=2' style="font-size:18px;width:2em;height:30px;border-radius: 5px;color: #4F3E47;rigth:30px;">
+	                    {{showPaginas[$index]}}
+	                    <div id="marcador">
+	                    		<span>{{showPaginas[$index]==atual ? '_' : ''}}</span>
+	              		</div>
+	                </a>
+	            </li>
+	         <a ng-click="nextPage(proxima)" style="position:relative;bottom:3.6em;right:3em;" ng-hide="nextDisable"><img src="img/tables/next.png"></a>	
+	        </ul>
+	    </nav>
+	</div>
+</div>
