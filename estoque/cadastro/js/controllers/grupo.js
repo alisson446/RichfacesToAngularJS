@@ -159,6 +159,7 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 	var carregarComissao = function(){
 		gruposService.getComissao().success(function(data){
 			$scope.comissoes = data;
+			$scope.comissoes
 		});
 	};
 
@@ -168,7 +169,7 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			"descontoMaximo": grupos.descontoMaximo, "markupPadrao": grupos.markupPadrao, "observacao": grupos.observacao,
 			"isImobilizado": grupos.isImobilizado, "isInventario": grupos.isInventario, "tipoProduto":grupos.tipoProduto, 
 			"aliquotaImpressoraFiscal":grupos.aliquotaImpressoraFiscal, "classfiscal": grupos.classfiscal, "fluxoSaida": grupos.fluxoSaida, 
-			"fluxoEntrada": grupos.fluxoEntrada, "comissao": grupos.comissao};
+			"fluxoEntrada": grupos.fluxoEntrada, "comissao": grupos.comissao, "tabelaCV": "CV", "tabelaTP": "TP", "tabelaIF": "IF"};
 
 		gruposService.saveGrupo(objetoGrupo).success(function(data){
 			$('#modalGrupos').foundation('reveal', 'close');
@@ -186,7 +187,7 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			"descontoMaximo": grupos.descontoMaximo, "markupPadrao": grupos.markupPadrao, "observacao": grupos.observacao,
 			"isImobilizado": grupos.isImobilizado, "isInventario": grupos.isInventario, "tipoProduto":grupos.tipoProduto, 
 			"aliquotaImpressoraFiscal":grupos.aliquotaImpressoraFiscal, "classfiscal": grupos.classfiscal, "fluxoSaida": grupos.fluxoSaida, 
-			"fluxoEntrada": grupos.fluxoEntrada, "comissao": grupos.comissao};
+			"fluxoEntrada": grupos.fluxoEntrada, "comissao": grupos.comissao, "tabelaCV": "CV", "tabelaTP": "TP", "tabelaIF": "IF"};
 
 		gruposService.editarGrupo(objetoGrupoEdit.grupo, objetoGrupoEdit).success(function (data){
 			carregarGrupos();
