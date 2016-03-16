@@ -7,6 +7,18 @@ angular.module("hrcomercial").factory("gruposService", function ($http, config){
 		return $http.get(config.fluxodecaixa + "/");
 	};
 
+	var _getTipoDeProduto = function(){
+		return $http.get(config.itemtabelagenerica + "/TP");
+	};
+
+	var _getAliquota = function(){
+		return $http.get(config.itemtabelagenerica + "/IF");
+	};
+
+	var _getComissao = function(){
+		return $http.get(config.itemtabelagenerica + "/CV");
+	};
+
 	var _saveGrupo = function(grups){
 		return $http.post(config.url + "/", grups);
 	}
@@ -29,7 +41,10 @@ angular.module("hrcomercial").factory("gruposService", function ($http, config){
 		saveGrupo: _saveGrupo,
 		editarGrupo: _editarGrupo,
 		deletarGrupo: _deletarGrupo,
-		gruposSelecionado: _gruposSelecionado
+		gruposSelecionado: _gruposSelecionado,
+		getTipoDeProduto: _getTipoDeProduto,
+		getAliquota:_getAliquota,
+		getComissao:_getComissao
 	};
 });
 
@@ -126,6 +141,24 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			$scope.fluxos = data;
 		}).error(function(data,status){
 			$scope.message = "Aconteceu um erro ao carregar fluxos!";
+		});
+	};
+
+	var carregarItemTabela = function(){
+		gruposService.getTipoDeProduto().success(function(data){
+			$scope.apendices = data;
+		});
+	};
+
+	var carregarAliquota = function(){
+		gruposService.getAliquota().success(function(data){
+			$scope.aliquotas = data;
+		});
+	};
+
+	var carregarComissao = function(){
+		gruposService.getComissao().success(function(data){
+			$scope.comissoes = data;
 		});
 	};
 
@@ -262,5 +295,8 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 
 	carregarSelectFluxo();
 	carregarGrupos();
+	carregarItemTabela();
+	carregarAliquota();
+	carregarComissao();
 
 });

@@ -166,14 +166,12 @@
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-4 medium-4 large-4 columns">
 	    				<select ng-model="grupo.tipoProduto">
-				          <option value="husker">Husker</option>
-				          <option value="starbuck">Starbuck</option>
+				          <option ng-repeat="apendice in apendices" value="{{apendice.elementoTabela}}">{{apendice.apendiceElemento}}</option>	
        					</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
 	    				<select ng-model="grupo.aliquotaImpressoraFiscal">
-				          <option value="husker">Husker</option>
-				          <option value="starbuck">Starbuck</option>
+				          <option ng-repeat="aliquota in aliquotas" value="{{aliquota.elementoTabela}}">{{aliquota.elementoTabela+' - '+aliquota.descricaoElemento }}</option>
        					</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
@@ -207,8 +205,7 @@
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
 	    				<select ng-model="grupo.comissao">
-				          <option value="husker">Husker</option>
-				          <option value="starbuck">Starbuck</option>
+				          <option ng-repeat="comissao in comissoes" value="{{comissao.apendiceElemento}}">{{comissao.apendiceElemento}}</option>
        					</select>
 	    			</div>
 	    		</div>
@@ -325,14 +322,12 @@
 	    		<div class="small-12 medium-12 large-12 columns">
 	    			<div class="small-4 medium-4 large-4 columns">
 	    				<select ng-model="grupoedit.tipoProduto">
-				          <option value="BR">BR</option>
-				          <option value="starbuck">Starbuck</option>
+				          <option ng-repeat="apendice in apendices" value="{{apendice.elementoTabela}}">{{apendice.apendiceElemento}}</option>	
        					</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
 	    				<select ng-model="grupoedit.aliquotaImpressoraFiscal">
-				          <option value="husker">Husker</option>
-				          <option value="starbuck">Starbuck</option>
+				          <option ng-repeat="aliquota in aliquotas" value="{{aliquota.elementoTabela}}">{{aliquota.elementoTabela+' - '+aliquota.descricaoElemento }}</option>
        					</select>
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
@@ -366,8 +361,7 @@
 	    			</div>
 	    			<div class="small-4 medium-4 large-4 columns">
 	    				<select ng-model="grupoedit.comissao">
-				          <option value="husker">Husker</option>
-				          <option value="starbuck">Starbuck</option>
+				          <option ng-repeat="comissao in comissoes" value="{{comissao.apendiceElemento}}">{{comissao.apendiceElemento}}</option>
        					</select>
 	    			</div>
 	    		</div>
