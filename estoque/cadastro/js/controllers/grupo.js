@@ -230,6 +230,10 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		$scope.grupoid = id;
 	};
 
+	$scope.closeExcluir = function(){
+		$('#modalExcluir').foundation('reveal', 'close');
+	};
+
 	$scope.fecharModal = function(){
 		$('#modalGrupos').foundation('reveal', 'close');
 		$scope.grupo = null;
