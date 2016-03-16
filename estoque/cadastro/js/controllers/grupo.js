@@ -156,9 +156,10 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			"fluxoEntrada": grupos.fluxoEntrada, "comissao": grupos.comissao};
 
 		gruposService.editarGrupo(objetoGrupoEdit.grupo, objetoGrupoEdit).success(function (data){
-			$('#modalEditarGrupos').foundation('reveal', 'close');	
-			carregarGrupos();		
+			carregarGrupos();
 		});
+		$('#modalEditarGrupos').foundation('reveal', 'close');
+		location.reload(); 		
 	};
 
 	$scope.deletarGrupo = function(id){
