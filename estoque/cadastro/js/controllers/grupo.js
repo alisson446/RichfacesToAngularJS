@@ -191,12 +191,12 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		gruposService.editarGrupo(objetoGrupoEdit.grupo, objetoGrupoEdit).success(function (data){
 			carregarGrupos();
 		});
-		$('#modalEditarGrupos').foundation('reveal', 'close');
 		location.reload(); 		
 	};
 
 	$scope.deletarGrupo = function(id){
 		gruposService.deletarGrupo(id).success(function(data){
+			$('#modalExcluir').foundation('reveal', 'close');
 			carregarGrupos();
 		});
 	};
@@ -221,6 +221,12 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			alert("Deu erro");
 		}
 		
+	};
+
+	$scope.openModalExcluir = function(descricao, id){
+		$('#modalExcluir').foundation('reveal', 'open');
+		$scope.gruporemove = descricao;
+		$scope.grupoid = id;
 	};
 
 	$scope.fecharModal = function(){
