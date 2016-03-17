@@ -139,8 +139,6 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 	var carregarSelectFluxo = function(){
 		gruposService.getFluxodecaixa().success(function(data){
 			$scope.fluxos = data;
-		}).error(function(data,status){
-			$scope.message = "Aconteceu um erro ao carregar fluxos!";
 		});
 	};
 
@@ -190,7 +188,7 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			"fluxoEntrada": grupos.fluxoEntrada, "comissao": grupos.comissao, "tabelaCV": "CV", "tabelaTP": "TP", "tabelaIF": "IF"};
 
 		gruposService.editarGrupo(objetoGrupoEdit.grupo, objetoGrupoEdit).success(function (data){
-			carregarGrupos();
+			$scope.grupoedit = data;
 		});
 		location.reload(); 		
 	};
@@ -202,15 +200,18 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		});
 	};
 
-	$scope.openModalGrupo = function(screen, id){
+	$scope.show = function(screen, id){
+		$scope.grupoedit = null;
 		if(screen == "cadastrar"){
+			$scope.titleModal = "Adicionar";
 			$('#modalGrupos').foundation('reveal', 'open');
-			$scope.abaIdent = "active";
-			$scope.abaClass = "";
-			$scope.activeIdent = "active";
-			$scope.activeClass = "";			
+			$scope.abaEditIdent = "active";
+			$scope.abaEditClass = "";
+			$scope.activeEditIdent = "active";
+			$scope.activeEditClass = "";				
 		}else if(screen == "editar"){
-			$('#modalEditarGrupos').foundation('reveal', 'open');
+			$scope.titleModal = "Editar";
+			$('#modalGrupos').foundation('reveal', 'open');
 			$scope.abaEditIdent = "active";
 			$scope.abaEditClass = "";
 			$scope.activeEditIdent = "active";
@@ -232,11 +233,6 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 
 	$scope.closeExcluir = function(){
 		$('#modalExcluir').foundation('reveal', 'close');
-	};
-
-	$scope.fecharModal = function(){
-		$('#modalGrupos').foundation('reveal', 'close');
-		$scope.grupo = null;
 	};
 
 	$scope.fecharModalEdit = function(){

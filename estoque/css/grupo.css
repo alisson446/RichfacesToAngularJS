@@ -1,7 +1,4 @@
-#modalGrupos input{
-	font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif !important;
-	color: #4F3E47 !important;
-}
+
 #abaClasse{
 	height: 12em;
 }
@@ -13,14 +10,6 @@ select{
 	height: 2.1em !important;
 	padding: 0px !important;
 	background-color: #DDDDDB !important;
-}
-
-#modalGrupos #titleTab2 input{
-	font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif !important;
-	color: #4F3E47 !important;
-	height: 2em;
-	font-size: 1em;
-	padding: 1px;
 }
 
 #modalEditarGrupos input{
@@ -58,3 +47,59 @@ select{
 	background-color: #DCDCDC;
 }
 
+#loadpaginate{
+	font-size:18px;width:2em;height:30px;
+	border-radius: 5px;color: #4F3E47;position:relative;
+}
+
+#modalTitle{
+	font-family: "Open Sans";
+	color: #4F3E47;	
+	font-size: 24px;
+	margin: 0 0.6em;
+}
+
+#modalTitle a{
+	float: right;
+}
+
+@media screen and (min-width: 1275px){	
+	#prevpage{
+		position:absolute;right:15.4em;
+	}
+	#nextpage{
+		position:absolute;right:4em;
+	}
+	#organizarPaginate{
+		position:absolute;left:9em;
+	}
+	#iconepesquisar{
+		position:relative;left:2.5em;
+	}
+	#iconeadd{
+		position:relative;left:2em;
+	}
+}
+@media screen and (max-width: 1274px){	
+	#prevpage{
+		position:absolute;right:11em;
+	}
+	#nextpage{
+		position:absolute;right:0.2em;
+	}
+	#organizarPaginate{
+		position:absolute;left:5em;
+	}
+	#iconepesquisar{
+		position:relative;bottom:2em;left:2.5em;
+	}
+}
+.titulo{
+	position: relative; right:0.6em;
+}
+.reveal-modal{
+	padding: 0.7em 0 !important;
+}
+.tabs-content{
+	margin-bottom: 1.4em !important;
+}

@@ -3954,6 +3954,7 @@ blockquote p {
 
 .reveal-modal {
   visibility: hidden;
+  max-height: 410px;
   display: none;
   position: absolute;
   z-index: 1005;
@@ -3999,14 +4000,14 @@ blockquote p {
       margin: 0 auto; } }
   @media only screen and (min-width: 40.063em) {
     .reveal-modal.small {
-      width: 40%;
+      width: 600px;
       max-width: 62.5rem;
       left: 0;
       right: 0;
       margin: 0 auto; } }
   @media only screen and (min-width: 40.063em) {
     .reveal-modal.medium {
-      width: 50%;
+      width: 800px;
       max-width: 62.5rem;
       left: 0;
       right: 0;
