@@ -55,7 +55,7 @@
 	<div class="small-3 medium-3 large-2 columns" style="position:relative;top:20em;">
 		<nav ng-show="totalPorPagina < totalRegistro">
 	        <ul class="pagination">
-	         <a ng-click="prevPage(anterior)" ng-hide="prevDisable" style="position:relative;right:11em;"><img src="img/tables/prev.png"></a>
+	         <a ng-click="prevPage(anterior)" ng-hide="prevDisable" style="position:absolute;right:15.8em;"><img src="img/tables/prev.png"></a>
 	            <li ng-repeat="j in pagina">
 	                <a href ng-click="loadListPagination($index)" ng-if='$index<=2' style="font-size:18px;width:2em;height:30px;border-radius: 5px;color: #4F3E47;rigth:30px;">
 	                    {{showPaginas[$index]}}
@@ -64,7 +64,7 @@
 	              		</div>
 	                </a>
 	            </li>
-	         <a ng-click="nextPage(proxima)" style="position:fixed;" ng-hide="nextDisable"><img src="img/tables/next.png"></a>	
+	         <a ng-click="nextPage(proxima)" style="position:absolute;" ng-hide="nextDisable"><img src="img/tables/next.png"></a>	
 	        </ul>
 	    </nav>
 	</div>
