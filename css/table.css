@@ -27,6 +27,13 @@
 #titleTab2{
 	font-family: "Open Sans" !important;
 	color: #4F3E47;
+	font-size: 12px !important;
+	font-weight: bold;
+}
+
+#titleTab2 label{
+	font-family: "Open Sans" !important;
+	color: #4F3E47;
 	font-size: 13px !important;
 	font-weight: bold;
 }

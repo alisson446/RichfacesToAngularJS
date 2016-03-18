@@ -161,7 +161,7 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		});
 	};
 
-	$scope.cadastrarGrupo = function(grupos){
+	$scope.salvar = function(grupos){
 		var objetoGrupo = { 
 			"grupo": grupos.grupo, "descricao":grupos.descricao, "abreviacao": grupos.abreviacao, 
 			"descontoMaximo": grupos.descontoMaximo, "markupPadrao": grupos.markupPadrao, "observacao": grupos.observacao,
@@ -169,28 +169,49 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			"aliquotaImpressoraFiscal":grupos.aliquotaImpressoraFiscal, "classfiscal": grupos.classfiscal, "fluxoSaida": grupos.fluxoSaida, 
 			"fluxoEntrada": grupos.fluxoEntrada, "comissao": grupos.comissao, "tabelaCV": "CV", "tabelaTP": "TP", "tabelaIF": "IF"};
 
-		gruposService.saveGrupo(objetoGrupo).success(function(data){
-			$('#modalGrupos').foundation('reveal', 'close');
-			carregarGrupos();
-			$scope.grupo = null;
-		}).error(function(data,status){
-			$scope.message = "Aconteceu um erro ao salvar grupo!";
-		});	
+		if($scope.titleModal=="Adicionar"){
+			gruposService.saveGrupo(objetoGrupo).success(function (data){
+				$('#modalGrupos').foundation('reveal', 'close');
+				$scope.grupo = null;
+				carregarGrupos();
+			});
+		}else{
+			gruposService.editarGrupo(objetoGrupo.grupo, objetoGrupo).success(function (data){
+				carregarGrupos();
+			});
+			location.reload(); 
+		}
 
-	};	
+	};
 
-	$scope.atualizarGrupo = function(grupos){
-		var objetoGrupoEdit = { 
-			"grupo": grupos.grupo, "descricao":grupos.descricao, "abreviacao": grupos.abreviacao, 
-			"descontoMaximo": grupos.descontoMaximo, "markupPadrao": grupos.markupPadrao, "observacao": grupos.observacao,
-			"isImobilizado": grupos.isImobilizado, "isInventario": grupos.isInventario, "tipoProduto":grupos.tipoProduto, 
-			"aliquotaImpressoraFiscal":grupos.aliquotaImpressoraFiscal, "classfiscal": grupos.classfiscal, "fluxoSaida": grupos.fluxoSaida, 
-			"fluxoEntrada": grupos.fluxoEntrada, "comissao": grupos.comissao, "tabelaCV": "CV", "tabelaTP": "TP", "tabelaIF": "IF"};
+	$scope.show = function(screen, id){
+		$scope.grupo = null;
+		if(screen == "cadastrar"){
+			$scope.titleModal = "Adicionar";
+			$scope.nameButton = "Cadastrar";
 
-		gruposService.editarGrupo(objetoGrupoEdit.grupo, objetoGrupoEdit).success(function (data){
-			$scope.grupoedit = data;
-		});
-		location.reload(); 		
+			$('#modalGrupos').foundation('reveal', 'open');
+			$scope.abaIdent = "active";
+			$scope.abaClass = "";
+			$scope.activeIdent = "active";
+			$scope.activeClass = "";				
+		}else if(screen == "editar"){
+			$scope.titleModal = "Editar";
+			$scope.nameButton = "Atualizar";
+
+			$('#modalGrupos').foundation('reveal', 'open');
+			$scope.abaIdent = "active";
+			$scope.abaClass = "";
+			$scope.activeIdent = "active";
+			$scope.activeClass = "";	
+
+			gruposService.gruposSelecionado(id).success(function(data){
+				$scope.grupo = data;
+			});
+		} else {
+			alert("Estamos em conserto do sistema!");
+		}
+		
 	};
 
 	$scope.deletarGrupo = function(id){
@@ -198,31 +219,6 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 			$('#modalExcluir').foundation('reveal', 'close');
 			carregarGrupos();
 		});
-	};
-
-	$scope.show = function(screen, id){
-		$scope.grupoedit = null;
-		if(screen == "cadastrar"){
-			$scope.titleModal = "Adicionar";
-			$('#modalGrupos').foundation('reveal', 'open');
-			$scope.abaEditIdent = "active";
-			$scope.abaEditClass = "";
-			$scope.activeEditIdent = "active";
-			$scope.activeEditClass = "";				
-		}else if(screen == "editar"){
-			$scope.titleModal = "Editar";
-			$('#modalGrupos').foundation('reveal', 'open');
-			$scope.abaEditIdent = "active";
-			$scope.abaEditClass = "";
-			$scope.activeEditIdent = "active";
-			$scope.activeEditClass = "";	
-			gruposService.gruposSelecionado(id).success(function(data){
-				$scope.grupoedit = data;
-			});
-		}else {
-			alert("Deu erro");
-		}
-		
 	};
 
 	$scope.openModalExcluir = function(descricao, id){
@@ -235,8 +231,8 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		$('#modalExcluir').foundation('reveal', 'close');
 	};
 
-	$scope.fecharModalEdit = function(){
-		$('#modalEditarGrupos').foundation('reveal', 'close');
+	$scope.fecharModal = function(){
+		$('#modalGrupos').foundation('reveal', 'close');
 		$scope.grupo = null;
 	};
 
@@ -286,18 +282,18 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		$scope.activeClass = "active";
 	};
 
-	$scope.abaEditIdentificacao = function(){
-		$scope.abaEditIdent = "active";
-		$scope.abaEditClass = "";
-		$scope.activeEditIdent = "active";
-		$scope.activeEditClass = "";
+	$scope.abaIdentificacao = function(){
+		$scope.abaIdent = "active";
+		$scope.abaClass = "";
+		$scope.activeIdent = "active";
+		$scope.activeClass = "";
 	};
 
-	$scope.abaEditClassificacao = function(){
-		$scope.abaEditIdent = "";
-		$scope.abaEditClass = "active";
-		$scope.activeEditIdent = "";
-		$scope.activeEditClass = "active";
+	$scope.abaClassificacao = function(){
+		$scope.abaIdent = "";
+		$scope.abaClass = "active";
+		$scope.activeIdent = "";
+		$scope.activeClass = "active";
 	};
 
 	carregarSelectFluxo();

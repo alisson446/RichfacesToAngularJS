@@ -76,7 +76,7 @@
 <div id="modalGrupos" class="reveal-modal medium collapse"  data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 	<h3 id="modalTitle">
 		{{titleModal}} Grupo
-		<a ng-click="fecharModalEdit()">
+		<a ng-click="fecharModal()">
 			<img src="img/publico/ic_remove.png">
 		</a>
 	</h3>
@@ -84,112 +84,82 @@
 	<div class="row">
 	  	<div class="medium-12 columns">
 		  	<ul class="tabs" data-tab role="tablist" id="titleTab">
-	  			<li class="tab-title {{activeEditIdent}}">
-	  				<a  href="" ng-click="abaEditIdentificacao()" role="tab" tabindex="0">Identificação</a>
+	  			<li class="tab-title {{activeIdent}}">
+	  				<a href="" ng-click="abaIdentificacao()" role="tab" tabindex="0">Identificação</a>
 	  			</li>
-	  			<li class="tab-title {{activeEditClass}}">
-	  				<a href="" ng-click="abaEditClassificacao()" role="tab" tabindex="0">Classificação</a>
+	  			<li class="tab-title {{activeClass}}">
+	  				<a href="" ng-click="abaClassificacao()" role="tab" tabindex="0">Classificação</a>
 	  			</li>
 			</ul>
 			
 			<div class="tabs-content" id="titleTab2">
-	  		  	<div role="tabpanel" class="content {{abaEditIdent}}">
+	  		  	<div role="tabpanel" class="content {{abaIdent}}">
 	    			<div class="medium-12 columns">
 	    				<div class="medium-2 columns">
-	    					Código
+	    					<label>Código</label>
+		    				<input class="form-control" type="text" ng-model="grupo.grupo" />
 	    				</div>
 	    				<div class="medium-10 columns">
-	    					Descrição
+	    					<label>Descrição</label>
+		    				<input class="form-control" type="text" ng-model="grupo.descricao" />
 	    				</div>
 	    			</div>
 		    		<div class="medium-12 columns">
-		    			<div class="medium-2 columns">
-		    				<input class="form-control" type="text" ng-model="grupoedit.grupo" />
+		    			<div class="medium-4 medium-offset-2 columns">
+		    				<label>Abreviação</label>
+		    				<input class="form-control" type="text" ng-model="grupo.abreviacao" />
 		    			</div>
-		    			<div class="medium-10 columns">
-		    				<input class="form-control" type="text" ng-model="grupoedit.descricao" />
+		    			<div class="medium-3 medium-offset-1 columns">
+		    				<label>Desconto Máximo</label>
+		    				<input class="form-control" type="text" ng-model="grupo.descontoMaximo" />
+		    			</div>
+		    			<div class="medium-2 columns">
+		    				<label>Markup</label>
+		    				<input class="form-control" type="text" ng-model="grupo.markupPadrao" />
 		    			</div>
 		    		</div>
 		    		<div class="medium-12 columns">
 		    			<div class="medium-4 medium-offset-2 columns">
-		    				Abreviação
+		    				<label>Observação</label>
+		    				<input class="form-control" type="text" ng-model="grupo.observacao" />
 		    			</div>
 		    			<div class="medium-3 medium-offset-1 columns">
-		    				Desconto Máximo
-		    			</div>
-		    			<div class="medium-2 columns">
-		    				Markup
-		    			</div>
-		    		</div>
-		    		<div class="medium-12 columns">
-		    			<div class="medium-5 medium-offset-2 columns">
-		    				<input class="form-control" type="text" ng-model="grupoedit.abreviacao" />
-		    			</div>
-		    			<div class="medium-3 columns">
-		    				<input class="form-control" type="text" ng-model="grupoedit.descontoMaximo" />
-		    			</div>
-		    			<div class="medium-2 columns">
-		    				<input class="form-control" type="text" ng-model="grupoedit.markupPadrao" />
-		    			</div>
-		    		</div>
-		    		<div class="medium-12 columns">
-		    			<div class="medium-4 medium-offset-2 columns">
-		    				Observação
-		    			</div>
-		    			<div class="medium-3 medium-offset-1 columns">
-		    				Imobilizado
-		    			</div>
-		    			<div class="medium-2 columns">
-		    				Inventario
-		    			</div>
-		    		</div>
-		    		<div class="medium-12 columns">
-		    			<div class="medium-5 medium-offset-2 columns">
-		    				<input class="form-control" type="text" ng-model="grupoedit.observacao" />
-		    			</div>
-		    			<div class="medium-3 columns">
+		    				<label>Imobilizado</label>
 		    				<div class="switch round">
-								<input id="imobilizadoedit" type="checkbox" ng-model="grupoedit.isImobilizado">
+								<input id="imobilizadoedit" type="checkbox" ng-model="grupo.isImobilizado">
 								<label for="imobilizadoedit"></label>
 							</div>
 		    			</div>
 		    			<div class="medium-2 columns">
+		    				<label>Inventario</label>
 		    				<div class="switch round" id="lainventarioedit" >
-								<input id="inventarioedit" type="checkbox" ng-model="grupoedit.isInventario" onfocus="document.getElementById('lainventarioedit').style.border = '1px dashed';">
+								<input id="inventarioedit" type="checkbox" ng-model="grupo.isInventario" onfocus="document.getElementById('lainventarioedit').style.border = '1px dashed';">
 								<label for="inventarioedit"></label>
 							</div>
 		    			</div>
 		    		</div>
 				</div>
-				<div role="tabpanel" id="abaClasse" class="content {{abaEditClass}}">
+				<div role="tabpanel" id="abaClasse" class="content {{abaClass}}">
 				  	<div class="medium-12 columns">
 				    	<div class="medium-4 columns">
-		    				Tipo de Produto
-		    			</div>
-		    			<div class="medium-4 columns">
-		    				Aliquota de Impressora Fiscal
-		    			</div>
-		    			<div class="medium-4 columns">
-		    				Classificacao Fiscal	
-		    			</div>
-		    		</div>
-		    		<div class="medium-12 columns">
-		    			<div class="medium-4 columns">
-		    				<select ng-model="grupoedit.tipoProduto">
+		    				<label>Tipo de Produto</label>
+		    				<select ng-model="grupo.tipoProduto">
 						        <option ng-repeat="apendice in apendices" value="{{apendice.elementoTabela}}">
 						        	{{apendice.apendiceElemento}}
 						        </option>
 		   					</select>
 		    			</div>
 		    			<div class="medium-4 columns">
-		    				<select ng-model="grupoedit.aliquotaImpressoraFiscal">
+		    				<label>Aliquota de Impressora Fiscal</label>
+		    				<select ng-model="grupo.aliquotaImpressoraFiscal">
 						        <option ng-repeat="aliquota in aliquotas" value="{{aliquota.elementoTabela}}">
 						        	{{aliquota.elementoTabela+' - '+aliquota.descricaoElemento }}
 						        </option>
 		   					</select>
 		    			</div>
 		    			<div class="medium-4 columns">
-		    				<select ng-model="grupoedit.classfiscal">
+		    				<label>Classificacao Fiscal</label>
+		    				<select ng-model="grupo.classfiscal">
 						        <option value="husker">Husker</option>
 						        <option value="starbuck">Starbuck</option>
 		   					</select>
@@ -197,32 +167,24 @@
 		    		</div>
 		    		<div class="medium-12 columns">
 				    	<div class="medium-4 columns">
-		    				Classificacao da Despesa
-		    			</div>
-		    			<div class="medium-4 columns">
-		    				Classificação da Receita
-		    			</div>
-		    			<div class="medium-4 columns">
-		    				Comissao	
-		    			</div>
-		    		</div>
-		    		<div class="medium-12 columns">
-		    			<div class="medium-4 columns">
-		    				<select ng-model="grupoedit.fluxoSaida">
+		    				<label>Classificacao da Despesa</label>
+		    				<select ng-model="grupo.fluxoSaida">
 		    					<option ng-repeat="fluxo in fluxos" value="{{fluxo.codigoFluxo}}">
 		    						{{fluxo.codigoFluxo +' - '+ fluxo.descricao}}
 		    					</option>
 		    				</select>
 		    			</div>
 		    			<div class="medium-4 columns">
-		    				<select ng-model="grupoedit.fluxoEntrada">
+		    				<label>Classificação da Receita</label>
+		    				<select ng-model="grupo.fluxoEntrada">
 		    					<option ng-repeat="fluxo in fluxos" value="{{fluxo.codigoFluxo}}">
 		    						{{fluxo.codigoFluxo +' - '+ fluxo.descricao}}
 		    					</option>
 		    				</select>
 		    			</div>
 		    			<div class="medium-4 columns">
-		    				<select ng-model="grupoedit.comissao">
+		    				<label>Comissao</label>
+		    				<select ng-model="grupo.comissao">
 						        <option ng-repeat="comissao in comissoes" value="{{comissao.elementoTabela}}">
 						        	{{comissao.apendiceElemento}}
 						        </option>
@@ -236,10 +198,10 @@
    	<div class="row">
 	   	<div class="medium-12 columns">
 		   	<div class="medium-2 medium-offset-8 columns" style="padding-right: 0">
-		   		<button ng-click="atualizarGrupo(grupoedit)" class="btPrimary">Atualizar</button>
+		   		<button ng-click="salvar(grupo)" class="btPrimary">{{nameButton}}</button>
 		   	</div>
 		   	<div class="medium-2 columns" style="padding-right: 0">
-		   		<button ng-click="fecharModalEdit()" class="btDanger">Cancelar</button>
+		   		<button ng-click="fecharModal()" class="btDanger">Cancelar</button>
 		   	</div>
 	   	</div>
    	</div>
@@ -248,14 +210,14 @@
 <!-- modal de exclusao -->
 <div id="modalExcluir" class="reveal-modal small collapse"  data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 	<h3 id="modalTitle">Remover Grupo</h3><br/>
-	<div class="medium-12 columns" style="position:relative;left:0.3em;">
+	<div class="medium-12 columns" style="float:right;">
 		<h5>Deseja remover o grupo {{gruporemove}} ?</h5>	
 	</div>
-	<div class="medium-4 medium-offset-5 columns" style="position:relative;left:5em;">
-		<button type="button" class="button small alert" ng-click="deletarGrupo(grupoid)">Confirmar</button>
+	<div class="medium-3 medium-offset-5 columns" style="padding:0.3; margin-left:52% !important;" >
+		<button type="button" class="btDanger" ng-click="deletarGrupo(grupoid)">Confirmar</button>
 	</div>
-	<div class="medium-3 columns">
-		<button type="button" class="button small info" ng-click="closeExcluir()">Cancelar</button>
+	<div class="medium-3 columns" style="padding:0.3;margin-left:-3% !important;">
+		<button type="button" class="btPrimary" ng-click="closeExcluir()">Cancelar</button>
 	</div>
 	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
