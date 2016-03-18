@@ -67,8 +67,13 @@ angular.module('hrcomercial').controller('grupoCtrl', function($scope, gruposSer
 		};	
 
 				gruposService.getGrupos().success(function(dados) {
+				$scope.tamanho = window.screen.availHeight;
 				$scope.totalRegistro = dados.length;
-				$scope.totalPorPagina = 10;
+				if($scope.tamanho<=768){
+					$scope.totalPorPagina = 8;
+				}else{
+					$scope.totalPorPagina = 10;
+				}
 				$scope.pagina = paginacaoService.getPagination($scope.totalPorPagina, dados);
 				$scope.filiais = $scope.pagina[0];
 

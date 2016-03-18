@@ -79,6 +79,9 @@ select{
 	#iconeadd{
 		position:relative;left:2em;
 	}
+	#paginatecss{
+		position:relative;top:20em;
+	}
 }
 @media screen and (max-width: 1274px){	
 	#prevpage{
@@ -92,6 +95,9 @@ select{
 	}
 	#iconepesquisar{
 		position:relative;bottom:2em;left:2.5em;
+	}
+	#paginatecss{
+		position:relative;top:16em;
 	}
 }
 .titulo{
